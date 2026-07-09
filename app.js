@@ -1,6 +1,6 @@
 /**
  * Tranberg Institut AB - Booking Engine
- * Only runs on /boka.html where booking elements are present
+ * Only runs on pages where booking elements are present (/boka.html and /index.html)
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const successTime = document.getElementById('success-time');
   const bookAnotherBtn = document.getElementById('book-another-btn');
 
+  // Step selection controls
+  const bookingTypeSelect = document.getElementById('booking-type');
+  const bookingGridArea = document.getElementById('booking-grid-area');
+
   // Working Hours
   const START_HOUR = 8;
   const END_HOUR = 15;
@@ -33,10 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Date State
   let currentDate = new Date();
   let selectedDate = null;
-  let selectedTime = null;
-
-  // Mock Bookings (persisted locally, GDPR-safe anonymous)
-  let bookingsDB = JSON.parse(localStorage.getItem('tranberg_bookings')) || {};
+  let selectedTime = null; // String "HH:MM"
 
   // Swedish locale helpers
   const swedishDays = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'];
@@ -51,24 +52,97 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${swedishDays[date.getDay()]} ${date.getDate()} ${swedishMonths[date.getMonth()]}`;
   }
 
-  // Deterministic pre-booked hours per date (to simulate existing bookings realistically)
-  function getPrebookedHours(dateString) {
-    const hash = dateString.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    const numBooked = 2 + (hash % 3);
-    const available = Array.from({ length: END_HOUR - START_HOUR + 1 }, (_, i) => START_HOUR + i);
-    const booked = [];
-    for (let i = 0; i < numBooked; i++) {
-      const idx = (hash + i * 3) % available.length;
-      booked.push(available.splice(idx, 1)[0]);
+  function timeToMinutes(timeStr) {
+    const [h, m] = timeStr.split(':').map(Number);
+    return h * 60 + m;
+  }
+
+  // Load and sanitize bookings (no mock data)
+  let bookingsDB = {};
+  try {
+    const stored = localStorage.getItem('tranberg_bookings');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      let isOldFormat = false;
+      for (const k in parsed) {
+        if (Array.isArray(parsed[k])) {
+          // If the array contains numbers instead of objects, it's the old mock format
+          if (parsed[k].length > 0 && typeof parsed[k][0] === 'number') {
+            isOldFormat = true;
+            break;
+          }
+        }
+      }
+      if (!isOldFormat) {
+        bookingsDB = parsed;
+      } else {
+        console.warn("Gammalt bokningsformat upptäckt i localStorage. Rensar för att undvika fel.");
+        localStorage.removeItem('tranberg_bookings');
+      }
     }
-    return booked.sort((a, b) => a - b);
+  } catch (e) {
+    console.error("Kunde inte läsa bokningar från localStorage:", e);
   }
 
   function getBookingsForDate(dateString) {
-    const pre = getPrebookedHours(dateString);
-    const user = bookingsDB[dateString] || [];
-    return [...new Set([...pre, ...user])];
+    return bookingsDB[dateString] || [];
   }
+
+  // Checks if a new booking interval overlaps with any existing bookings on that date
+  function checkOverlap(dateStr, newStartMinutes, totalDurationMinutes) {
+    const bookings = getBookingsForDate(dateStr);
+    const newEndMinutes = newStartMinutes + totalDurationMinutes;
+
+    for (const b of bookings) {
+      const bStart = timeToMinutes(b.start);
+      const bEnd = bStart + b.duration + 15; // treatment duration + 15 min write-up
+
+      if (newStartMinutes < bEnd && bStart < newEndMinutes) {
+        return true; // Overlap detected!
+      }
+    }
+    return false;
+  }
+
+  // Checks if a date has at least one valid starting hour for the selected duration
+  function hasAvailableSlotsForDate(dateStr, durationVal) {
+    const totalDuration = durationVal + 15;
+    for (let h = START_HOUR; h <= END_HOUR; h++) {
+      const startMins = h * 60;
+      if (!checkOverlap(dateStr, startMins, totalDuration)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Handle flow transitions based on selection of treatment
+  function handleServiceSelectionChange() {
+    const typeSelected = bookingTypeSelect.value;
+
+    if (typeSelected) {
+      bookingGridArea.classList.remove('disabled');
+      // Reset selections to avoid inconsistent states on change
+      selectedDate = null;
+      selectedTime = null;
+      selectedDateText.textContent = 'Välj en dag i kalendern till vänster';
+      timeslotsContainer.classList.add('empty');
+      timeslotsContainer.innerHTML = '<p class="helper-text">Vänligen klicka på en tillgänglig dag först.</p>';
+      bookingFormSection.classList.add('disabled');
+      formDateInput.value = '';
+      formTimeInput.value = '';
+      renderCalendar();
+    } else {
+      bookingGridArea.classList.add('disabled');
+      bookingFormSection.classList.add('disabled');
+      selectedDate = null;
+      selectedTime = null;
+      formDateInput.value = '';
+      formTimeInput.value = '';
+    }
+  }
+
+  bookingTypeSelect.addEventListener('change', handleServiceSelectionChange);
 
   // Calendar Rendering
   function renderCalendar() {
@@ -81,6 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    const durationVal = parseInt(bookingTypeSelect.value, 10) || 60;
+
     for (let d = 1; d <= lastDay.getDate(); d++) {
       const tempDate = new Date(year, month, d);
       const dow = tempDate.getDay();
@@ -88,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const dateStr = formatDateString(tempDate);
       const isPast = tempDate < today;
-      const allSlots = Array.from({ length: END_HOUR - START_HOUR + 1 }, (_, i) => START_HOUR + i);
-      const booked = getBookingsForDate(dateStr);
-      const fullyBooked = booked.length >= allSlots.length;
+      
+      // A day is unavailable if it is in the past OR has no available timeslots
+      const dayAvailable = !isPast && hasAvailableSlotsForDate(dateStr, durationVal);
 
       const btn = document.createElement('button');
       btn.className = 'calendar-day-btn';
@@ -107,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.appendChild(numSpan);
 
       const dot = document.createElement('span');
-      dot.className = `day-status-dot ${isPast || fullyBooked ? 'unavailable' : 'available'}`;
+      dot.className = `day-status-dot ${dayAvailable ? 'available' : 'unavailable'}`;
       btn.appendChild(dot);
 
-      if (isPast || fullyBooked) {
+      if (!dayAvailable) {
         btn.disabled = true;
       } else {
         btn.addEventListener('click', () => {
@@ -148,11 +224,13 @@ document.addEventListener('DOMContentLoaded', () => {
     formDateInput.value = '';
     formTimeInput.value = '';
 
-    const booked = getBookingsForDate(dateStr);
+    const durationVal = parseInt(bookingTypeSelect.value, 10) || 60;
+    const totalDuration = durationVal + 15;
 
     for (let h = START_HOUR; h <= END_HOUR; h++) {
       const timeStr = `${String(h).padStart(2, '0')}:00`;
-      const isBooked = booked.includes(h);
+      const startMins = h * 60;
+      const isOverlapping = checkOverlap(dateStr, startMins, totalDuration);
 
       const btn = document.createElement('button');
       btn.className = 'timeslot-btn';
@@ -164,15 +242,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const statusSpan = document.createElement('span');
       statusSpan.className = 'slot-status';
-      statusSpan.textContent = isBooked ? 'Upptagen' : 'Ledig';
+      statusSpan.textContent = isOverlapping ? 'Upptagen' : 'Ledig';
 
-      if (isBooked) {
+      if (isOverlapping) {
         btn.disabled = true;
       } else {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.timeslot-btn').forEach(b => b.classList.remove('selected'));
           btn.classList.add('selected');
-          selectTime(timeStr, h);
+          selectTime(timeStr);
         });
       }
 
@@ -182,8 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function selectTime(timeStr, hourInt) {
-    selectedTime = hourInt;
+  function selectTime(timeStr) {
+    selectedTime = timeStr;
     formDateInput.value = formatDateString(selectedDate);
     formTimeInput.value = timeStr;
     summaryDatetime.textContent = `${formatReadableSwedishDate(selectedDate)} kl. ${timeStr}`;
@@ -194,8 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (appointmentForm) {
     appointmentForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const typeEl = document.getElementById('booking-type');
-      const type = typeEl.options[typeEl.selectedIndex].text;
+      const type = bookingTypeSelect.options[bookingTypeSelect.selectedIndex].text;
+      const durationVal = parseInt(bookingTypeSelect.value, 10);
+
       if (!document.getElementById('gdpr-consent').checked) {
         alert('Du måste godkänna GDPR-villkoren för att boka.');
         return;
@@ -214,14 +293,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const dateStr = formatDateString(selectedDate);
             if (!bookingsDB[dateStr]) bookingsDB[dateStr] = [];
-            bookingsDB[dateStr].push(selectedTime);
+            bookingsDB[dateStr].push({
+              start: selectedTime,
+              duration: durationVal,
+              type: type,
+              name: document.getElementById('client-name').value
+            });
             localStorage.setItem('tranberg_bookings', JSON.stringify(bookingsDB));
 
             bookingFormSection.classList.add('disabled');
             document.querySelector('.booking-grid').classList.add('hidden');
             bookingSuccessMessage.classList.remove('hidden');
             successType.textContent = type;
-            successTime.textContent = `${formatReadableSwedishDate(selectedDate)} kl. ${String(selectedTime).padStart(2, '0')}:00`;
+            successTime.textContent = `${formatReadableSwedishDate(selectedDate)} kl. ${selectedTime}`;
             renderCalendar();
             bookingSuccessMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }, 1500);
@@ -233,17 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (bookAnotherBtn) {
     bookAnotherBtn.addEventListener('click', () => {
       appointmentForm.reset();
-      selectedDate = null;
-      selectedTime = null;
+      bookingTypeSelect.selectedIndex = 0;
+      handleServiceSelectionChange();
       document.querySelector('.booking-grid').classList.remove('hidden');
       bookingSuccessMessage.classList.add('hidden');
-      timeslotsContainer.classList.add('empty');
-      timeslotsContainer.innerHTML = '<p class="helper-text">Vänligen klicka på en tillgänglig dag först.</p>';
-      selectedDateText.textContent = 'Välj en dag i kalendern till vänster';
-      bookingFormSection.classList.add('disabled');
       renderCalendar();
     });
   }
 
-  renderCalendar();
+  // Initial call on load
+  handleServiceSelectionChange();
 });

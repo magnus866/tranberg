@@ -554,9 +554,22 @@
   <section id="bokning" class="booking-section section-padding">
     <div class="container">
       <div class="booking-container card glassmorphism">
-        <div class="booking-grid">
+        <div class="booking-header-selection">
+          <h3 class="booking-step-title">1. Välj behandling</h3>
+          <div class="form-group">
+            <label for="booking-type">Behandling *</label>
+            <select id="booking-type" name="type" form="appointment-form" required>
+              <option value="" disabled selected>Välj behandling...</option>
+              <option value="45">Behandling 45 minuter (950 kr)</option>
+              <option value="60">Behandling 60 minuter (1 200 kr)</option>
+              <option value="90">Behandling 90 minuter (1 800 kr)</option>
+            </select>
+          </div>
+        </div>
+        <hr class="form-divider">
+        <div class="booking-grid disabled" id="booking-grid-area">
           <div class="booking-datepicker">
-            <h3 class="booking-step-title">1. Välj datum</h3>
+            <h3 class="booking-step-title">2. Välj datum</h3>
             <div class="calendar-controls">
               <button id="prev-month-btn" aria-label="Föregående månad" class="calendar-nav-btn">&lsaquo;</button>
               <span id="calendar-month-year"></span>
@@ -572,7 +585,7 @@
             </div>
           </div>
           <div class="booking-timeslots">
-            <h3 class="booking-step-title">2. Välj tid</h3>
+            <h3 class="booking-step-title">3. Välj tid</h3>
             <div class="selected-date-display" id="selected-date-text">Välj en dag i kalendern till vänster</div>
             <div class="timeslots-grid empty" id="timeslots-container">
               <p class="helper-text">Vänligen klicka på en tillgänglig dag först.</p>
@@ -581,7 +594,7 @@
         </div>
         <div class="booking-form-wrapper disabled" id="booking-form-section">
           <hr class="form-divider">
-          <h3 class="booking-step-title">3. Fyll i dina uppgifter</h3>
+          <h3 class="booking-step-title">4. Fyll i dina uppgifter</h3>
           <p class="form-helper">Vald tid: <strong id="summary-datetime">-</strong></p>
           <form id="appointment-form" class="booking-form">
             <input type="hidden" id="form-date" name="date" required>
@@ -596,19 +609,9 @@
                 <input type="email" id="client-email" name="email" placeholder="din@email.se" required autocomplete="email">
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="client-phone">Telefonnummer *</label>
-                <input type="tel" id="client-phone" name="phone" placeholder="070-123 45 67" required autocomplete="tel">
-              </div>
-              <div class="form-group">
-                <label for="booking-type">Typ av behandling *</label>
-                <select id="booking-type" name="type" required>
-                  <option value="" disabled selected>Välj behandling...</option>
-                  <option value="osteopati">Osteopatisk Behandling (60 min)</option>
-                  <option value="kraniosakral">Biodynamisk Kraniosakralosteopati (60 min)</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="client-phone">Telefonnummer *</label>
+              <input type="tel" id="client-phone" name="phone" placeholder="070-123 45 67" required autocomplete="tel">
             </div>
             <div class="form-group">
               <label for="client-message">Beskriv dina besvär (frivilligt)</label>
