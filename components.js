@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <nav id="primary-navigation" class="nav-menu">
           <ul>
             <li><a href="${rootPath}index.html">Startsida</a></li>
+            <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati?</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">Om oss</a>
               <ul class="dropdown-menu">
                 <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
-                <li><a href="${rootPath}christer-tranberg.html">Christer Tranberg</a></li>
+                <li><a href="${rootPath}om-christer.html">Om Christer</a></li>
                 <li><a href="${rootPath}jorgen-tranberg.html">Jörgen Tranbergs arv</a></li>
               </ul>
             </li>
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer-links fade-in">
           <h4>Navigering</h4>
           <ul>
+            <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati</a></li>
             <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
             <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Biodynamisk Osteopati</a></li>
             <li><a href="${rootPath}utbildningar.html">Våra utbildningar</a></li>
