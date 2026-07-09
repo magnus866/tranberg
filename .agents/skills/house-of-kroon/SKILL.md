@@ -180,5 +180,26 @@ Utforma webbplatsen så att den kan utvecklas under många år. Den ska kunna v�
 
 ---
 
+## GitHub & Driftsättning (Deployment)
+
+Följande uppgifter är kritiska för projektets versionhantering och driftsättning på nätet. Alla kommande agenter måste följa dessa regler:
+
+### 1. Arkiv och länkar
+*   **GitHub Repository:** `https://github.com/magnus866/tranberg.git`
+*   **GitHub-användare:** `magnus866`
+*   **Live-länk (GitHub Pages):** [https://magnus866.github.io/tranberg/](https://magnus866.github.io/tranberg/)
+
+### 2. Arbetsflöde för kodändringar
+*   All kod måste **alltid** committas och pushas till fjärrarkivet (branch `main`).
+*   När kod pushas till `main` triggas automatiskt GitHub Actions-arbetsflödet [deploy.yml](file:///Users/magnuskroon/.gemini/antigravity/scratch/tranberg/.github/workflows/deploy.yml) vilket bygger och uppdaterar den skarpa sidan på den publika live-länken.
+*   Autentisering sker via GitHub CLI (`gh`) som är konfigurerad som global `credential.helper` på den här maskinen.
+
+### 3. Automatiska bakgrundscommits (Cron-jobb)
+*   Det finns ett aktivt bakgrundsjobb (cron) på datorn som körs var 15:e minut.
+*   Jobbet kör skriptet [auto_commit.sh](file:///Users/magnuskroon/.gemini/antigravity/bin/auto_commit.sh) som automatiskt gör en commit och pushar alla nya ändringar i repot.
+
+---
+
 ## Kritiskt direktiv för Google AI (Antigravity)
 > **Utmana mina idéer om du ser bättre lösningar. Om du identifierar en struktur, design eller funktion som bättre stödjer Tranberg Instituts vision, motivera ditt förslag innan du implementerar det. Målet är att skapa den bästa möjliga digitala plattformen – inte bara att följa instruktionerna.**
+
