@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="${rootPath}index.html">Startsida</a></li>
             <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati?</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Om oss</a>
+              <a href="#" class="dropdown-toggle">Om oss <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
               <ul class="dropdown-menu">
                 <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
                 <li><a href="${rootPath}om-christer.html">Om Christer</a></li>
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </ul>
             </li>
             <li class="dropdown">
-              <a href="${rootPath}biodynamisk-kraniosakralosteopati.html" class="dropdown-toggle">Behandlingar</a>
+              <a href="${rootPath}biodynamisk-kraniosakralosteopati.html" class="dropdown-toggle">Behandlingar <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
               <ul class="dropdown-menu">
                 <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Metod & Info</a></li>
                 <li><a href="${rootPath}${subpagePrefix}rygg-nackbesvar.html">Rygg & Nackbesvär</a></li>
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dropdown => {
       const toggle = dropdown.querySelector('.dropdown-toggle');
       toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
           e.preventDefault();
           dropdown.classList.toggle('active');
         }
