@@ -337,7 +337,7 @@ a {
 }
 
 /* Media query for medium desktops/tablets to prevent nav menu items from overlapping or squishing the logo */
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1201px) and (max-width: 1340px) {
   .header-container {
     padding: 1rem 1.5rem;
     gap: 1rem;
@@ -1232,7 +1232,7 @@ a {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .section-padding {
     padding: 5rem 0;
   }
@@ -1433,7 +1433,7 @@ a {
 }
 
 /* Hover triggering on desktop */
-@media (min-width: 1025px) {
+@media (min-width: 1201px) {
   .dropdown:hover .dropdown-menu {
     opacity: 1;
     pointer-events: auto;
@@ -1474,7 +1474,7 @@ a {
 }
 
 /* Mobile dropdown handling overrides */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .dropdown-menu {
     position: static;
     transform: none;
