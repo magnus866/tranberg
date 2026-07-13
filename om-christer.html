@@ -3,140 +3,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Möt Christer Tranberg - legitimerad osteopat, medförfattare och utbildare med 30+ års erfarenhet inom kraniosakral manuell medicin.">
-  <title>Om Christer Tranberg | Tranberg Institut AB</title>
+  <meta name="description" content="Christer Tranberg – Osteopat D.O. med medicinsk grund från BMC Uppsala och Skandinaviska Osteopathögskolan. Specialist inom biodynamisk och biomekanisk kraniell osteopati. Utbildar terapeuter i hela Norden.">
+  <title>Christer Tranberg – Osteopat D.O. | Tranberg Institut AB</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
+  <style>
+    /* ────────────────────────────────────────────────
+       PAGE-SPECIFIC STYLES – OM CHRISTER
+    ──────────────────────────────────────────────── */
+
+    /* Credential badge strip */
+    .credential-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.75rem 0;
+    }
+    .credential-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(38,51,43,0.06);
+      border: 1px solid rgba(38,51,43,0.15);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-forest-stone);
+      letter-spacing: 0.04em;
+    }
+    .credential-badge svg { color: var(--color-patinated-brass); flex-shrink: 0; }
+
+    /* DO title box */
+    .do-explainer {
+      background: linear-gradient(135deg, var(--color-forest-stone) 0%, #1e3024 100%);
+      border-radius: 16px;
+      padding: 2.75rem 2.5rem;
+      color: var(--color-limestone);
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .do-explainer::before {
+      content: 'D.O.';
+      position: absolute;
+      right: -0.5rem;
+      top: -1rem;
+      font-family: var(--font-heading);
+      font-size: 9rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .do-explainer h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--color-limestone);
+      margin-bottom: 1rem;
+    }
+    .do-explainer p {
+      color: rgba(245,243,238,0.85);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+      font-size: 0.97rem;
+    }
+    .do-explainer p:last-child { margin-bottom: 0; }
+    .do-explainer strong { color: var(--color-limestone); }
+    .do-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 560px) { .do-comparison { grid-template-columns: 1fr; } }
+    .do-compare-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+    .do-compare-card .flag { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+    .do-compare-card h4 { color: var(--color-patinated-brass); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .do-compare-card p { color: rgba(245,243,238,0.78); font-size: 0.85rem; line-height: 1.6; margin: 0; }
+
+    /* Academic timeline */
+    .academic-timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2.5rem 0;
+    }
+    .academic-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-patinated-brass), rgba(178,140,90,0.2));
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--color-patinated-brass);
+      border-radius: 50%;
+      border: 2px solid var(--color-white);
+      box-shadow: 0 0 0 2px var(--color-patinated-brass);
+    }
+    .timeline-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.3rem;
+    }
+    .timeline-item span {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-patinated-brass);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: var(--color-granite-moss);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Discipline comparison */
+    .discipline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 640px) { .discipline-grid { grid-template-columns: 1fr; } }
+    .discipline-card {
+      border-radius: var(--border-radius);
+      padding: 2.25rem 2rem;
+      border: 1.5px solid var(--color-border);
+      position: relative;
+    }
+    .discipline-card.classical {
+      background: rgba(110,113,104,0.04);
+      border-color: rgba(110,113,104,0.2);
+    }
+    .discipline-card.functional {
+      background: rgba(178,140,90,0.05);
+      border-color: rgba(178,140,90,0.25);
+    }
+    .discipline-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .discipline-card.classical .discipline-tag { background: rgba(110,113,104,0.12); color: var(--color-granite-moss); }
+    .discipline-card.functional .discipline-tag { background: rgba(178,140,90,0.15); color: #8a6520; }
+    .discipline-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .discipline-card p {
+      font-size: 0.9rem;
+      color: var(--color-granite-moss);
+      line-height: 1.75;
+      margin-bottom: 0.75rem;
+    }
+    .discipline-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .discipline-card ul li {
+      font-size: 0.87rem;
+      color: var(--color-granite-moss);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .discipline-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-patinated-brass);
+      font-size: 0.85rem;
+    }
+    .discipline-card .kraniell-note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      background: rgba(178,140,90,0.08);
+      border-left: 3px solid var(--color-patinated-brass);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.83rem;
+      color: var(--color-forest-stone);
+      line-height: 1.6;
+    }
+
+    /* Teaching section */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 640px) { .teaching-grid { grid-template-columns: 1fr; } }
+    .teaching-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--color-border);
+      border-top: 4px solid var(--color-forest-stone);
+      transition: var(--transition-smooth);
+    }
+    .teaching-card:hover { box-shadow: 0 12px 40px rgba(38,51,43,0.1); transform: translateY(-3px); }
+    .teaching-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .teaching-card p {
+      font-size: 0.88rem;
+      color: var(--color-granite-moss);
+      line-height: 1.7;
+    }
+    .teaching-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(38,51,43,0.06);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest-stone);
+      margin-bottom: 1.25rem;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header injected by components.js -->
   <header id="main-header"></header>
 
-  <!-- Subpage Hero -->
+  <!-- ════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
   <section class="subpage-hero fade-in">
     <div class="container">
-      <h1>Om Christer</h1>
-      <p class="subpage-hero-lead">Legitimerad osteopat, författare och lärare med passion för kroppens naturliga hälsa.</p>
+      <h1>Christer Tranberg</h1>
+      <p class="subpage-hero-lead">Osteopat D.O. · Specialist inom biodynamisk och biomekanisk kraniell osteopati · Utbildare · Medförfattare</p>
     </div>
   </section>
 
-  <!-- Section 1: Presentation -->
-  <section class="section-padding">
+  <!-- ════════════════════════════════════════════
+       SEKTION 1: PRESENTATION & TITULERING
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="presentation">
     <div class="container">
       <div class="grid-2-col align-center">
+
         <div class="treatment-image-wrapper fade-in">
-          <img src="assets/christer.jpg" alt="Christer Tranberg behandlar en patient" class="treatment-img">
+          <img src="assets/christer.jpg" alt="Christer Tranberg – Osteopat D.O." class="treatment-img">
           <div class="image-accent-border"></div>
         </div>
+
         <div class="rich-text fade-in">
           <span class="section-tagline">Möt din terapeut</span>
-          <h2>Över tre decennier av klinisk erfarenhet</h2>
-          <p><strong>Christer Tranberg – En livslång passion för osteopati</strong></p>
-<p>Född och uppvuxen i Göteborg, Christer har tillsammans med sin bror <strong>Jörgen Tranberg</strong> byggt upp <em>Tranberg Institut AB</em> till ett av landets mest respekterade osteopatikentren. Under mer än 25 år har de två bröderna kombinerat djup klinisk kunskap med en filosofi som ser kroppen som ett levande system i ständig dialog med omgivningen. Jörgens bortgång för ett år sedan har gjort att Christer nu ensam förvaltar det livsverk de tillsammans skapade – med samma engagemang, respekt och omtanke som tidigare.</p>
-          <p>Tillsammans med sin bror Jörgen Tranberg grundade han Bröderna Tranbergs Institut & Klinik i Göteborg. Christers filosofi bygger på en djup respekt för kroppens inneboende intelligens och självläkande förmåga. Genom att möta varje patient i ett tillstånd av djup närvaro skapar han ett tryggt och stressfritt behandlingsrum där läkning kan ske på vävnadernas egna villkor.</p>
+          <h2>Christer Tranberg – Osteopat D.O.</h2>
+
+          <div class="credential-strip">
+            <span class="credential-badge">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Osteopat D.O.
+            </span>
+            <span class="credential-badge">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Medicinsk grund, BMC Uppsala
+            </span>
+            <span class="credential-badge">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Skandinaviska Osteopathögskolan
+            </span>
+            <span class="credential-badge">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+              30+ år klinisk erfarenhet
+            </span>
+          </div>
+
+          <p>Christer Tranberg har ägnat mer än tre decennier åt att fördjupa och förfina sin förståelse för kroppens mest subtila processer. Född och uppvuxen i Göteborg, byggde han tillsammans med sin bror <strong>Jörgen Tranberg</strong> upp <em>Tranberg Institut AB</em> till ett av landets mest respekterade centrum för osteopati och biodynamisk kraniosakral terapi. Sedan Jörgens bortgång för ett år sedan förvaltar Christer ensam det livsverk de skapade – med samma engagemang, integritet och kliniska precision som alltid.</p>
+
           <blockquote>
-            "Hälsa är inte bara frånvaro av sjukdom, det är livskraftens förmåga att uttrycka sig fritt genom kroppens alla system."
+            "Hälsa är inte bara frånvaro av sjukdom – det är livskraftens förmåga att uttrycka sig fritt genom kroppens alla system."
+            <cite>— Christer Tranberg</cite>
           </blockquote>
-          <p>Christer är känd för sin inkännande touch och sitt analytiska förhållningssätt. Han kombinerar gedigen klinisk kunskap med en intuitiv förståelse för hur fysiska spänningar och stress påverkar det autonoma nervsystemet.</p>
+
+          <p>Christer är en av de mest erfarna osteopaterna i Sverige med en djupgående specialisering i biodynamisk och biomekanisk kraniell osteopati. Hans arbete spänner från klinisk behandling till att utbilda nästa generation terapeuter.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Book / Stillhetens kommunikation (alt-bg) -->
-  <section class="section-padding alt-bg">
-    <div class="container">
-      <div class="grid-2-col align-center">
-        <div class="rich-text fade-in">
-          <span class="section-tagline">Författarskap & Medicinsk Samverkan</span>
-          <h2>Medförfattare till pionjärverket "Stillhetens kommunikation"</h2>
-          <p>Christer Tranberg är en av författarna bakom den hyllade fackboken <strong>Stillhetens kommunikation – kraniosakral behandling: ett medicinskt förhållningssätt till hälsa, helhet och högre medvetenhet</strong> (2014).</p>
-          <p>Boken, som skrevs i nära samarbete med Christers bror Jörgen Tranberg och den legitimerade läkaren, docenten och anestesispecialisten <strong>Åse Jolin Mellgård</strong>, var det första svenska verket i sitt slag. Den etablerade en viktig bro mellan den kliniska skolmedicinen och den komplementära kraniosakrala terapin.</p>
-          <p>Genom detta författarskap belyser Christer hur anatomiska, fysiologiska och embryologiska principer samspelar med de subtila vätskerörelser och kraniella rytmer som utgör grunden för kroppens reglerande system. Samarbetet med en narkosläkare understryker Christers medicinskt grundade syn på manuell terapi.</p>
-        </div>
-        <div class="treatment-image-wrapper fade-in" style="background: var(--color-forest-stone); padding: 2rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; color: var(--color-limestone); text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 2rem; margin-bottom: 1rem;">"Stillhetens kommunikation"</h3>
-          <p style="font-size: 0.95rem; line-height: 1.6; max-width: 320px; color: var(--color-limestone); opacity: 0.9;">En banbrytande bok om kraniosakral behandling, skriven av Christer Tranberg, Jörgen Tranberg & docent/leg. läkare Åse Jolin Mellgård.</p>
-          <div style="margin-top: 1.5rem; height: 1.5px; width: 60px; background: var(--color-patinated-brass);"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Kompetenser -->
-  <section class="section-padding">
+  <!-- ════════════════════════════════════════════
+       SEKTION 2: TITELN OSTEOPAT D.O.
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="titulering">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tagline">Expertis</span>
-        <h2>Kompetenser & Yrkesroll</h2>
+        <span class="section-tagline">Titel &amp; Kompetens</span>
+        <h2>Vad betyder Osteopat D.O.?</h2>
+        <p class="section-lead">Titeln D.O. (Diplomate of Osteopathy) är en av de mest specialiserade titlarna inom manuell medicin. Det är viktigt att förstå vad den faktiskt innebär – och inte innebär – i en svensk kontext.</p>
       </div>
-      
-      <div class="values-grid">
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 2v20M2 12h20" />
-            </svg>
-          </div>
-          <h3>Biodynamisk Kraniosakralterapi</h3>
-          <p>Mjuk, djupgående manuell behandling med fokus på vätskerörelser, kraniella rytmer (Breath of Life) och nervsystemsreglering vid stress och trauma.</p>
-        </div>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>Osteopatisk Behandling</h3>
-          <p>Diagnostik och behandling av strukturella obalanser i ryggrad, muskler och leder. Skonsam mobilisering för ökad rörelsefrihet.</p>
-        </div>
+      <div class="do-explainer fade-in">
+        <h3>D.O. – En titel med djup medicinsk substans</h3>
+        <p>I Sverige är <strong>Osteopat D.O.</strong> en yrkestitel som uppnås efter en komplett osteopatutbildning på avancerad nivå. Det är inte en skyddad legitimationstitel i juridisk mening (vilket är en viktig pågående debatt – se <a href="behandling-barn.html#debatten" style="color: var(--color-patinated-brass);">vår sida om reglering</a>), men den speglar en gedigen akademisk och klinisk kompetens som är direkt jämförbar med vad specialistläkare besitter inom sina respektive fält.</p>
+        <p>Det är fullt rimligt att jämföra en D.O. inom osteopati med en specialist inom ortopedi, neurologi eller rehabiliteringsmedicin – inte för att titlarna är identiska, utan för att <strong>djupet, precisionen och den kliniska förståelsen för rörelse- och nervsystemet</strong> är av samma kaliber.</p>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-              <path d="M12 7v5l3 3" />
-            </svg>
+        <div class="do-comparison">
+          <div class="do-compare-card">
+            <span class="flag">🇺🇸</span>
+            <h4>USA – Doctor of Osteopathic Medicine</h4>
+            <p>I USA är D.O. en fullständig läkarexamen – likvärdig med M.D. En Doctor of Osteopathic Medicine är en legitimerad läkare som kan diagnostisera, ordinera läkemedel och operera. Utbildningen är fyra år på medicinsk fakultet plus residency.</p>
           </div>
-          <h3>Utbildning & Forskning</h3>
-          <p>Mångårig lärare och handledare för terapeuter. Aktiv i styrgruppsarbete för vetenskapliga fallstudier gällande kraniosakral behandling i Sverige.</p>
+          <div class="do-compare-card">
+            <span class="flag">🇸🇪</span>
+            <h4>Sverige – Osteopat D.O.</h4>
+            <p>I Sverige är D.O. titeln för en utövare med fullständig osteopatutbildning och klinisk fördjupning. Christer har stärkt sin D.O.-titel med medicinska studier vid BMC i Uppsala – vilket ger hans kompetens en ovanligt stark vetenskaplig och anatomisk grund.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Sidebar & CTA -->
-  <section class="section-padding alt-bg">
+  <!-- ════════════════════════════════════════════
+       SEKTION 3: AKADEMISK GRUND
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="akademisk-grund">
     <div class="container">
       <div class="content-grid">
-        
-        <!-- Left: Philosophy -->
+
         <div class="rich-text fade-in">
-          <h2>Mötet med patienten i fokus</h2>
-          <p>För Christer är varje patient unik. Behandlingen börjar alltid med ett genuint samtal och en grundlig kartläggning av din hälsohistoria. Hans metoder är mycket skonsamma och görs alltid i samklang med din kropps egna rytmer, vilket gör dem säkra för alla åldrar.</p>
-          <p>Oavsett om du söker hjälp för akut ryggskott, långvarig spänningshuvudvärk, stressrelaterad utmattning eller vill främja din allmänna hälsa, anpassas behandlingen efter dina specifika fysiologiska förutsättningar.</p>
-          
-          <div style="margin-top: 2.5rem;">
-            <a href="boka.html" class="btn btn-primary">Boka behandling med Christer</a>
+          <span class="section-tagline">Utbildning</span>
+          <h2>En akademisk grund utöver det vanliga</h2>
+          <p>Christers utbildningsresa är ovanlig i sin bredd och sitt djup. Den kombinerar konventionell medicinsk vetenskap med avancerad osteopatisk specialisering – en kombination som är sällsynt och som gör honom till en terapeut med exceptionnell analytisk och klinisk förmåga.</p>
+
+          <div class="academic-timeline">
+            <div class="timeline-item">
+              <span>Medicinsk grund</span>
+              <h4>Biomedicinskt Centrum (BMC), Uppsala</h4>
+              <p>Christer studerade medicin vid det ansedda <strong>Biomedicinska Centrum i Uppsala</strong> – ett av Nordeuropas ledande biovetenskapliga lärosäten. Denna medicinska grund ger honom en djup förståelse för human anatomi, fysiologi och patologi som de flesta manuella terapeuter saknar. Det är denna grund som gör att Christer kan se och förstå kroppen på ett sätt som kombinerar det vetenskapliga med det kliniskt intuitiva.</p>
+            </div>
+            <div class="timeline-item">
+              <span>Osteopatisk specialisering</span>
+              <h4>Skandinaviska Osteopathögskolan</h4>
+              <p>Sin formella osteopatutbildning genomförde Christer på <strong>Skandinaviska Osteopathögskolan</strong>, som erbjuder en av de mest respekterade och rigorösa osteopatutbildningarna i Norden. Utbildningen täcker strukturell osteopati, visceral osteopati, kraniosakral terapi och biodynamiska principer på djupet.</p>
+            </div>
+            <div class="timeline-item">
+              <span>Livslångt lärande</span>
+              <h4>Otaliga kurser inom biodynamisk osteopati</h4>
+              <p>Utöver sin formella utbildning har Christer under tre decennier genomgått ett otaligt antal fördjupningskurser – hos internationellt ledande lärare inom den biodynamiska sfären. Denna oavbrutna kunskapsinhämtning är det som placerar honom i frontlinjen av biodynamisk kraniosakral osteopati i Sverige.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Right: Sidebar -->
         <aside class="sidebar fade-in">
           <div class="sidebar-widget">
             <h4>Snabblänkar</h4>
             <ul class="sidebar-links">
+              <li><a href="boka.html">Boka behandling</a></li>
               <li><a href="om-institutet.html">Om institutet</a></li>
               <li><a href="jorgen-tranberg.html">Jörgen Tranbergs arv</a></li>
-              <li><a href="biodynamisk-kraniosakralosteopati.html">Biodynamisk osteopati</a></li>
-              <li><a href="vad-ar-osteopati.html">Vad är osteopati?</a></li>
+              <li><a href="biodynamisk-kraniosakralosteopati.html">Om biodynamisk osteopati</a></li>
             </ul>
           </div>
 
@@ -146,22 +410,156 @@
               <cite>— Christer Tranberg</cite>
             </blockquote>
           </div>
+
+          <div class="sidebar-widget">
+            <h4>Medförfattare</h4>
+            <p style="font-size:0.88rem; color: var(--color-granite-moss); line-height:1.7;">Christer är medförfattare till <em>Stillhetens kommunikation</em> (2014) – den första svenska fackboken om kraniosakral behandling, skriven tillsammans med Jörgen Tranberg och docenten Åse Jolin Mellgård.</p>
+          </div>
         </aside>
 
       </div>
     </div>
   </section>
 
-    <section id="historik" class="section-padding alt-bg fade-in">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tagline">Vår Historia</span>
-          <h2>Christer &amp; Jörgen Tranberg – Ett livsverk</h2>
-          <p>Christer har tillsammans med sin bror <strong>Jörgen Tranberg</strong> byggt upp Tranberg Institut AB till ett av landets mest respekterade osteopatikentren. Jörgens bortgång för ett år sedan har gjort att Christer nu ensam förvaltar detta livsverk vidare, med samma engagemang och omtanke.</p>
+  <!-- ════════════════════════════════════════════
+       SEKTION 4: DE TVÅ DISCIPLINERNA
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="discipliner">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Osteopati i praktiken</span>
+        <h2>Klassisk och funktionell osteopati – två distinkta discipliner</h2>
+        <p class="section-lead">Osteopati är inte ett enhetligt fält. Det finns väsentliga skillnader i filosofi, teknik och tillämpning – skillnader som Christer behärskar med sällsynt djup.</p>
+      </div>
+
+      <div class="discipline-grid fade-in">
+
+        <div class="discipline-card classical">
+          <span class="discipline-tag">Disciplin 1</span>
+          <h3>Klassisk osteopati</h3>
+          <p>Den klassiska osteopatin är det ursprungliga fältet som Andrew Taylor Still grundade på 1870-talet. Den arbetar primärt med kroppens struktur – skelett, muskler, fascia och leder – för att optimera funktion och rörlighet.</p>
+          <ul>
+            <li>Strukturell diagnostik och behandling</li>
+            <li>Mobilisering av leder och fascia</li>
+            <li>Muskelenergi-tekniker</li>
+            <li>High-velocity low-amplitude (HVLA) justeringar</li>
+            <li>Visceral osteopati för inre organ</li>
+          </ul>
+          <p style="margin-top: 1rem; font-size: 0.87rem;">Klassisk osteopati har stora likheter med <strong>kiropraktik</strong> och <strong>naprapati</strong> i sin grundläggande approach – man arbetar med de fysiska strukturerna för att återge kroppen rörlighet och funktion. Det är ett mäktigt verktyg för rörelseapparatens besvär.</p>
+        </div>
+
+        <div class="discipline-card functional">
+          <span class="discipline-tag">Disciplin 2</span>
+          <h3>Funktionell osteopati</h3>
+          <p>Den funktionella osteopatin tar ett steg bortom strukturen och arbetar med kroppens fysiologiska och neurofysiologiska system. Här handlar det inte om att "rätta till" utan om att <strong>skapa förutsättningar</strong> för kroppens egna självreglerande mekanismer.</p>
+          <ul>
+            <li>Nervsystemets reglering och tonusbalans</li>
+            <li>Fascial och fluid-baserad behandling</li>
+            <li>Autonoma nervsystemets funktion</li>
+            <li>Embryologiska rörelsemönster</li>
+            <li>Integrativ behandling av hela personen</li>
+          </ul>
+          <div class="kraniell-note">
+            <strong>Kraniell osteopati – en egen disciplin inom det funktionella fältet.</strong><br>
+            Kraniell osteopati fokuserar på de subtila rörelserna i kraniet, sacrum och cerebrospinalvätskan. Det är ett avancerat specialistfält som kräver år av dedikerad träning – och det är här Christers djupaste expertis finns.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rich-text fade-in" style="margin-top: 3rem; max-width: 720px;">
+        <h3>Vad skiljer biomekanisk från biodynamisk kraniell osteopati?</h3>
+        <p>Inom det kraniella fältet finns ytterligare en viktig distinktion som Christer behärskar på djupet:</p>
+        <p><strong>Biomekanisk kraniell osteopati</strong> arbetar med de primärt rytmiska rörelserna i det kraniosacrala systemet – den primära andningsmekanismen (Primary Respiratory Mechanism, PRM) – med en mer strukturell och mekanisk förståelse av rörelserna.</p>
+        <p><strong>Biodynamisk kraniell osteopati</strong> är en vidareutveckling som betonar kroppens inneboende kraft – den s.k. <em>Breath of Life</em> – som den primära drivkraften för hälsa och självläkning. Här är terapeutens roll att lyssna och att skapa ett fält där kroppen kan uttrycka sin naturliga ordning, snarare än att aktivt manipulera strukturer. Det är en djupt meditativ och närvaro-baserad behandlingsform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SEKTION 5: CHRISTERS ROLL SOM UTBILDARE
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="utbildarrollen">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Utbildare</span>
+        <h2>Christer utbildar nästa generation</h2>
+        <p class="section-lead">Att vara en kliniker av hög klass är en sak. Att kunna lära ut det man kan – på ett sätt som verkligen når fram – är en annan. Christer är bägge.</p>
+      </div>
+
+      <div class="grid-2-col align-center" style="margin-top: 3rem;">
+        <div class="rich-text fade-in">
+          <h3>En livslång fördjupning i det biodynamiska fältet</h3>
+          <p>Under tre decennier har Christer sökt ut och studerat för några av världens mest ansedda lärare inom biodynamisk osteopati. Det har inneburit otaliga kurser, retreats och fördjupningsprogram – i Sverige, Europa och internationellt – med fokus på att förstå och integrera de mest avancerade aspekterna av biodynamisk behandling.</p>
+          <p>Denna djupgående och livslånga fördjupning är grunden för att Christer idag är en av de mest kompetenta utövarna i sitt slag i hela Norden.</p>
+
+          <h3 style="margin-top: 2rem;">Att föra kunskapen vidare</h3>
+          <p>Det är inte tillräckligt att besitta kunskap. Christer brinner för att föra den vidare – på ett strukturerat, akademiskt och kliniskt grundat sätt. Han utbildar aktivt terapeuter från hela landet och Norden, med kurser som kräver grundläggande osteopatisk kompetens för deltagande.</p>
+          <p>Christers undervisningsstil kombinerar rigorös teori med praktisk, hands-on träning i en atmosfär av respekt och nyfikenhet.</p>
+        </div>
+
+        <div class="fade-in">
+          <div class="teaching-grid">
+            <div class="teaching-card">
+              <div class="teaching-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="1.8" fill="none">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2v20M2 12h20"/>
+                </svg>
+              </div>
+              <h3>Biomekanisk kraniell osteopati</h3>
+              <p>Kurs i det klassiska kraniella systemet – Primary Respiratory Mechanism, kraniell rytm och strukturell kraniosakral behandling. Riktar sig till legitimerade osteopater och fysioterapeuter med klinisk erfarenhet.</p>
+            </div>
+            <div class="teaching-card">
+              <div class="teaching-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="1.8" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                  <path d="M12 8v4M12 16h.01"/>
+                </svg>
+              </div>
+              <h3>Biodynamisk kraniell osteopati</h3>
+              <p>Fördjupningskurs i den biodynamiska dimensionen – Breath of Life, stillhet, fältmedvetenhet och närvaro som terapeutiskt verktyg. En transformerande utbildning för erfarna utövare som vill fördjupa sin praktik.</p>
+            </div>
+          </div>
+
+          <div style="background: rgba(38,51,43,0.04); border: 1.5px solid rgba(38,51,43,0.12); border-radius: var(--border-radius); padding: 1.75rem; margin-top: 1.5rem;">
+            <h4 style="font-family: var(--font-heading); color: var(--color-forest-stone); margin-bottom: 0.75rem;">Intresserad av utbildning?</h4>
+            <p style="font-size: 0.88rem; color: var(--color-granite-moss); line-height: 1.7; margin-bottom: 1.25rem;">Christers utbildningar vänder sig till legitimerade terapeuter och osteopater med klinisk grundkompetens. Se aktuella datum och anmäl dig på utbildningssidan.</p>
+            <a href="utbildningar.html" class="btn btn-primary">Se utbildningar</a>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- Footer injected by components.js -->
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SEKTION 6: BOKEN & BOKA
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="bok">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div class="rich-text fade-in">
+          <span class="section-tagline">Författarskap &amp; Medicinsk samverkan</span>
+          <h2>Medförfattare till "Stillhetens kommunikation"</h2>
+          <p>Christer Tranberg är en av författarna bakom den hyllade fackboken <strong>Stillhetens kommunikation – kraniosakral behandling: ett medicinskt förhållningssätt till hälsa, helhet och högre medvetenhet</strong> (2014).</p>
+          <p>Boken skrevs i nära samarbete med Christers bror Jörgen Tranberg och den legitimerade läkaren, docenten och anestesispecialisten <strong>Åse Jolin Mellgård</strong>. Det var det första svenska verket i sitt slag och etablerade en viktig bro mellan klinisk skolmedicin och komplementär kraniosakral terapi.</p>
+          <p>Samarbetet med en anestesiläkare och docent understryker Christers medicinskt grundade syn på manuell terapi – och hans vilja att verka i dialog med konventionell sjukvård snarare än vid sidan om den.</p>
+          <div style="margin-top: 2.5rem;">
+            <a href="boka.html" class="btn btn-primary">Boka behandling med Christer</a>
+          </div>
+        </div>
+
+        <div class="treatment-image-wrapper fade-in" style="background: var(--color-forest-stone); padding: 2.5rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 340px; color: var(--color-limestone); text-align: center;">
+          <h3 style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 2rem; margin-bottom: 1rem; color: var(--color-limestone); line-height: 1.3;">"Stillhetens kommunikation"</h3>
+          <p style="font-size: 0.92rem; line-height: 1.7; max-width: 300px; color: rgba(245,243,238,0.85); margin-bottom: 1.5rem;">En banbrytande bok om kraniosakral behandling, skriven av Christer Tranberg, Jörgen Tranberg &amp; docent/leg. läkare Åse Jolin Mellgård.</p>
+          <div style="height: 1.5px; width: 60px; background: var(--color-patinated-brass);"></div>
+          <p style="font-size: 0.78rem; color: rgba(245,243,238,0.55); margin-top: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">Utgiven 2014</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
   <footer id="kontakt"></footer>
 
   <!-- Scripts -->
