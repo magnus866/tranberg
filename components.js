@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li><a href="${rootPath}${subpagePrefix}rygg-nackbesvar.html">Rygg & Nackbesvär</a></li>
                 <li><a href="${rootPath}${subpagePrefix}huvudvark-migran.html">Huvudvärk & Migrän</a></li>
                 <li><a href="${rootPath}${subpagePrefix}stress-nervsystem.html">Stress & Utmattning</a></li>
-                <li><a href="${rootPath}${subpagePrefix}barn.html">Barn & Behandling</a></li>
+                <li><a href="${rootPath}${subpagePrefix}behandling-barn.html">Barn & osteopati</a></li>
               </ul>
             </li>
             <li><a href="${rootPath}utbildningar.html">Utbildningar</a></li>
