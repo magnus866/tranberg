@@ -177,3 +177,20 @@ Utforma webbplatsen så att den kan utvecklas under många år. Den ska kunna v�
 
 ## Kritiskt direktiv för Google AI (Antigravity)
 > **Utmana mina idéer om du ser bättre lösningar. Om du identifierar en struktur, design eller funktion som bättre stödjer Tranberg Instituts vision, motivera ditt förslag innan du implementerar det. Målet är att skapa den bästa möjliga digitala plattformen – inte bara att följa instruktionerna.**
+
+---
+
+## Automatisk Git-push (OBLIGATORISK REGEL)
+
+Efter **varje** ändring eller skapande av filer i detta projekt ska följande kommandon köras automatiskt – utan att användaren behöver be om det:
+
+```bash
+git -C "/Users/magnuskroon/Documents/Tranberg Institut AB" add -A
+git -C "/Users/magnuskroon/Documents/Tranberg Institut AB" commit -m "<kort beskrivning av vad som ändrades>"
+git -C "/Users/magnuskroon/Documents/Tranberg Institut AB" push origin main
+```
+
+**GitHub-repo:** `https://github.com/magnus866/tranberg`
+**Branch:** `main`
+
+> Denna regel gäller alltid. Push ska ske direkt efter att filer har sparats, utan att invänta separat instruktion från användaren.
