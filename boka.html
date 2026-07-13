@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boka din tid för biodynamisk kraniosakralosteopati eller osteopatisk behandling vid Tranberg Institut AB. Tider måndag–fredag 08:00–15:00 i Göteborg.">
+  <title>Boka Behandling | Tranberg Institut AB</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* ══════════════════════════════════════════════════
+       BOOKING SECTION
+    ══════════════════════════════════════════════════ */
+    .booking-section {
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+    }
+
+    /* Card container */
+    .booking-container {
+      background: var(--color-white);
+      border-radius: 20px;
+      box-shadow: 0 8px 48px rgba(38, 51, 43, 0.10);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Glassmorphism badge on the card */
+    .glassmorphism {
+      border: 1px solid rgba(178, 140, 90, 0.15);
+    }
+
+    /* ── Step 1 + 2 grid ─────────────────────────── */
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 720px) {
+      .booking-grid { grid-template-columns: 1fr; }
+    }
+
+    .booking-datepicker,
+    .booking-timeslots {
+      padding: 2.5rem 2rem;
+    }
+
+    .booking-datepicker {
+      border-right: 1px solid var(--color-border);
+    }
+
+    @media (max-width: 720px) {
+      .booking-datepicker { border-right: none; border-bottom: 1px solid var(--color-border); }
+    }
+
+    .booking-step-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* ── Calendar ────────────────────────────────── */
+    .calendar-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .calendar-nav-btn {
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--color-forest-stone);
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar-nav-btn:hover {
+      background: var(--color-forest-stone);
+      color: var(--color-white);
+      border-color: var(--color-forest-stone);
+    }
+
+    #calendar-month-year {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-forest-stone);
+      font-weight: 500;
+    }
+
+    .calendar-grid-header {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .calendar-grid-header > div {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-granite-moss);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 4px 0;
+    }
+
+    .calendar-grid-days {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar-day.available {
+      background: rgba(178, 140, 90, 0.08);
+      color: var(--color-forest-stone);
+    }
+
+    .calendar-day.available:hover {
+      background: var(--color-patinated-brass);
+      color: var(--color-white);
+      transform: scale(1.05);
+    }
+
+    .calendar-day.unavailable {
+      background: rgba(110, 113, 104, 0.06);
+      color: var(--color-granite-moss);
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .calendar-day.selected {
+      background: var(--color-forest-stone);
+      color: var(--color-white);
+    }
+
+    .calendar-day.today {
+      outline: 2px solid var(--color-patinated-brass);
+      outline-offset: 2px;
+    }
+
+    .calendar-legend {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--color-granite-moss);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.available { background: var(--color-patinated-brass); }
+    .dot.unavailable { background: rgba(110, 113, 104, 0.3); }
+
+    /* ── Time slots ──────────────────────────────── */
+    .selected-date-display {
+      font-size: 0.9rem;
+      color: var(--color-granite-moss);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .timeslots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+
+    .timeslots-grid.empty {
+      display: block;
+    }
+
+    .helper-text {
+      color: var(--color-granite-moss);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .timeslot-btn {
+      border: 1px solid var(--color-border);
+      background: var(--color-limestone);
+      border-radius: 8px;
+      padding: 0.65rem 0.5rem;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--color-forest-stone);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-align: center;
+    }
+
+    .timeslot-btn:hover:not(:disabled) {
+      background: var(--color-patinated-brass);
+      color: var(--color-white);
+      border-color: var(--color-patinated-brass);
+    }
+
+    .timeslot-btn.selected {
+      background: var(--color-forest-stone);
+      color: var(--color-white);
+      border-color: var(--color-forest-stone);
+    }
+
+    .timeslot-btn:disabled {
+      opacity: 0.38;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    /* ── Form section ────────────────────────────── */
+    .booking-form-wrapper {
+      padding: 0 2.5rem 2.5rem;
+      position: relative;
+      transition: opacity 0.4s ease;
+    }
+
+    .booking-form-wrapper.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .form-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 0 0 2rem;
+    }
+
+    .form-helper {
+      font-size: 0.92rem;
+      color: var(--color-granite-moss);
+      margin-bottom: 1.75rem;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-forest-stone);
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: var(--color-dark-text);
+      background: var(--color-limestone);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-patinated-brass);
+      box-shadow: 0 0 0 3px rgba(178, 140, 90, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .form-checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--color-patinated-brass);
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .form-checkbox-group label {
+      font-size: 0.82rem;
+      color: var(--color-granite-moss);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .form-actions {
+      padding-top: 0.5rem;
+    }
+
+    .text-center { text-align: center; }
+
+    .btn-large {
+      padding: 1rem 3rem;
+      font-size: 1.05rem;
+    }
+
+    /* ── Loading Overlay ─────────────────────────── */
+    .status-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(245, 243, 238, 0.92);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 20px 20px;
+      z-index: 10;
+    }
+
+    .status-overlay.hidden { display: none; }
+
+    .status-box {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 3px solid var(--color-border);
+      border-top-color: var(--color-patinated-brass);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      margin: 0 auto 1.25rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #status-title {
+      font-size: 1.1rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.4rem;
+    }
+
+    #status-desc {
+      font-size: 0.88rem;
+      color: var(--color-granite-moss);
+    }
+
+    /* ── Success Message ─────────────────────────── */
+    .booking-success {
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+
+    .booking-success.hidden { display: none; }
+
+    .success-icon {
+      color: var(--color-patinated-brass);
+      margin-bottom: 1.25rem;
+    }
+
+    .booking-success h3 {
+      font-size: 1.8rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.6rem;
+    }
+
+    .booking-success > p {
+      color: var(--color-granite-moss);
+      margin-bottom: 1.75rem;
+    }
+
+    .success-details {
+      background: var(--color-limestone);
+      border-radius: var(--border-radius);
+      padding: 1.25rem 1.75rem;
+      display: inline-block;
+      text-align: left;
+      margin-bottom: 1.25rem;
+    }
+
+    .success-details p {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--color-dark-text);
+    }
+
+    .success-details p:last-child { margin-bottom: 0; }
+
+    .encryption-notice {
+      font-size: 0.78rem;
+      color: var(--color-granite-moss);
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .encryption-notice::before {
+      content: '🔒';
+      font-size: 0.85rem;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--color-patinated-brass);
+      color: var(--color-patinated-brass);
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-patinated-brass);
+      color: var(--color-white);
+    }
+
+    /* ══════════════════════════════════════════════
+       PRACTICAL INFO CARDS
+    ══════════════════════════════════════════════ */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    .info-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .info-card-icon {
+      color: var(--color-patinated-brass);
+      margin-bottom: 0.25rem;
+    }
+
+    .info-card h4 {
+      font-size: 1.05rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.15rem;
+    }
+
+    .info-card p,
+    .info-card a {
+      font-size: 0.9rem;
+      color: var(--color-granite-moss);
+      line-height: 1.65;
+      text-decoration: none;
+    }
+
+    .info-card a:hover {
+      color: var(--color-patinated-brass);
+    }
+
+    .practical-section-title {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- ══════════════════════════════════════════════════════
+       SUBPAGE HERO
+  ══════════════════════════════════════════════════════ -->
+  <section class="subpage-hero fade-in">
+    <div class="container">
+      <h1>Boka behandling</h1>
+      <p class="subpage-hero-lead">Välj dag och tid – vi återkommer med en bekräftelse. Öppet måndag–fredag, 08:00–15:00.</p>
+    </div>
+  </section>
+
+    <section id="priser" class="section-padding alt-bg fade-in">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tagline">Prislista &amp; Tjänster</span>
+          <h2>Våra behandlingar</h2>
+        </div>
+        <div class="price-grid">
+          <div class="price-card value-card fade-in">
+            <h3>Initial (60 min)</h3>
+            <p>Kartläggning, behandlingsbehov samt behandling – första besöket bygger grunden för långsiktigt välmående.</p>
+            <p class="price">1 250 kr</p>
+          </div>
+          <div class="price-card value-card fade-in">
+            <h3>Underhåll (45 min)</h3>
+            <p>Löpande behandling – för att bibehålla funktion och förebygga återfall.</p>
+            <p class="price">950 kr</p>
+          </div>
+          <div class="price-card value-card fade-in">
+            <h3>Djup behandling (90 min)</h3>
+            <p>Fördjupad och omfattande behandling för komplexa besvär eller akuta problem.</p>
+            <p class="price">1 700 kr</p>
+          </div>
+        </div>
+        <p class="price-note">Alla behandlingar är berättigade till friskvårdsbidrag och kan bokas via vårt online‑bokningssystem.</p>
+      </div>
+    </section>
+    <!-- ══════════════════════════════════════════════════════
+        BOKNINGSSEKTION
+    ══════════════════════════════════════════════════════ -->
+  <section id="bokning" class="booking-section section-padding">
+    <div class="container">
+      <div class="booking-container card glassmorphism">
+        <div class="booking-header-selection">
+          <h3 class="booking-step-title">1. Välj behandling</h3>
+          <div class="form-group">
+            <label for="booking-type">Behandling *</label>
+            <select id="booking-type" name="type" form="appointment-form" required>
+              <option value="" disabled selected>Välj behandling...</option>
+              <option value="45">Underhåll – 45 minuter (950 kr)</option>
+              <option value="60">Initial – 60 minuter (1 250 kr)</option>
+              <option value="90">Djup behandling – 90 minuter (1 700 kr)</option>
+            </select>
+          </div>
+        </div>
+        <hr class="form-divider">
+        <div class="booking-grid disabled" id="booking-grid-area">
+          <div class="booking-datepicker">
+            <h3 class="booking-step-title">2. Välj datum</h3>
+            <div class="calendar-controls">
+              <button id="prev-month-btn" aria-label="Föregående månad" class="calendar-nav-btn">&lsaquo;</button>
+              <span id="calendar-month-year"></span>
+              <button id="next-month-btn" aria-label="Nästa månad" class="calendar-nav-btn">&rsaquo;</button>
+            </div>
+            <div class="calendar-grid-header">
+              <div>Mån</div><div>Tis</div><div>Ons</div><div>Tor</div><div>Fre</div>
+            </div>
+            <div class="calendar-grid-days" id="calendar-days-container"></div>
+            <div class="calendar-legend">
+              <span class="legend-item"><span class="dot available"></span> Ledig</span>
+              <span class="legend-item"><span class="dot unavailable"></span> Upptagen</span>
+            </div>
+          </div>
+          <div class="booking-timeslots">
+            <h3 class="booking-step-title">3. Välj tid</h3>
+            <div class="selected-date-display" id="selected-date-text">Välj en dag i kalendern till vänster</div>
+            <div class="timeslots-grid empty" id="timeslots-container">
+              <p class="helper-text">Vänligen klicka på en tillgänglig dag först.</p>
+            </div>
+          </div>
+        </div>
+        <div class="booking-form-wrapper disabled" id="booking-form-section">
+          <hr class="form-divider">
+          <h3 class="booking-step-title">4. Fyll i dina uppgifter</h3>
+          <p class="form-helper">Vald tid: <strong id="summary-datetime">-</strong></p>
+          <form id="appointment-form" class="booking-form">
+            <input type="hidden" id="form-date" name="date" required>
+            <input type="hidden" id="form-time" name="time" required>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="client-name">För- och efternamn *</label>
+                <input type="text" id="client-name" name="name" placeholder="Ditt namn" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="client-email">E-postadress *</label>
+                <input type="email" id="client-email" name="email" placeholder="din@email.se" required autocomplete="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="client-phone">Telefonnummer *</label>
+              <input type="tel" id="client-phone" name="phone" placeholder="070-123 45 67" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="client-message">Beskriv dina besvär (frivilligt)</label>
+              <textarea id="client-message" name="message" rows="3" placeholder="T.ex. spänningshuvudvärk sedan flera månader..."></textarea>
+            </div>
+            <div class="form-checkbox-group">
+              <input type="checkbox" id="gdpr-consent" name="gdpr" required>
+              <label for="gdpr-consent">Jag samtycker till att mina personuppgifter hanteras i enlighet med GDPR för att administrera denna bokning. *</label>
+            </div>
+            <div class="form-actions text-center">
+              <button type="submit" class="btn btn-primary btn-large" id="submit-booking-btn">Genomför bokning</button>
+            </div>
+          </form>
+          <div id="booking-status-overlay" class="status-overlay hidden">
+            <div class="status-box">
+              <div class="spinner"></div>
+              <h4 id="status-title">Krypterar bokningsdata...</h4>
+              <p id="status-desc">Etablerar säker anslutning till bokningsservern.</p>
+            </div>
+          </div>
+        </div>
+        <div id="booking-success-message" class="booking-success hidden">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="60" height="60" stroke="currentColor" stroke-width="2" fill="none">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h3>Tack för din bokning!</h3>
+          <p>Din bokning har registrerats och bekräftats.</p>
+          <div class="success-details">
+            <p><strong>Behandling:</strong> <span id="success-type">-</span></p>
+            <p><strong>Tid:</strong> <span id="success-time">-</span></p>
+            <p><strong>Plats:</strong> Tranberg Institut AB, Göteborg</p>
+          </div>
+          <div class="encryption-notice">
+            Bokningsdata krypterades med AES-256 och skickades säkert till magnus@houseofkroon.se.
+          </div>
+          <button id="book-another-btn" class="btn btn-secondary">Gör en ny bokning</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       PRAKTISK INFORMATION
+  ══════════════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="praktisk-info">
+    <div class="container">
+      <h2 class="practical-section-title">Praktisk information</h2>
+      <div class="info-grid fade-in">
+
+        <!-- Plats -->
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4>Plats</h4>
+          <p>
+            Tranberg Institut AB<br>
+            Göteborg, Sverige<br>
+            <a href="mailto:magnus@houseofkroon.se">magnus@houseofkroon.se</a>
+          </p>
+          <p style="font-size:0.82rem; color: var(--color-granite-moss); margin-top:0.25rem;">Exakt adress anges i bokningsbekräftelsen.</p>
+        </div>
+
+        <!-- Öppettider -->
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h4>Öppettider</h4>
+          <p>
+            Måndag – Fredag<br>
+            08:00 – 15:00
+          </p>
+          <p style="font-size:0.82rem; color: var(--color-granite-moss); margin-top:0.5rem;">Lördag &amp; söndag stängt.<br>Bokning sker via formuläret ovan.</p>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h4>Kontakt</h4>
+          <p>
+            <a href="tel:+46700000000">070-XXX XX XX</a><br>
+            <a href="mailto:magnus@houseofkroon.se">magnus@houseofkroon.se</a>
+          </p>
+          <p style="font-size:0.82rem; color: var(--color-granite-moss); margin-top:0.5rem;">Vi svarar normalt inom ett par timmar under öppettider.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
+  <footer id="kontakt"></footer>
+
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+
+</body>
+</html>

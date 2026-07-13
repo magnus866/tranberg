@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fördjupa din kunskap om biodynamisk kraniosakralosteopati, osteopati och kroppens självläkningsförmåga. Artiklar, guider och forskning från Tranberg Institut AB.">
+  <title>Kunskapsbank | Biodynamisk Kraniosakralosteopati | Tranberg Institut AB</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* Kunskapsbank extras */
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 4rem;
+    }
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--color-wine-red);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-wine-red);
+      background-color: transparent;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      letter-spacing: 0.04em;
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background-color: var(--color-wine-red);
+      color: var(--color-white);
+    }
+
+    .newsletter-section {
+      text-align: center;
+    }
+
+    .newsletter-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-section .section-lead {
+      margin-bottom: 3rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.95rem 1.3rem;
+      border-radius: var(--border-radius);
+      border: 1.5px solid var(--color-border);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-dark-text);
+      background-color: var(--color-white);
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--color-patinated-brass);
+      box-shadow: 0 0 0 4px rgba(178, 140, 90, 0.1);
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--color-granite-moss);
+    }
+
+    .newsletter-gdpr {
+      font-size: 0.8rem;
+      color: var(--color-granite-moss);
+      margin-top: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header – injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="section-tagline fade-in">Tranberg Institut AB</span>
+      <h1 class="fade-in">Kunskapsbank</h1>
+      <p class="subpage-hero-lead fade-in">En levande portal med artiklar, guider och forskning om biodynamisk kraniosakralosteopati och kroppens naturliga funktion.</p>
+    </div>
+  </section>
+
+  <!-- 1. Kategorier & Filter -->
+  <section class="section-padding">
+    <div class="container">
+      <span class="section-tagline">Utforska innehållet</span>
+      <h2>Utforska efter ämne</h2>
+
+      <div class="filter-pills" role="group" aria-label="Filtrera artiklar efter kategori">
+        <button class="filter-pill active" id="filter-alla">Alla</button>
+        <button class="filter-pill" id="filter-metod">Metod &amp; Behandling</button>
+        <button class="filter-pill" id="filter-forskning">Forskning</button>
+        <button class="filter-pill" id="filter-halsa">Hälsa &amp; Välmående</button>
+        <button class="filter-pill" id="filter-utbildning">Utbildning</button>
+      </div>
+
+      <!-- 2. Artikelgrid -->
+      <div class="articles-grid">
+
+        <!-- Artikel 1 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/leaves.jpg"
+            alt="Löv i naturligt ljus – symbol för biodynamisk behandling"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Metod &amp; Behandling · 12 mars 2025</p>
+            <h3>Vad är biodynamisk kraniosakralosteopati?</h3>
+            <p>En introduktion till den biodynamiska synen på det kraniosakrala systemet, hur det förhåller sig till klassisk osteopati och varför behandlingsformen vinner mark bland terapeuter och patienter.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om biodynamisk kraniosakralosteopati">Läs mer →</a>
+          </div>
+        </article>
+
+        <!-- Artikel 2 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/zen_water.jpg"
+            alt="Lugnt vatten – symbol för nervsystemets återhämtning"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Hälsa &amp; Välmående · 28 februari 2025</p>
+            <h3>Kronisk stress och nervsystemet – kroppens respons</h3>
+            <p>Hur kronisk stress påverkar det autonoma nervsystemet på djupet, vad som händer i kroppen vid långvarig aktivering av stressaxeln och hur det biodynamiska arbetet kan stödja återhämtning.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om kronisk stress och nervsystemet">Läs mer →</a>
+          </div>
+        </article>
+
+        <!-- Artikel 3 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/leaves.jpg"
+            alt="Natur och lugn – kraniosakral terapi för barn"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Forskning · 14 januari 2025</p>
+            <h3>Kraniosakral terapi för barn – vad forskningen säger</h3>
+            <p>En genomgång av befintlig forskning och kliniska observationer kring kraniosakral terapi för barn, från nyfödda till skolålder, inklusive vanliga indikationer och försiktighetsaspekter.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om kraniosakral terapi för barn">Läs mer →</a>
+          </div>
+        </article>
+
+        <!-- Artikel 4 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/zen_water.jpg"
+            alt="Flödande vatten – symbol för osteopatiska principer"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Metod &amp; Behandling · 5 december 2024</p>
+            <h3>Hur biodynamisk osteopati skiljer sig från klassisk osteopati</h3>
+            <p>En jämförelse av det biodynamiska och det biomechaniska paradigmet inom osteopati – med fokus på syn på kroppen, behandlarens roll och kliniska implikationer för terapeuten.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om skillnaden mellan biodynamisk och klassisk osteopati">Läs mer →</a>
+          </div>
+        </article>
+
+        <!-- Artikel 5 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/leaves.jpg"
+            alt="Lugnt naturscen – återhämtning och autonoma nervsystemet"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Hälsa &amp; Välmående · 18 november 2024</p>
+            <h3>Återhämtning och det autonoma nervsystemet</h3>
+            <p>Om kroppens inneboende förmåga till återhämtning, vad som hindrar och möjliggör denna process, och hur ett biodynamiskt perspektiv kan erbjuda en ny förståelse av hälsa och vila.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om återhämtning och autonoma nervsystemet">Läs mer →</a>
+          </div>
+        </article>
+
+        <!-- Artikel 6 -->
+        <article class="article-card fade-in">
+          <img
+            src="assets/zen_water.jpg"
+            alt="Spegelblank yta – fördjupning inom biodynamisk osteopati"
+            class="article-card-img"
+          >
+          <div class="article-card-content">
+            <p class="article-meta">Utbildning · 3 oktober 2024</p>
+            <h3>Att utbilda sig inom biodynamisk osteopati – vad innebär det?</h3>
+            <p>En personlig och pedagogisk reflektion om vad det innebär att fördjupa sig i biodynamisk osteopati – från den första insikten till det kliniska seendet och förhållningssättet som terapeut.</p>
+            <a href="#" class="article-link" aria-label="Läs mer om att utbilda sig inom biodynamisk osteopati">Läs mer →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Nyhetsbrev CTA -->
+  <section id="nyhetsbrev" class="section-padding alt-bg newsletter-section">
+    <div class="container">
+      <span class="section-tagline">Håll dig uppdaterad</span>
+      <h2>Prenumerera på kunskapsbrevet</h2>
+      <p class="section-lead">Få nya artiklar, forskning och information om kommande utbildningar direkt i inkorgen – utan brus, utan spam.</p>
+
+      <form class="newsletter-form" action="#" method="post" id="newsletter-form">
+        <input
+          type="email"
+          name="email"
+          id="newsletter-email"
+          placeholder="Din e-postadress"
+          required
+          autocomplete="email"
+          aria-label="E-postadress för kunskapsbrevet"
+        >
+        <button type="submit" class="btn btn-primary" id="newsletter-submit">Prenumerera</button>
+      </form>
+
+      <p class="newsletter-gdpr">Vi hanterar dina uppgifter med respekt och delar dem aldrig med tredje part. Du kan avregistrera dig när som helst.</p>
+    </div>
+  </section>
+
+  <!-- Footer – injected by components.js -->
+  <footer id="kontakt" class="contact-footer"></footer>
+
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+  <script>
+    // Simple filter pill toggle for visual layout demonstration
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.filter-pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

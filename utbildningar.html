@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professionella utbildningar inom biodynamisk kraniosakralosteopati och osteopati vid Tranberg Institut AB. För terapeuter som vill fördjupa sin kunskap och kompetens.">
+  <title>Utbildningar inom Biodynamisk Kraniosakralosteopati | Tranberg Institut AB</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* Utbildningar page extras */
+    .faq-section {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 0;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-forest-stone);
+      cursor: pointer;
+      gap: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary:hover {
+      color: var(--color-wine-red);
+    }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      font-size: 1.1rem;
+      color: var(--color-patinated-brass);
+    }
+
+    .faq-item[open] .faq-chevron {
+      background-color: var(--color-patinated-brass);
+      border-color: var(--color-patinated-brass);
+      color: white;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 0 2rem 0;
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: rgba(44, 47, 45, 0.8);
+    }
+
+    .cta-dark {
+      background-color: var(--color-forest-stone);
+      color: var(--color-limestone);
+      text-align: center;
+    }
+
+    .cta-dark h2 {
+      color: var(--color-white);
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-dark p {
+      color: var(--color-soft-moss);
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .cta-dark .btn-secondary {
+      border-color: var(--color-patinated-brass);
+      color: var(--color-patinated-brass);
+    }
+
+    .cta-dark .btn-secondary:hover {
+      background-color: var(--color-patinated-brass);
+      color: white;
+    }
+
+    .edu-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-badge {
+      display: inline-block;
+      background-color: rgba(178, 140, 90, 0.12);
+      border: 1px solid rgba(178, 140, 90, 0.3);
+      color: var(--color-patinated-brass);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .edu-price-highlight {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--color-forest-stone);
+      font-weight: 500;
+    }
+
+    .edu-price-note {
+      font-size: 0.82rem;
+      color: var(--color-granite-moss);
+      margin-top: 0.2rem;
+    }
+
+    .sidebar-cta-widget {
+      background: linear-gradient(135deg, var(--color-forest-stone) 0%, #1a2620 100%);
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--color-limestone);
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar-cta-widget h4 {
+      color: var(--color-white);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-cta-widget p {
+      font-size: 0.88rem;
+      color: var(--color-soft-moss);
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-cta-widget .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header – injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="section-tagline fade-in">Tranberg Institut AB</span>
+      <h1 class="fade-in">Utbildningar</h1>
+      <p class="subpage-hero-lead fade-in">Premiumutbildningar för terapeuter som vill fördjupa sin kunskap inom biodynamisk kraniosakralosteopati och osteopati.</p>
+    </div>
+  </section>
+
+  <!-- 1. Filosofi om utbildning -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Rich Text -->
+        <div class="rich-text fade-in">
+          <h3>Mer än en kurs</h3>
+          <p>En utbildning vid Tranberg Institut är inte ett sätt att tillägna sig fler tekniker. Det är ett djupgående möte med kroppen som levande system – med nervsystemet, med tid, med närvaro. Vi ser kunskapsöverföring som en process som sker i relation, inte enbart i information.</p>
+          <p>Christer Tranberg har under decennier format ett pedagogiskt förhållningssätt som integrerar biodynamiska principer med klinisk erfarenhet. Varje utbildningsmoment är utformat för att stödja det praktiska seendet hos terapeuten – inte bara det teoretiska förståndet.</p>
+
+          <h3>Vem är utbildningarna för?</h3>
+          <p>Utbildningarna vänder sig till legitimerade eller certifierade terapeuter som redan bär en grundläggande förståelse för manuell terapi. Det kan röra sig om sjukgymnaster, naprapater, massageterapeuter, osteopater eller andra med klinisk praktik som söker en fördjupning mot det biodynamiska och kraniosakrala området.</p>
+          <p>Inga förkunskaper specifikt inom kraniosakral terapi krävs för grundutbildningen – däremot förväntas en vana av att arbeta med kroppen och en genuint nyfiken hållning till nervsystemets komplexitet.</p>
+
+          <blockquote>
+            Det vi lär ut är inte en metod. Det är ett förhållningssätt till kroppen och livet.
+          </blockquote>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+          <div class="sidebar-cta-widget fade-in">
+            <h4>Redo att fördjupa dig?</h4>
+            <p>Platserna är begränsade per kurs. Säkra din plats i god tid.</p>
+            <a href="boka.html" class="btn btn-primary">Boka din plats</a>
+          </div>
+
+          <div class="sidebar-widget fade-in">
+            <h4>Snabblänkar</h4>
+            <ul class="sidebar-links">
+              <li><a href="#aktuella-utbildningar">Aktuella utbildningar</a></li>
+              <li><a href="#utbildning-intro">Introduktionskurs</a></li>
+              <li><a href="#utbildning-fordjupning">Fördjupningskurs</a></li>
+              <li><a href="#faq-utbildningar">Vanliga frågor</a></li>
+              <li><a href="kontakt.html">Kontakta oss</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget fade-in">
+            <h4>Kursledare</h4>
+            <p style="font-size:0.92rem; margin-bottom:0.5rem; font-weight:500; color:var(--color-forest-stone);">Christer Tranberg</p>
+            <p style="font-size:0.88rem; margin-bottom:0;">Legitimerad osteopat och grundare av Tranberg Institut AB. Över 30 års klinisk och pedagogisk erfarenhet inom biodynamisk kraniosakralosteopati.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Utbildningsöversikt -->
+  <section id="aktuella-utbildningar" class="section-padding alt-bg">
+    <div class="container">
+      <span class="section-tagline">Kursutbud</span>
+      <h2>Aktuella utbildningar</h2>
+      <p class="section-lead" style="margin-left:0;">Vi erbjuder ett genomtänkt och progressivt utbildningsprogram – från introduktion till avancerad klinisk tillämpning.</p>
+
+      <!-- Utbildning A -->
+      <div id="utbildning-intro" class="education-details fade-in">
+        <div class="edu-header">
+          <div>
+            <span class="edu-badge">Grundnivå</span>
+            <h3 style="margin-top:1rem; margin-bottom:0.5rem;">Introduktion till Biodynamisk Kraniosakralosteopati</h3>
+            <p style="margin-bottom:0; font-size:0.95rem;">Ge terapeuter grundläggande förståelse och praktiska verktyg för att arbeta med det kraniosakrala systemet.</p>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div class="edu-price-highlight">8 900 kr</div>
+            <div class="edu-price-note">Inkl. kursmaterial</div>
+          </div>
+        </div>
+
+        <table class="education-meta-table">
+          <tbody>
+            <tr>
+              <td>Målgrupp</td>
+              <td>Terapeuter med grundutbildning inom manuell terapi (sjukgymnaster, naprapater, massageterapeuter m.fl.)</td>
+            </tr>
+            <tr>
+              <td>Lärandemål</td>
+              <td>Förstå det kraniosakrala systemets anatomi och funktion, tillägna sig biodynamiska principer samt genomföra grundläggande behandlingspraktik</td>
+            </tr>
+            <tr>
+              <td>Upplägg</td>
+              <td>4 heldagar fördelat på 2 helger (lördag–söndag)</td>
+            </tr>
+            <tr>
+              <td>Kursledare</td>
+              <td>Christer Tranberg</td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td>Höst 2026 – exakt datum meddelas via nyhetsbrevet</td>
+            </tr>
+            <tr>
+              <td>Pris</td>
+              <td>8 900 kr inkl. allt kursmaterial</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="boka.html" class="btn btn-primary" id="anmal-intro">Anmäl dig till grundkursen</a>
+      </div>
+
+      <!-- Utbildning B -->
+      <div id="utbildning-fordjupning" class="education-details fade-in">
+        <div class="edu-header">
+          <div>
+            <span class="edu-badge" style="background:rgba(128,0,32,0.08); border-color:rgba(128,0,32,0.25); color:var(--color-wine-red);">Avancerad nivå</span>
+            <h3 style="margin-top:1rem; margin-bottom:0.5rem;">Fördjupningskurs – Biodynamisk Osteopati &amp; Nervsystemet</h3>
+            <p style="margin-bottom:0; font-size:0.95rem;">Fördjupad klinisk tillämpning med fokus på nervsystemets biodynamik och avancerad behandlingsteknik.</p>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div class="edu-price-highlight">14 500 kr</div>
+            <div class="edu-price-note">Inkl. material &amp; handledning</div>
+          </div>
+        </div>
+
+        <table class="education-meta-table">
+          <tbody>
+            <tr>
+              <td>Målgrupp</td>
+              <td>Terapeuter som genomgått grundkursen i Biodynamisk Kraniosakralosteopati</td>
+            </tr>
+            <tr>
+              <td>Lärandemål</td>
+              <td>Avancerade biodynamiska tekniker, fördjupad klinisk tillämpning och individuell handledning i det terapeutiska arbetet</td>
+            </tr>
+            <tr>
+              <td>Upplägg</td>
+              <td>6 heldagar fördelat på 3 helger + individuell handledning</td>
+            </tr>
+            <tr>
+              <td>Kursledare</td>
+              <td>Christer Tranberg</td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td>Vår 2027 – datum presenteras under höst 2026</td>
+            </tr>
+            <tr>
+              <td>Pris</td>
+              <td>14 500 kr inkl. material och individuell handledning</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="boka.html" class="btn btn-primary" id="anmal-fordjupning">Anmäl dig till fördjupningskursen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FAQ -->
+  <section id="faq-utbildningar" class="section-padding">
+    <div class="container">
+      <span class="section-tagline">Vanliga frågor</span>
+      <h2 style="text-align:center;">Frågor om utbildningarna</h2>
+
+      <div class="faq-section">
+        <details class="faq-item fade-in">
+          <summary>
+            Behöver jag förkunskaper inom kraniosakral terapi?
+            <span class="faq-chevron">+</span>
+          </summary>
+          <p class="faq-answer">
+            För grundutbildningen krävs inga specifika förkunskaper inom kraniosakral terapi. Däremot förutsätter vi att du har en grundläggande utbildning och praktisk erfarenhet inom manuell terapi – exempelvis som sjukgymnast, naprapat, massageterapeut eller osteopat. En genuint nyfiken och öppen hållning är det viktigaste.
+          </p>
+        </details>
+
+        <details class="faq-item fade-in">
+          <summary>
+            Ingår ett certifikat eller diplom i kursen?
+            <span class="faq-chevron">+</span>
+          </summary>
+          <p class="faq-answer">
+            Ja, samtliga deltagare som fullgjort kursens alla moment erhåller ett intyg från Tranberg Institut AB. Intyget anger kursens namn, omfattning och kursledarens signatur. Fördjupningskursen ger ett mer utförligt kompetensdiplom som kan bifogas din professionella dokumentation.
+          </p>
+        </details>
+
+        <details class="faq-item fade-in">
+          <summary>
+            Hur anmäler jag mig till en utbildning?
+            <span class="faq-chevron">+</span>
+          </summary>
+          <p class="faq-answer">
+            Du anmäler dig enklast via vår bokningssida eller genom att skicka ett meddelande via kontaktformuläret. Ange i meddelandet vilken utbildning du är intresserad av och dina kontaktuppgifter, så återkommer vi med bekräftelse och betalningsinformation. Anmälan är bindande efter att en bekräftelse skickats.
+          </p>
+        </details>
+
+        <details class="faq-item fade-in">
+          <summary>
+            Kan jag få faktura för utbildningskostnaden?
+            <span class="faq-chevron">+</span>
+          </summary>
+          <p class="faq-answer">
+            Ja, vi utfärdar faktura för samtliga utbildningar. Ange detta vid anmälan och inkludera faktureringsuppgifter (företagsnamn, org.nr. och adress om faktura ska ställas till arbetsgivare). Betalningsvillkor är 30 dagar netto. Vi kan även diskutera delbetalning vid förfrågan.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA mörk -->
+  <section class="section-padding cta-dark fade-in">
+    <div class="container">
+      <h2>Vill du hålla dig uppdaterad?</h2>
+      <p>Kommande utbildningstillfällen och nyheter skickas till dig som prenumererar på kunskapsbrevet. Var först med att få veta när nästa kurs öppnar för anmälan.</p>
+      <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+        <a href="kunskapsbank.html#nyhetsbrev" class="btn btn-primary" id="cta-nyhetsbrev">Prenumerera på nyhetsbrevet</a>
+        <a href="kontakt.html" class="btn btn-secondary" id="cta-kontakt-utb">Kontakta oss med frågor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer – injected by components.js -->
+  <footer id="kontakt" class="contact-footer"></footer>
+
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

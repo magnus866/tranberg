@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakta Tranberg Institut AB i Göteborg. Boka behandling, ställ frågor om utbildningar eller föreläsningar. Vi svarar inom 24 timmar.">
+  <title>Kontakt | Tranberg Institut AB | Göteborg</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* Kontakt page extras */
+    .contact-info-block {
+      margin-bottom: 3rem;
+    }
+
+    .contact-info-block h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: rgba(44, 47, 45, 0.85);
+      font-weight: 300;
+    }
+
+    .contact-detail-icon {
+      color: var(--color-wine-red);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .contact-detail strong {
+      display: block;
+      font-weight: 500;
+      color: var(--color-forest-stone);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    .maps-placeholder {
+      background: linear-gradient(135deg, rgba(38, 51, 43, 0.06) 0%, rgba(110, 113, 104, 0.08) 100%);
+      border: 1.5px dashed var(--color-border);
+      border-radius: var(--border-radius);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--color-granite-moss);
+      font-size: 0.88rem;
+      margin-top: 1.5rem;
+    }
+
+    .maps-placeholder svg {
+      margin-bottom: 0.5rem;
+      display: block;
+      margin: 0 auto 0.5rem auto;
+      color: var(--color-patinated-brass);
+      opacity: 0.5;
+    }
+
+    .contact-form-panel {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: 3.5rem;
+      box-shadow: 0 8px 30px rgba(38, 51, 43, 0.03);
+    }
+
+    .contact-form-panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: 3rem 2.5rem;
+      transition: var(--transition-smooth);
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(38, 51, 43, 0.05);
+      border-color: rgba(178, 140, 90, 0.25);
+    }
+
+    .info-card-icon {
+      color: var(--color-wine-red);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .info-card a {
+      color: var(--color-patinated-brass);
+      font-weight: 500;
+    }
+
+    .info-card a:hover {
+      color: var(--color-wine-red);
+    }
+
+    .info-card-note {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.82rem;
+      color: var(--color-granite-moss);
+      font-style: italic;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .response-time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: rgba(74, 124, 89, 0.08);
+      border: 1px solid rgba(74, 124, 89, 0.2);
+      color: #3b5f45;
+      font-size: 0.82rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 500;
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header – injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="section-tagline fade-in">Tranberg Institut AB</span>
+      <h1 class="fade-in">Kontakta oss</h1>
+      <p class="subpage-hero-lead fade-in">Vi välkomnar alla frågor – om behandling, utbildning, föreläsningar eller samarbeten.</p>
+    </div>
+  </section>
+
+  <!-- 1. Kontaktinfo + Formulär -->
+  <section class="section-padding">
+    <div class="container">
+
+      <div class="response-time-badge fade-in">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Vi svarar inom 24 timmar på vardagar
+      </div>
+
+      <div class="grid-2-col align-center">
+
+        <!-- Vänster: Kontaktinfo -->
+        <div class="fade-in">
+          <div class="contact-info-block">
+            <h3>Tranberg Institut AB</h3>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Adress</strong>
+                Kungsgatan 12, 411 19 Göteborg
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.47 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.09-1.09a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Telefon</strong>
+                <a href="tel:+46317001234">031-700 12 34</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <div>
+                <strong>E-post</strong>
+                <a href="mailto:info@tranberginstitut.se">info@tranberginstitut.se</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Öppettider</strong>
+                Måndag–fredag: 09.00–17.00<br>
+                Lördag: 10.00–14.00<br>
+                Söndag: Stängt
+              </div>
+            </div>
+          </div>
+
+          <!-- Hitta till oss -->
+          <h3>Hitta till oss</h3>
+          <!-- Google Maps iframe here -->
+          <div class="maps-placeholder" role="img" aria-label="Karta – Google Maps placeholder">
+            <div>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <p style="margin:0; font-size:0.85rem; color:var(--color-granite-moss);">Kungsgatan 12, Göteborg<br><em style="font-size:0.8rem; opacity:0.7;">Google Maps-karta infogas här</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Höger: Kontaktformulär -->
+        <div class="contact-form-panel fade-in">
+          <h3>Skicka ett meddelande</h3>
+
+          <form class="booking-form" action="#" method="post" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Namn *</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Ditt fullständiga namn"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contact-email">E-post *</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="din@epost.se"
+                >
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">Telefon <em style="font-weight:300; font-style:italic; font-size:0.82rem;">(frivilligt)</em></label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="070-000 00 00"
+                >
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Ärende *</label>
+                <select id="contact-subject" name="subject" required>
+                  <option value="" disabled selected>Välj ärende…</option>
+                  <option value="behandling">Behandlingsfråga</option>
+                  <option value="utbildning">Utbildningsfråga</option>
+                  <option value="forelasning">Föreläsning</option>
+                  <option value="ovrigt">Övrigt</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Meddelande *</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                placeholder="Berätta gärna om bakgrunden till din förfrågan…"
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox-group">
+              <input type="checkbox" id="contact-gdpr" name="gdpr" required>
+              <label for="contact-gdpr">
+                Jag godkänner att Tranberg Institut AB behandlar mina personuppgifter i enlighet med GDPR för att kunna hantera min förfrågan. Uppgifterna delas inte med tredje part.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="contact-submit" style="width:100%; justify-content:center; margin-top:0.5rem;">
+              Skicka meddelande
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Info-grid -->
+  <section class="section-padding alt-bg">
+    <div class="container">
+      <span class="section-tagline">Mer information</span>
+      <h2>Hur kan vi hjälpa dig?</h2>
+
+      <div class="values-grid" style="margin-top:1rem;">
+
+        <!-- Akut behov -->
+        <div class="info-card fade-in">
+          <div class="info-card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Akut medicinsk hjälp</h3>
+          <p>Tranberg Institut erbjuder inte akutsjukvård. Vid akuta medicinska behov, kontakta <a href="https://www.1177.se" target="_blank" rel="noopener noreferrer">1177 Vårdguiden</a> för råd dygnet runt, eller ring 112 vid livshotande tillstånd.</p>
+          <em class="info-card-note">Vi är inte en akutmottagning.</em>
+        </div>
+
+        <!-- Utbildningsfrågor -->
+        <div class="info-card fade-in">
+          <div class="info-card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <h3>Utbildningsfrågor</h3>
+          <p>Har du frågor om våra kurser, anmälan, faktura eller kursinnehåll? Kontakta oss direkt via e-post på <a href="mailto:utbildning@tranberginstitut.se">utbildning@tranberginstitut.se</a> eller ring oss på <a href="tel:+46317001234">031-700 12 34</a>.</p>
+          <em class="info-card-note">Svarstid: 1–2 vardagar.</em>
+        </div>
+
+        <!-- Föreläsningsförfrågan -->
+        <div class="info-card fade-in">
+          <div class="info-card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Föreläsningsförfrågan</h3>
+          <p>Intresserad av att boka Christer Tranberg som föreläsare? Skicka gärna in en förfrågan via formuläret och beskriv er organisation, målgrupp och eventuellt datum. Du kan också maila direkt till <a href="mailto:forelasning@tranberginstitut.se">forelasning@tranberginstitut.se</a>.</p>
+          <em class="info-card-note">Vi återkommer inom 24 timmar.</em>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer – injected by components.js -->
+  <footer id="kontakt" class="contact-footer"></footer>
+
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

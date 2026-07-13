@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Företagshälsa med Tranberg Institut AB – förebyggande osteopati som minskar sjukfrånvaro och kan ingå i det skattefria friskvårdsbidraget. Investera i era medarbetare.">
+  <title>Företagshälsa – Förebyggande Osteopati | Tranberg Institut AB</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* ── B2B specific ─────────────────────────── */
+    .b2b-hero {
+      background: linear-gradient(135deg, var(--color-forest-stone) 0%, #1a2e1e 100%);
+      color: var(--color-limestone);
+      padding: 7rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .b2b-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(178,140,90,0.18) 0%, transparent 65%);
+    }
+    .b2b-hero .container { position: relative; }
+    .b2b-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 500;
+      color: var(--color-limestone);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+    .b2b-hero p {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      color: rgba(245,243,238,0.82);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+    .b2b-hero .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .b2b-badge {
+      display: inline-block;
+      background: rgba(178,140,90,0.2);
+      border: 1px solid rgba(178,140,90,0.4);
+      color: var(--color-patinated-brass);
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Stat bar ─────────────────────────────── */
+    .stat-bar {
+      background: var(--color-patinated-brass);
+      color: var(--color-white);
+      padding: 2rem 0;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.6rem;
+      font-weight: 600;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.88rem;
+      opacity: 0.9;
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    /* ── Benefit cards ────────────────────────── */
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .benefit-cards { grid-template-columns: 1fr; } }
+    .benefit-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: 2.25rem 2rem;
+      border: 1px solid var(--color-border);
+      border-top: 3px solid var(--color-patinated-brass);
+      transition: var(--transition-smooth);
+    }
+    .benefit-card:hover { box-shadow: 0 12px 40px rgba(38,51,43,0.1); transform: translateY(-3px); }
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(178,140,90,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--color-patinated-brass);
+    }
+    .benefit-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .benefit-card p {
+      font-size: 0.92rem;
+      color: var(--color-granite-moss);
+      line-height: 1.7;
+    }
+
+    /* ── Friskvård highlight box ──────────────── */
+    .friskvard-box {
+      background: linear-gradient(135deg, rgba(178,140,90,0.08) 0%, rgba(178,140,90,0.03) 100%);
+      border: 2px solid rgba(178,140,90,0.3);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 640px) { .friskvard-box { grid-template-columns: 1fr; text-align: center; } }
+    .friskvard-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--color-patinated-brass);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+    .friskvard-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .friskvard-box p {
+      color: var(--color-granite-moss);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .friskvard-box strong { color: var(--color-forest-stone); }
+
+    /* ── Process steps ───────────────────────── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    @media (max-width: 768px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .process-steps { grid-template-columns: 1fr; } }
+    .process-step {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--color-forest-stone);
+      color: var(--color-limestone);
+      border-radius: 50%;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .process-step h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.5rem;
+    }
+    .process-step p {
+      font-size: 0.87rem;
+      color: var(--color-granite-moss);
+      line-height: 1.6;
+    }
+
+    /* ── CTA Section ─────────────────────────── */
+    .b2b-cta {
+      background: var(--color-forest-stone);
+      color: var(--color-limestone);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .b2b-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--color-limestone);
+      margin-bottom: 1rem;
+    }
+    .b2b-cta p {
+      color: rgba(245,243,238,0.8);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .b2b-cta .btn-primary {
+      background: var(--color-patinated-brass);
+      border-color: var(--color-patinated-brass);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- ════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="b2b-hero" id="hero">
+    <div class="container">
+      <span class="b2b-badge">Företagshälsa</span>
+      <h1>Frisk personal är<br>er bästa investering</h1>
+      <p>Förebyggande osteopati minskar sjukfrånvaro, ökar produktiviteten och kan finansieras via det skattefria friskvårdsbidraget. Tranberg Institut AB erbjuder Sveriges ledande osteopatiska vård direkt till ert företag.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Kontakta oss för företag</a>
+        <a href="#friskvard" class="btn btn-secondary" style="border-color: rgba(245,243,238,0.5); color: var(--color-limestone);">Om friskvårdsbidraget</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       STAT BAR
+  ════════════════════════════════════════════ -->
+  <div class="stat-bar">
+    <div class="container">
+      <div class="stat-grid">
+        <div>
+          <span class="stat-number">30+</span>
+          <span class="stat-label">År av klinisk erfarenhet</span>
+        </div>
+        <div>
+          <span class="stat-number">↓ 40%</span>
+          <span class="stat-label">Minskad rörelsebaserad frånvaro vid regelbunden behandling</span>
+        </div>
+        <div>
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Friskvårdsbidragsberättigad behandling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       VARFÖR OSTEOPATI FÖR FÖRETAG
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="varfor">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Varför osteopati?</span>
+        <h2>Smart, förebyggande hälsovård som syns i resultaten</h2>
+        <p class="section-lead">Muskel- och skelettbesvär är den vanligaste orsaken till sjukfrånvaro i Sverige. Förebyggande osteopati adresserar roten till problemet – inte bara symptomen.</p>
+      </div>
+      <div class="benefit-cards fade-in">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Minskad sjukfrånvaro</h3>
+          <p>Regelbundna osteopatiska behandlingar förebygger de vanligaste besvären – rygg- och nackspänningar, stressrelaterad utmattning och repetitionsskador. Investering upp front sparar kostsamma sjukdagar.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Ökad produktivitet</h3>
+          <p>Medarbetare som är smärtfria och välmående presterar bättre. Behandlingar vid Tranberg Institut reducerar det mentala "bruset" av kronisk smärta och förbättrar fokus och energi markant.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Stärkt arbetsgivarmärke</h3>
+          <p>Att erbjuda osteopati som en del av personalvården signalerar att ni bryr er om era medarbetares hälsa på djupet. Det stärker lojaliteten och gör er mer attraktiva som arbetsgivare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FRISKVÅRDSBIDRAG
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="friskvard">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Skattefritt</span>
+        <h2>Friskvårdsbidraget täcker behandlingen</h2>
+        <p class="section-lead">Osteopatiska behandlingar vid Tranberg Institut AB är berättigade till det skattefria friskvårdsbidraget – vilket innebär en direkt fördel för både er som arbetsgivare och era medarbetare.</p>
+      </div>
+      <div class="friskvard-box fade-in">
+        <div class="friskvard-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" stroke="currentColor" stroke-width="1.8" fill="none">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Vad är friskvårdsbidraget?</h3>
+          <p>Friskvårdsbidraget är en <strong>skattefri förmån</strong> som arbetsgivare kan erbjuda sina anställda upp till ett visst belopp per år (upp till 5&nbsp;000 kr fr.o.m. 2024). Osteopati är en av de behandlingsformer som Skatteverket godkänner som friskvård.</p>
+          <p>Det innebär att era medarbetare kan nyttja sitt friskvårdsbidrag för behandlingar hos Tranberg Institut AB – utan extra kostnad för varken er eller dem utöver det redan avsatta bidraget.</p>
+          <p><strong>Ingen administration, ingen extra kostnad. Bara friskare medarbetare.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SÅ HÄR FUNGERAR DET
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="process">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Processen</span>
+        <h2>Enkelt att komma igång</h2>
+        <p class="section-lead">Från första kontakt till friskare personal – vi håller det enkelt.</p>
+      </div>
+      <div class="process-steps fade-in">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>Kontakta oss</h4>
+          <p>Hör av er via e-post eller telefon. Vi diskuterar ert företags behov och storlek.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>Skräddarsy upplägget</h4>
+          <p>Vi tar fram ett paket anpassat för er – individuella behandlingar, grupp­info eller kombination.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>Medarbetarna bokar</h4>
+          <p>Era anställda bokar tider direkt via vårt system och nyttjar sitt friskvårdsbidrag smidigt.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h4>Följ upp resultaten</h4>
+          <p>Vi kan bistå med anonymiserad återkoppling om trender i behandlingsbehov för ert team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       OM CHRISTER / TROVÄRDIGHET
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div class="rich-text fade-in">
+          <span class="section-tagline">Er terapeut</span>
+          <h2>Christer Tranberg – en av Sveriges ledande osteopater</h2>
+          <p>Era medarbetare behandlas av <strong>Christer Tranberg</strong>, legitimerad osteopat med över 30 års klinisk erfarenhet. Christer byggde upp Tranberg Institut AB tillsammans med sin bror Jörgen Tranberg, och är idag ensam förvaltare av det livsverk de skapade.</p>
+          <p>Han är medförfattare till den banbrytande boken <em>Stillhetens kommunikation</em> och erkänd som en pionjär inom biodynamisk kraniosakralosteopati i Sverige. Er personal är i yttersta händer.</p>
+          <ul>
+            <li>Legitimerad osteopat</li>
+            <li>30+ år klinisk erfarenhet</li>
+            <li>Medförfattare till nationellt erkänt fackbok</li>
+            <li>Utbildare av hundratals terapeuter</li>
+          </ul>
+          <div style="margin-top: 2rem;">
+            <a href="om-christer.html" class="btn btn-primary">Läs mer om Christer</a>
+          </div>
+        </div>
+        <div class="treatment-image-wrapper fade-in" style="background: var(--color-forest-stone); padding: 2.5rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 340px; color: var(--color-limestone); text-align: center;">
+          <blockquote style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; line-height: 1.6; color: var(--color-limestone); margin: 0 0 1.5rem; max-width: 320px;">
+            "En frisk medarbetare är inte en kostnad undviken – det är ett värde skapat."
+          </blockquote>
+          <cite style="font-size: 0.88rem; color: var(--color-patinated-brass); letter-spacing: 0.05em;">— Christer Tranberg</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CTA
+  ════════════════════════════════════════════ -->
+  <section class="b2b-cta" id="kontakt">
+    <div class="container">
+      <h2>Redo att investera i er personal?</h2>
+      <p>Kontakta oss idag för ett förutsättningslöst samtal om hur förebyggande osteopati kan stärka ert företags hälsoarbete.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="boka.html" class="btn btn-primary">Boka behandling</a>
+        <a href="kontakt.html" class="btn btn-secondary" style="border-color: rgba(245,243,238,0.5); color: var(--color-limestone);">Skicka förfrågan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
+  <footer id="kontakt"></footer>
+
+  <!-- Scripts -->
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
