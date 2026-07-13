@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Osteopati för barn 8+ vid Tranberg Institut AB i Göteborg. Vi följer Patientsäkerhetslagen och erbjuder skonsam, manuell behandling av växtvärk, idrottsskador och hållningsproblematik. Läs om debatten om legitimering av osteopater i Sverige.">
+  <title>Osteopati för Barn | Tranberg Institut AB – Säker behandling från 8 år</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+  <style>
+    /* ────────────────────────────────────────────────
+       PAGE-SPECIFIC STYLES – BEHANDLING BARN
+    ──────────────────────────────────────────────── */
+
+    /* Law info box */
+    .law-box {
+      background: linear-gradient(135deg, rgba(38,51,43,0.04) 0%, rgba(38,51,43,0.01) 100%);
+      border: 1.5px solid rgba(38,51,43,0.15);
+      border-left: 5px solid var(--color-forest-stone);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      padding: 2.5rem 2.5rem 2.5rem 2.75rem;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    .law-box-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-forest-stone);
+      color: var(--color-limestone);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+    .law-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .law-box p {
+      color: var(--color-dark-text);
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+    .law-box p:last-child { margin-bottom: 0; }
+
+    /* Nordic comparison table */
+    .nordic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width: 720px) { .nordic-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px) { .nordic-grid { grid-template-columns: 1fr; } }
+    .nordic-card {
+      border-radius: var(--border-radius);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      border: 1.5px solid var(--color-border);
+    }
+    .nordic-card.approved {
+      background: rgba(92, 139, 108, 0.06);
+      border-color: rgba(92, 139, 108, 0.3);
+    }
+    .nordic-card.restricted {
+      background: rgba(178,140,90,0.06);
+      border-color: rgba(178,140,90,0.35);
+    }
+    .nordic-flag {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .nordic-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.5rem;
+    }
+    .nordic-card p {
+      font-size: 0.83rem;
+      color: var(--color-granite-moss);
+      line-height: 1.55;
+    }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.75rem;
+    }
+    .status-badge.ok { background: rgba(92,139,108,0.15); color: #3a7550; }
+    .status-badge.restricted { background: rgba(178,140,90,0.15); color: #8a6520; }
+
+    /* Symptom cards for children */
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 720px) { .symptom-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .symptom-grid { grid-template-columns: 1fr; } }
+    .symptom-card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--color-border);
+      transition: var(--transition-smooth);
+    }
+    .symptom-card:hover {
+      box-shadow: 0 8px 32px rgba(38,51,43,0.09);
+      transform: translateY(-2px);
+    }
+    .symptom-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(178,140,90,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-patinated-brass);
+      margin-bottom: 1rem;
+    }
+    .symptom-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.5rem;
+    }
+    .symptom-card p {
+      font-size: 0.88rem;
+      color: var(--color-granite-moss);
+      line-height: 1.65;
+    }
+
+    /* Debate / opinion section */
+    .debate-section {
+      background: var(--color-forest-stone);
+      color: var(--color-limestone);
+      padding: 5.5rem 0;
+    }
+    .debate-section h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--color-limestone);
+      margin-bottom: 1.5rem;
+    }
+    .debate-section p {
+      color: rgba(245,243,238,0.85);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+    .debate-section strong { color: var(--color-limestone); }
+    .debate-lead {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--color-patinated-brass) !important;
+      line-height: 1.5;
+      margin-bottom: 2rem !important;
+    }
+    .debate-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 640px) { .debate-points { grid-template-columns: 1fr; } }
+    .debate-point {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--color-patinated-brass);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+    }
+    .debate-point h4 {
+      color: var(--color-limestone);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .debate-point p {
+      font-size: 0.87rem;
+      margin-bottom: 0 !important;
+      color: rgba(245,243,238,0.78) !important;
+    }
+    .gp-reference {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--border-radius);
+      padding: 1.25rem 1.75rem;
+      margin-top: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .gp-reference svg { color: var(--color-patinated-brass); flex-shrink: 0; }
+    .gp-reference p {
+      margin: 0 !important;
+      font-size: 0.88rem !important;
+      color: rgba(245,243,238,0.75) !important;
+    }
+
+    /* CTA bar */
+    .barn-cta {
+      background: rgba(178,140,90,0.08);
+      border: 1.5px solid rgba(178,140,90,0.25);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .barn-cta h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-forest-stone);
+      margin-bottom: 0.75rem;
+    }
+    .barn-cta p {
+      color: var(--color-granite-moss);
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by components.js -->
+  <header id="main-header"></header>
+
+  <!-- ════════════════════════════════════════════
+       SUBPAGE HERO
+  ════════════════════════════════════════════ -->
+  <section class="subpage-hero fade-in">
+    <div class="container">
+      <h1>Barn &amp; Osteopati</h1>
+      <p class="subpage-hero-lead">Skonsam manuell behandling för barn från 8 år – med full respekt för svensk lagstiftning och en gedigen klinisk erfarenhet av över tre decennier.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SEKTION 1: LAGSTIFTNING
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="lagstiftning">
+    <div class="container">
+      <div class="content-grid">
+
+        <div class="rich-text fade-in">
+          <span class="section-tagline">Patientsäkerhetslagen</span>
+          <h2>Vad säger den svenska lagen?</h2>
+          <p>I Sverige regleras komplementärmedicinska utövare av <strong>Patientsäkerhetslagen (PSL, SFS 2010:659)</strong>. Lagen innehåller ett förbud för icke-legitimerade hälso- och sjukvårdspersonal att behandla barn under 8 år – och i praktiken gäller detta även för osteopater, trots att yrket är ett reglerat och legitimerat vårdyrke i stora delar av övriga Europa.</p>
+
+          <div class="law-box">
+            <span class="law-box-label">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Patientsäkerhetslagen · SFS 2010:659
+            </span>
+            <h3>Vad innebär förbudet?</h3>
+            <p>Osteopater i Sverige faller under lagen om yrkesverksamhet på hälso- och sjukvårdens område som "annan yrkesutövare". Enligt denna reglering är det <strong>förbjudet att behandla barn under 8 år</strong> med komplementärmedicinska metoder, däribland osteopati – även om utövaren är välutbildad och certifierad.</p>
+            <p>Detta gäller trots att behandlingsmetoderna i sig är skonsamma och mjuka. Förbudet är inte baserat på evidens om behandlingens risk, utan snarare på att osteopati i Sverige ännu inte har nationell legitimationsstatus.</p>
+          </div>
+
+          <p>Tranberg Institut AB respekterar denna lagstiftning fullt ut. Vi tar patientsäkerheten på yttersta allvar och välkomnar <strong>barn från 8 år och uppåt</strong> för behandling.</p>
+
+          <h3>Sverige i jämförelse med Norden</h3>
+          <p>Det som gör situationen särskilt intressant är att Sverige är det enda nordiska landet som inte reglerar osteopati som ett legitimerat vårdyrke. I Finland, Norge och Danmark är osteopater legitimerade, vilket innebär full möjlighet att behandla alla åldrar – inklusive spädbarn och småbarn – under samma kvalitetskrav och tillsyn som gäller övrig legitimerad sjukvård.</p>
+
+          <div class="nordic-grid">
+            <div class="nordic-card approved">
+              <span class="nordic-flag">🇳🇴</span>
+              <h4>Norge</h4>
+              <p>Legitimerat yrke. Osteopater behandlar alla åldrar under reglerade former.</p>
+              <span class="status-badge ok">Legitimerat</span>
+            </div>
+            <div class="nordic-card approved">
+              <span class="nordic-flag">🇩🇰</span>
+              <h4>Danmark</h4>
+              <p>Legitimerat yrke. Osteopater ingår i det reglerade vårdlandskapet.</p>
+              <span class="status-badge ok">Legitimerat</span>
+            </div>
+            <div class="nordic-card approved">
+              <span class="nordic-flag">🇫🇮</span>
+              <h4>Finland</h4>
+              <p>Legitimerat yrke med nationell tillsyn och formella utbildningskrav.</p>
+              <span class="status-badge ok">Legitimerat</span>
+            </div>
+            <div class="nordic-card restricted">
+              <span class="nordic-flag">🇸🇪</span>
+              <h4>Sverige</h4>
+              <p>Ej legitimerat. Behandling av barn under 8 år är förbjuden enligt PSL.</p>
+              <span class="status-badge restricted">Ej legitimerat</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar fade-in">
+          <div class="sidebar-widget">
+            <h4>Snabblänkar</h4>
+            <ul class="sidebar-links">
+              <li><a href="boka.html">Boka behandling</a></li>
+              <li><a href="om-christer.html">Om Christer Tranberg</a></li>
+              <li><a href="biodynamisk-kraniosakralosteopati.html">Om metoden</a></li>
+              <li><a href="vad-ar-osteopati.html">Vad är osteopati?</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <blockquote>
+              "Barn förtjänar samma tillgång till välgrundad manuell vård som vuxna. Det handlar om kompetens och kvalitet – inte om ett generellt förbud."
+              <cite>— Christer Tranberg</cite>
+            </blockquote>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Åldergräns vid Tranberg Institut</h4>
+            <p style="font-size:0.9rem; color: var(--color-granite-moss); line-height:1.7;">Vi behandlar barn från <strong>8 år</strong> och uppåt, i enlighet med Patientsäkerhetslagen. Behandlingarna är alltid skonsamma och anpassade efter barnets ålder och mognad.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SEKTION 2: CHRISTERS EXPERTIS & BARN 8+
+  ════════════════════════════════════════════ -->
+  <section class="section-padding alt-bg" id="behandling">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Barn från 8 år</span>
+        <h2>Trygg, skonsam behandling med 30 år av erfarenhet</h2>
+        <p class="section-lead">Christer Tranberg är en av Sveriges mest erfarna osteopater. Hans mjuka, lyssnande approach är särskilt lämpad för yngre patienter vars kroppar är känsliga och under aktiv utveckling.</p>
+      </div>
+
+      <div class="grid-2-col align-center" style="margin-top: 3rem;">
+        <div class="rich-text fade-in">
+          <h3>Hur behandlingen går till</h3>
+          <p>En osteopatisk barnbehandling vid Tranberg Institut börjar alltid med ett samtal med både barn och förälder. Christers teknik är <strong>icke-invasiv och extremt skonsam</strong> – inget knäcks, inget forceras. Istället arbetar han med mjuka vävnader, led­rörlighet och det kraniosakrala systemet för att ge kroppen bättre förutsättningar att reglera sig själv.</p>
+          <p>Behandlingarna är korta och anpassade efter barnets ork och koncentrationsförmåga. Föräldrar är alltid välkomna att närvara under hela behandlingen.</p>
+
+          <h3>Vanliga besvär hos barn 8–18 år</h3>
+        </div>
+        <div class="treatment-image-wrapper fade-in" style="background: var(--color-forest-stone); padding: 2.5rem; border-radius: 12px; color: var(--color-limestone); display: flex; flex-direction: column; justify-content: center; min-height: 340px;">
+          <h3 style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--color-limestone); margin-bottom: 1.25rem; line-height: 1.4;">Barnets kropp är i ständig rörelse och förändring.</h3>
+          <p style="color: rgba(245,243,238,0.82); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">Osteopati kan vara ett viktigt komplement vid idrottsskador, tillväxtrelaterade besvär och stress – utan medicin och utan biverkningar.</p>
+          <a href="boka.html" class="btn btn-primary" style="align-self: flex-start;">Boka tid för ditt barn</a>
+        </div>
+      </div>
+
+      <div class="symptom-grid fade-in">
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M8 12h8M12 8v8"/>
+            </svg>
+          </div>
+          <h3>Växtvärk &amp; ledbesvär</h3>
+          <p>Under tillväxtperioden kan muskler och leder hamna i obalans. Osteopati ger lättnad utan att störa den naturliga tillväxten.</p>
+        </div>
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z"/>
+            </svg>
+          </div>
+          <h3>Idrottsskador</h3>
+          <p>Unga idrottare utsätter kroppen för stora belastningar. Osteopati stödjer återhämtning och förebygger framtida skador.</p>
+        </div>
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M12 22V12M12 12C12 6 18 2 18 2S12 6 6 2c0 0 6 4 6 10z"/>
+            </svg>
+          </div>
+          <h3>Hållningsproblematik</h3>
+          <p>Skärmar och stillasittande påverkar barnets hållning tidigt. Osteopati hjälper kroppen att återfinna sin naturliga balans.</p>
+        </div>
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Spänningshuvudvärk</h3>
+          <p>Skolstress och muskelspänningar ger ofta huvudvärk hos unga. Skonsam osteopatisk behandling ger varaktig lättnad.</p>
+        </div>
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Stress &amp; skolrelaterat</h3>
+          <p>Nervsystemet påverkas av prestationskrav och stress. Osteopati lugnar det autonoma nervsystemet och förbättrar återhämtning.</p>
+        </div>
+        <div class="symptom-card">
+          <div class="symptom-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.8" fill="none">
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+              <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+            </svg>
+          </div>
+          <h3>Rygg &amp; nackbesvär</h3>
+          <p>Tung ryggsäck och dålig sittställning skapar tidigt spänningar. Behandlingen löser upp blockeringar och förbättrar rörligheten.</p>
+        </div>
+      </div>
+
+      <div class="barn-cta fade-in">
+        <h3>Frågor om behandling av ditt barn?</h3>
+        <p>Ring eller maila oss gärna innan du bokar – vi svarar på alla frågor om vad en behandling innebär för just ditt barns situation. Inga frågor är för stora eller för små.</p>
+        <a href="boka.html" class="btn btn-primary">Boka behandling</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SEKTION 3: DEBATT & REGLERING
+  ════════════════════════════════════════════ -->
+  <section class="debate-section" id="debatten">
+    <div class="container">
+      <div class="content-grid">
+        <div>
+          <span class="section-tagline" style="color: var(--color-patinated-brass);">Debatt</span>
+          <h2>Sverige behöver legitimera osteopater</h2>
+
+          <p class="debate-lead">
+            Varför ska välutbildade osteopater i Sverige vara mer begränsade i sin yrkesutövning än sina kollegor i Finland, Norge och Danmark?
+          </p>
+
+          <p>Den frågan ställde debattören <strong>Beni Köhler</strong> i Göteborgs-Posten i en uppmärksammad artikel som belyste paradoxen i den svenska regleringen. Osteopati är ett evidensbaserat, manuellt vårdyrke – men i Sverige saknas den nationella legitimationsstruktur som finns i resten av Norden.</p>
+
+          <p>Effekten av detta är konkret: <strong>svenska familjer nekas tillgång</strong> till en behandlingsform som deras nordiska grannar tar för given. Föräldrar som söker hjälp för sitt barn hos en välutbildad osteopat i Stockholm eller Göteborg möter ett förbud som inte baseras på vetenskaplig riskvärdering, utan på ett regulatoriskt gap.</p>
+
+          <div class="debate-points">
+            <div class="debate-point">
+              <h4>Kvalitetssäkring – inte förbud</h4>
+              <p>Legitimation innebär inte fritt fram – det innebär tydliga krav på utbildning, etik och tillsyn. Det ger patienterna ett starkare skydd, inte ett svagare.</p>
+            </div>
+            <div class="debate-point">
+              <h4>Kompetensen finns redan</h4>
+              <p>Svenska osteopater utbildas på hög nivå och arbetar dagligen med vuxna patienter. Förbudet mot barn beror inte på bristande kompetens – utan på en saknad rubricering i lagen.</p>
+            </div>
+            <div class="debate-point">
+              <h4>Valfrihet för familjer</h4>
+              <p>Föräldrar borde ha rätt att välja välreglerad, evidensinformerad manuell vård för sina barn – utan att behöva åka utomlands för att få det.</p>
+            </div>
+            <div class="debate-point">
+              <h4>Harmonisering med Norden</h4>
+              <p>Sverige är en del av ett nordiskt hälsovårdslandskap. Att stå utanför den legitimationsstruktur som våra grannländer har är inte uthålligt på sikt.</p>
+            </div>
+          </div>
+
+          <p>Tranberg Institut AB stöder debatten om en modernisering av den svenska regleringen. Christer Tranberg, som under 30+ år arbetat med att höja professionaliteten inom osteopati i Sverige, välkomnar en legitimitetsstruktur som <strong>kvalitetssäkrar yrket för alla patienter – oavsett ålder</strong>.</p>
+
+          <div class="gp-reference">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+            <p>Inspirerat av debattartikel av <strong>Beni Köhler</strong> i Göteborgs-Posten om osteopati, Patientsäkerhetslagen och behovet av legitimering av osteopater i Sverige.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-self: start; padding-top: 3.5rem;">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--border-radius); padding: 2rem;">
+            <h4 style="color: var(--color-patinated-brass); font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 1rem;">Vad Tranberg Institut anser</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: rgba(245,243,238,0.82); line-height: 1.6;">
+                <span style="color: var(--color-patinated-brass); font-weight: 700; flex-shrink: 0;">→</span>
+                Osteopater bör legitimeras i Sverige, som i övriga Norden
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: rgba(245,243,238,0.82); line-height: 1.6;">
+                <span style="color: var(--color-patinated-brass); font-weight: 700; flex-shrink: 0;">→</span>
+                Legitimation stärker patientsäkerheten – det motverkar den inte
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: rgba(245,243,238,0.82); line-height: 1.6;">
+                <span style="color: var(--color-patinated-brass); font-weight: 700; flex-shrink: 0;">→</span>
+                Alla patienter, oavsett ålder, bör ha tillgång till välreglerad osteopatisk vård
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem; color: rgba(245,243,238,0.82); line-height: 1.6;">
+                <span style="color: var(--color-patinated-brass); font-weight: 700; flex-shrink: 0;">→</span>
+                Vi följer och respekterar gällande lagstiftning fullt ut, men arbetar för en bättre reglering
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius); padding: 2rem; text-align: center;">
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--color-limestone) !important; line-height: 1.6; margin-bottom: 1.25rem !important;">"En välutbildad osteopat är inte ett hot mot patientsäkerheten – bristen på reglering är det."</p>
+            <cite style="font-size: 0.85rem; color: var(--color-patinated-brass);">— Christer Tranberg</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       AVSLUTANDE CTA
+  ════════════════════════════════════════════ -->
+  <section class="section-padding" id="boka">
+    <div class="container">
+      <div class="grid-2-col align-center fade-in">
+        <div class="rich-text">
+          <span class="section-tagline">Nästa steg</span>
+          <h2>Boka en tid för ditt barn</h2>
+          <p>Välkommen att kontakta oss om du har frågor om behandling för ditt barn. Vi tar oss alltid tid för ett förutsättningslöst samtal innan bokning – och vi anpassar alltid behandlingen efter barnets individuella behov.</p>
+          <p><strong>Åldersgrupp:</strong> Barn från 8 år välkomnas. Förälder deltar alltid vid besöket.</p>
+          <ul>
+            <li>Skonsam, icke-invasiv metod</li>
+            <li>Förälder alltid välkommen att närvara</li>
+            <li>Behandlingen anpassas efter ålder och mognad</li>
+            <li>30+ år av klinisk erfarenhet</li>
+          </ul>
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="boka.html" class="btn btn-primary">Boka behandling</a>
+            <a href="kontakt.html" class="btn btn-secondary">Ställ en fråga</a>
+          </div>
+        </div>
+        <div class="treatment-image-wrapper fade-in">
+          <img src="assets/treatment.jpg" alt="Christer Tranberg i behandling" class="treatment-img">
+          <div class="image-accent-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected by components.js -->
+  <footer id="kontakt"></footer>
+
+  <!-- Scripts -->
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li><a href="${rootPath}${subpagePrefix}huvudvark-migran.html">Huvudvärk & Migrän</a></li>
                 <li><a href="${rootPath}${subpagePrefix}stress-nervsystem.html">Stress & Utmattning</a></li>
                 <li><a href="${rootPath}${subpagePrefix}barn.html">Barn & Behandling</a></li>
+                <li><a href="${rootPath}behandling-barn.html">Barn & Osteopati (lag & debatt)</a></li>
               </ul>
             </li>
             <li><a href="${rootPath}utbildningar.html">Utbildningar</a></li>
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati</a></li>
             <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
             <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Biodynamisk Osteopati</a></li>
+            <li><a href="${rootPath}behandling-barn.html">Barn &amp; Osteopati</a></li>
             <li><a href="${rootPath}utbildningar.html">Våra utbildningar</a></li>
             <li><a href="${rootPath}kunskapsbank.html">Kunskapsbank</a></li>
             <li><a href="${rootPath}forelasningar.html">Föreläsningar</a></li>
