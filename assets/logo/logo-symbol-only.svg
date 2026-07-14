@@ -1,0 +1,14 @@
+<!-- ============================================================
+     TRANBERG INSTITUT AB – SYMBOL ONLY
+     Brand Book: Endast Symbol
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="symbol-only-title">
+  <title id="symbol-only-title">Tranberg Institut AB – Symbol</title>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#26332B" stroke-width="1.4"/>
+  <path d="M 100 26 C 126 26 150 44 160 68 C 168 88 162 112 146 126 C 134 136 118 138 106 132 C 96 127 90 116 90 104 C 90 90 98 78 108 70 C 118 62 126 50 116 38 C 111 32 106 27 100 26 Z" fill="#B28C5A"/>
+  <path d="M 100 174 C 74 174 50 156 40 132 C 32 112 38 88 54 74 C 66 64 82 62 94 68 C 104 73 110 84 110 96 C 110 110 102 122 92 130 C 82 138 74 150 84 162 C 89 168 94 173 100 174 Z" fill="#26332B"/>
+  <circle cx="100" cy="100" r="6"   fill="#26332B"/>
+  <circle cx="100" cy="15"  r="3.5" fill="#B28C5A"/>
+  <circle cx="100" cy="185" r="3.5" fill="#B28C5A"/>
+  <circle cx="179" cy="108" r="2.2" fill="#26332B"/>
+</svg>

@@ -2,17 +2,15 @@
  * Brand Palette Variables (Tranberg Institut AB)
  * ------------------------------------------------------------- */
 :root {
-  --color-forest-stone: #1F2D26;       /* Djup skogsgrön – rubrik & primärtext */
-  --color-granite-moss: #6E7168;       /* Medium varm grågrön */
-  --color-soft-moss: #8B9886;          /* Ljus lugn sagegreen */
-  --color-patinated-brass: #C89A5B;     /* Varm guld/ockraaccentfärg */
-  --color-brass-hover: #b08040;        /* Mörkare guld för hover */
-  --color-wine-red: #800020;           /* Vinröd / Burgundy för ikoner */
-  --color-limestone: #F2EDE6;          /* Ljusbeige basbakgrund */
+  --color-primary: #26332B;            /* Primary dark forest green */
+  --color-secondary-1: #6E7168;        /* Secondary gray-green */
+  --color-secondary-2: #8B9886;        /* Secondary light sage */
+  --color-accent: #B28C5A;             /* Warm gold accent */
+  --color-background: #F5F3EE;        /* Light beige background */
   
   --color-white: #ffffff;
-  --color-dark-text: #1F2D26;          /* Primär textfärg = skogsgrön */
-  --color-border: rgba(31, 45, 38, 0.12);
+  --color-text: #26332B;               /* Primary text color */
+  --color-border: rgba(38, 51, 43, 0.12);
   
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -218,6 +216,7 @@ a {
   width: 100%;
   z-index: 1000;
   background-color: rgba(245, 243, 238, 0.85);
+  background-color: var(--color-background);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition-smooth);

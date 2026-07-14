@@ -1,0 +1,19 @@
+<!-- ============================================================
+     TRANBERG INSTITUT AB – WORDMARK ONLY
+     Brand Book: Endast Ordmärke
+     No symbol – typography only.
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" role="img" aria-labelledby="wordmark-title">
+  <title id="wordmark-title">Tranberg Institut AB – Ordmärke</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&amp;display=swap');
+      .wm { font-family: 'Playfair Display', Georgia, serif; fill: #26332B; text-anchor: middle; }
+      .wr { stroke: #26332B; stroke-width: 0.9; }
+    </style>
+  </defs>
+  <text x="170" y="34" class="wm" font-size="30" letter-spacing="8" font-weight="400">TRANBERG</text>
+  <line x1="34"  y1="48" x2="96"  y2="48" class="wr"/>
+  <text x="170" y="52" class="wm" font-size="10" letter-spacing="5">INSTITUT AB</text>
+  <line x1="244" y1="48" x2="306" y2="48" class="wr"/>
+</svg>

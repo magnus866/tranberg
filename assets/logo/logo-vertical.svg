@@ -1,0 +1,40 @@
+<!-- ============================================================
+     TRANBERG INSTITUT AB – VERTICAL LOGO
+     Symbol centred top, wordmark below, tagline below that.
+     Brand Book: Vertikal Logotyp
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 290" role="img" aria-labelledby="logo-vertical-title">
+  <title id="logo-vertical-title">Tranberg Institut AB – Vertikal Logotyp</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&amp;family=Inter:wght@300;400;500&amp;display=swap');
+      .logo-wordmark { font-family: 'Playfair Display', Georgia, serif; fill: #26332B; text-anchor: middle; }
+      .logo-rule     { stroke: #26332B; stroke-width: 0.8; }
+      .logo-tagline  { font-family: 'Inter', system-ui, sans-serif; fill: #6E7168; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Symbol centred (100x100) -->
+  <g transform="translate(20, 8) scale(1)">
+    <circle cx="100" cy="100" r="82" fill="none" stroke="#26332B" stroke-width="1.4"/>
+    <path d="M 100 26 C 126 26 150 44 160 68 C 168 88 162 112 146 126 C 134 136 118 138 106 132 C 96 127 90 116 90 104 C 90 90 98 78 108 70 C 118 62 126 50 116 38 C 111 32 106 27 100 26 Z" fill="#B28C5A"/>
+    <path d="M 100 174 C 74 174 50 156 40 132 C 32 112 38 88 54 74 C 66 64 82 62 94 68 C 104 73 110 84 110 96 C 110 110 102 122 92 130 C 82 138 74 150 84 162 C 89 168 94 173 100 174 Z" fill="#26332B"/>
+    <circle cx="100" cy="100" r="6" fill="#26332B"/>
+    <circle cx="100" cy="15"  r="3.5" fill="#B28C5A"/>
+    <circle cx="100" cy="185" r="3.5" fill="#B28C5A"/>
+    <circle cx="179" cy="108" r="2.2" fill="#26332B"/>
+  </g>
+
+  <!-- TRANBERG -->
+  <text x="120" y="134" class="logo-wordmark" font-size="26" letter-spacing="6">TRANBERG</text>
+
+  <!-- — INSTITUT AB — -->
+  <line x1="28"  y1="148" x2="68"  y2="148" class="logo-rule"/>
+  <text x="120" y="152" class="logo-wordmark" font-size="8.5" letter-spacing="4">INSTITUT AB</text>
+  <line x1="172" y1="148" x2="212" y2="148" class="logo-rule"/>
+
+  <!-- Tagline -->
+  <text x="120" y="172" class="logo-tagline" font-size="6" letter-spacing="2.8">I SYMBIOS MED</text>
+  <text x="120" y="182" class="logo-tagline" font-size="6" letter-spacing="2.8">MÄNNISKANS NATUR</text>
+
+</svg>
