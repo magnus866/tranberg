@@ -16,11 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerContainer.innerHTML = `
       <div class="header-container">
         <a href="${rootPath}index.html" class="logo-area" id="logo-link">
-          <svg class="logo-svg" viewBox="0 0 100 100" width="48" height="48" aria-hidden="true">
-            <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1.5" fill="none" />
-            <path d="M 50,15 A 35,35 0 0, 1 85,50 A 35,35 0 0, 1 50,85 A 35,35 0 0, 1 30,70 A 20,20 0 0, 0 50,80 A 30,30 0 0, 0 80,50 A 30,30 0 0, 0 50,20 A 30,30 0 0, 0 20,50 A 10,10 0 0, 0 25,58 A 12,12 0 0, 1 20,50 A 25,25 0 0, 1 50,25 Z" fill="currentColor" />
-            <circle cx="50" cy="50" r="4" fill="currentColor" />
-          </svg>
+          <img src="${rootPath}assets/logo/logo.svg" alt="Tranberg Institut logo" class="logo-img" width="48" height="48" />
           <div class="logo-text">
             <span class="logo-title">TRANBERG</span>
             <span class="logo-subtitle">INSTITUT AB</span>
