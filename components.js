@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Resolve path depth helper (to handle links from /behandlingar/ subpages correctly)
   const isSubpage = window.location.pathname.includes('/behandlingar/');
   const rootPath = isSubpage ? '../' : './';
-  const subpagePrefix = isSubpage ? '' : 'behandlingar/';
 
   /* -------------------------------------------------------------
    * 1. Header HTML Definition & Injection
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="sr-only">Meny</span>
           <span class="hamburger"></span>
         </button>
-
+ 
         <nav id="primary-navigation" class="nav-menu">
           <ul>
             <li><a href="${rootPath}index.html">Startsida</a></li>
@@ -44,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="${rootPath}biodynamisk-kraniosakralosteopati.html" class="dropdown-toggle">Behandlingar <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
               <ul class="dropdown-menu">
                 <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Metod & Info</a></li>
-                <li><a href="${rootPath}${subpagePrefix}rygg-nackbesvar.html">Rygg & Nackbesvär</a></li>
-                <li><a href="${rootPath}${subpagePrefix}huvudvark-migran.html">Huvudvärk & Migrän</a></li>
-                <li><a href="${rootPath}${subpagePrefix}stress-nervsystem.html">Stress & Utmattning</a></li>
-                <li><a href="${rootPath}${subpagePrefix}barn.html">Barn & Behandling</a></li>
+                <li><a href="${rootPath}behandlingar/rygg-nackbesvar.html">Rygg & Nackbesvär</a></li>
+                <li><a href="${rootPath}behandlingar/huvudvark-migran.html">Huvudvärk & Migrän</a></li>
+                <li><a href="${rootPath}behandlingar/stress-nervsystem.html">Stress & Utmattning</a></li>
+                <li><a href="${rootPath}behandlingar/barn.html">Barn & Behandling</a></li>
                 <li><a href="${rootPath}behandling-barn.html">Barn & Osteopati (lag & debatt)</a></li>
               </ul>
             </li>
