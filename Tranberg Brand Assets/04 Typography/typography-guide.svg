@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" shape-rendering="geometricPrecision">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Inter:wght@300;400;600&amp;display=swap');
+      .title { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; fill: #26332B; font-weight: 500; }
+      .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; fill: #6E7168; font-weight: 300; letter-spacing: 2px; }
+      .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; fill: #26332B; font-weight: 500; }
+      
+      .font-spec { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; fill: #6E7168; font-weight: 400; }
+      .label { font-family: 'Inter', system-ui, sans-serif; font-size: 10px; font-weight: 600; fill: #B28C5A; text-transform: uppercase; letter-spacing: 1px; }
+      
+      .example-h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 40px; fill: #26332B; font-weight: 400; }
+      .example-h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; fill: #26332B; font-weight: 500; }
+      .example-h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; fill: #26332B; font-weight: 400; font-style: italic; }
+      .example-body { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; fill: #26332B; font-weight: 300; line-height: 1.6; }
+      .example-caption { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; fill: #6E7168; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F3EE"/>
+
+  <!-- Header -->
+  <text x="50" y="70" class="title">Tranberg Institut AB</text>
+  <text x="50" y="95" class="subtitle">TYPOGRAFIRIKTLINJER — BRAND ASSETS 1.0</text>
+  <line x1="50" y1="115" x2="750" y2="115" stroke="#B28C5A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Left Column: Typefaces -->
+  <g transform="translate(50, 150)">
+    <text x="0" y="0" class="section-title">Primär Typsnittsfamilj (Rubriker)</text>
+    <text x="0" y="50" font-family="'Playfair Display', Georgia, serif" font-size="48" fill="#26332B">Playfair Display</text>
+    <text x="0" y="80" class="font-spec">Används för: Huvudrubriker, sidtitlar, sektionstitlar och logotyptext.</text>
+    <text x="0" y="100" class="font-spec">Karaktär: Elegant, akademisk, tidlös, skandinavisk auktoritet.</text>
+    <text x="0" y="125" font-family="'Playfair Display', Georgia, serif" font-size="20" fill="#26332B" letter-spacing="1">
+      Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890
+    </text>
+
+    <text x="0" y="200" class="section-title">Sekundär Typsnittsfamilj (Brödtext)</text>
+    <text x="0" y="250" font-family="'Inter', system-ui, sans-serif" font-size="36" font-weight="400" fill="#26332B" letter-spacing="-1">Inter</text>
+    <text x="0" y="280" class="font-spec">Används för: Brödtext, menyer, knappar, tabeller och metadata.</text>
+    <text x="0" y="300" class="font-spec">Karaktär: Extremt läsbar, ren, modern, neutral och mänsklig.</text>
+    <text x="0" y="325" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="400" fill="#26332B" letter-spacing="1">
+      Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890
+    </text>
+  </g>
+
+  <!-- Right Column: Hierarchy Examples -->
+  <g transform="translate(480, 150)">
+    <text x="0" y="0" class="section-title">Typografisk Hierarki</text>
+    
+    <!-- H1 -->
+    <text x="0" y="35" class="label">Rubrik H1 (Playfair Display Regular — 40px)</text>
+    <text x="0" y="80" class="example-h1">Om institutet</text>
+    
+    <!-- H2 -->
+    <text x="0" y="125" class="label">Underrubrik H2 (Playfair Display Medium — 28px)</text>
+    <text x="0" y="160" class="example-h2">Kunskap &amp; Behandling</text>
+    
+    <!-- H3 -->
+    <text x="0" y="200" class="label">Mellanrubrik H3 (Playfair Display Italic — 20px)</text>
+    <text x="0" y="230" class="example-h3">I symbios med människans natur</text>
+    
+    <!-- Body -->
+    <text x="0" y="275" class="label">Brödtext (Inter Light — 14px, Line-height 1.6)</text>
+    <text x="0" y="300" class="example-body">
+      Tranberg Institut bygger på över 30 års erfarenhet
+    </text>
+    <text x="0" y="320" class="example-body">
+      genom Christer Tranberg och det kunskapsarv
+    </text>
+    <text x="0" y="340" class="example-body">
+      som skapats tillsammans med Jörgen Tranberg.
+    </text>
+
+    <!-- Tagline/Caption -->
+    <text x="0" y="390" class="label">Etikett / Tagline (Inter Regular — 11px, letter-spacing 4px)</text>
+    <text x="0" y="415" class="example-caption">I SYMBIOS MED MÄNNISKANS NATUR</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="50" y1="550" x2="750" y2="550" stroke="#B28C5A" stroke-width="0.8" opacity="0.5"/>
+  <text x="50" y="570" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#6E7168">© 2026 TRANBERG INSTITUT AB. ALL RIGHTS RESERVED.</text>
+</svg>

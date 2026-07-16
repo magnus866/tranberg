@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tranberg Institut AB — Brand Book 1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-forest: #26332B;
+      --color-gold: #B28C5A;
+      --color-limestone: #F5F3EE;
+      --color-granite: #6E7168;
+      --color-soft-moss: #8B9886;
+      --font-primary: 'Inter', system-ui, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--color-limestone);
+      color: var(--color-forest);
+      line-height: 1.6;
+      padding: 60px 40px;
+    }
+
+    .book-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 80px 60px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      border-radius: 4px;
+      border-left: 6px solid var(--color-gold);
+      position: relative;
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      .book-container {
+        box-shadow: none;
+        padding: 0;
+        border-left: none;
+      }
+      .no-print {
+        display: none;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+
+    header {
+      margin-bottom: 60px;
+      border-bottom: 1px solid rgba(178, 140, 90, 0.3);
+      padding-bottom: 30px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo-symbol {
+      width: 64px;
+      height: 64px;
+      margin-right: 20px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text h1 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      letter-spacing: 6px;
+      font-weight: 500;
+    }
+
+    .logo-text span {
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--color-granite);
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .book-title {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .book-subtitle {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 500;
+      margin: 40px 0 20px 0;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--color-limestone);
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: var(--color-forest);
+    }
+
+    .lead {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--color-granite);
+    }
+
+    /* Color Grid */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .color-card {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid var(--color-limestone);
+      text-align: left;
+    }
+
+    .color-block {
+      height: 120px;
+      border-radius: 3px;
+      margin-bottom: 12px;
+    }
+
+    .color-name {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .color-meta {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--color-granite);
+      margin-bottom: 3px;
+    }
+
+    .color-meta strong {
+      color: var(--color-forest);
+      font-weight: 600;
+    }
+
+    /* Typo card */
+    .typo-spec {
+      background: var(--color-limestone);
+      padding: 30px;
+      border-radius: 4px;
+      margin: 30px 0;
+    }
+
+    .typo-family {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .typo-desc {
+      font-size: 12px;
+      color: var(--color-granite);
+      margin-bottom: 20px;
+    }
+
+    .typo-alphabet {
+      font-size: 14px;
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+
+    /* Button and UI components */
+    .print-button {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      background: var(--color-forest);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(38, 51, 43, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .print-button:hover {
+      background: var(--color-gold);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="book-container">
+    <button class="print-button no-print" onclick="window.print()">Skriv ut till PDF</button>
+
+    <header>
+      <div class="logo-container">
+        <!-- Inline symbol -->
+        <svg class="logo-symbol" viewBox="81 125 70 70">
+          <g fill="var(--color-forest)">
+            <path d="M 101.2023,184.4129 c -0.50932,-0.38387 -1.802546,-1.58522 -2.873835,-2.66966 -8.261532,-8.36296 -10.235575,-20.63058 -5.010195,-31.13566 2.033362,-4.08786 5.508079,-8.13938 8.86374,-10.33512 0.87582,-0.57308 1.81734,-1.19209 2.09228,-1.37558 0.27494,-0.18348 -0.0359,-0.0785 -0.69074,0.23331 -6.631056,3.15744 -11.883699,10.22083 -13.552348,18.22427 -0.746988,3.58282 -0.554878,8.91626 0.443156,12.30312 1.736018,5.89124 5.292769,10.97902 10.198772,14.58893 0.65485,0.48184 1.25016,0.87344 1.32292,0.87021 0.0728,-0.003 -0.28443,-0.31994 -0.79375,-0.70382 z"/>
+            <path d="M 104.78547,160.81232 c -0.0837,-0.13546 -0.0312,-0.32108 0.11668,-0.41249 0.14789,-0.0914 0.2689,0.0194 0.2689,0.2463 0,0.46475 -0.15877,0.53318 -0.38558,0.16619 z"/>
+            <path d="M 105.9648,151.82025 c 0,-0.32499 0.17084,-0.55121 0.41627,-0.55121 0.24639,0 0.38137,0.18001 0.33073,0.4411 -0.12873,0.66377 -0.747,0.75492 -0.747,0.11011 z"/>
+            <path d="M 116.16328,190.04253 c 0.35719,-0.35719 0.64944,-0.89297 0.64944,-1.19063 0,-0.76015 -0.92627,-1.59953 -1.76511,-1.59953 -1.63137,0 -2.26604,1.87752 -0.97734,2.89122 0.90323,0.71047 1.30067,0.69128 2.09301,-0.10106 z"/>
+            <path d="M 116.16328,135.80294 c 0.35719,-0.35719 0.64944,-0.89838 0.64944,-1.20265 0,-0.65112 -1.11519,-1.85208 -1.7198,-1.85208 -0.6046,0 -1.71979,1.20096 -1.71979,1.85208 0,0.65112 1.11519,1.85208 1.71979,1.85208 0.23151,0 0.71318,-0.29224 1.07036,-0.64943 z"/>
+            <path d="M 115.96605,165.50362 c 0.17462,-0.17462 0.3175,-0.62706 0.3175,-1.00541 0,-0.83199 -0.44184,-1.32292 -1.19063,-1.32292 -0.74878,0 -1.19062,0.49093 -1.19062,1.32292 0,0.83198 0.44184,1.32291 1.19062,1.32291 0.3056,0 0.6985,-0.14287 0.87313,-0.3175 z"/>
+          </g>
+          <g fill="var(--color-gold)">
+            <path d="M 130.57105,183.40021 c 3.27747,-2.50653 6.01426,-5.91072 7.78675,-9.68564 1.88213,-4.00842 2.40218,-6.47827 2.38628,-11.33303 -0.0113,-3.44335 -0.11212,-4.46171 -0.62878,-6.35 -1.98446,-7.25275 -6.89153,-13.57265 -12.91769,-16.63689 -1.62172,-0.82463 -1.38268,-0.53103 0.5277,0.64812 0.9087,0.56088 2.6444,1.97236 3.85712,3.13662 3.791,3.63952 6.4474,8.33024 7.7278,13.6459 0.75708,3.14308 0.83925,8.3629 0.1775,11.27533 -1.42974,6.29248 -4.95207,11.81635 -10.2396,16.0582 -1.39399,1.11831 -0.34397,0.51619 1.32292,-0.75861 z"/>
+            <path d="M 112.69428,183.04605 c 0.73128,-0.34136 1.92293,-0.54705 3.72156,-0.64235 4.14924,-0.21985 6.57102,-1.24645 9.58468,-4.06295 1.32769,-1.24083 1.68064,-1.74469 1.81968,-2.59775 l 0.1725,-1.05833 -0.76134,0.70916 c -0.41875,0.39004 -1.65096,1.13418 -2.73826,1.65365 -1.67029,0.79799 -2.25742,0.94448 -3.78544,0.94448 -0.9947,0 -2.33224,-0.13187 -2.97232,-0.29305 -1.02764,-0.25876 -1.28591,-0.48781 -2.20763,-1.95787 -1.01536,-1.61939 -2.35213,-2.68886 -3.96297,-3.17052 -0.60698,-0.1815 -0.61006,-0.17297 -0.17653,0.48868 0.24268,0.37037 0.40161,0.86928 0.35318,1.10868 -0.0689,0.34055 -0.46228,0.14547 -1.80784,-0.89654 -4.11206,-3.18436 -5.82868,-6.86243 -4.64697,-9.9567 0.59172,-1.54939 2.51072,-3.26266 3.90401,-3.48545 0.61276,-0.098 1.1345,-0.3655 1.29397,-0.66347 0.42777,-0.7993 0.0374,-1.08649 -1.22029,-0.89788 -0.69119,0.10365 -1.20297,0.0618 -1.30725,-0.10694 -0.24156,-0.39085 -1.4057,-0.34436 -2.96389,0.11837 -2.82067,0.83765 -5.119166,3.95831 -5.705496,7.74633 -0.236134,1.52555 -0.209131,2.25653 0.1503,4.06873 0.955856,4.81931 3.557816,8.30363 7.856666,10.52094 1.23314,0.63605 2.29442,1.20171 2.3584,1.25703 0.064,0.0553 -0.16157,0.29523 -0.50122,0.53313 -0.59011,0.41333 -0.59597,0.44833 -0.13191,0.78766 0.69399,0.50746 2.42033,0.43837 3.67441,-0.14704 z"/>
+            <path d="M 122.22883,179.31887 c 0.56654,-0.28884 1.07903,-0.47621 1.13886,-0.41638 0.14445,0.14444 -1.40929,0.94155 -1.83528,0.94155 -0.18352,0 0.12987,-0.23632 0.69642,-0.52517 z"/>
+            <path fill="none" stroke="var(--color-gold)" stroke-width="1.2" d="M 133.64121,171.26896 c 0.24629,-0.64182 -0.6489,-1.96812 -2.01857,-2.99068 -0.7239,-0.54043 -1.31617,-1.17668 -1.31617,-1.41388 0,-0.2372 0.22077,-1.07499 0.49061,-1.86175 0.26984,-0.78677 0.57843,-2.02032 0.68576,-2.74122 l 0.19515,-1.31073 0.49898,0.64927 0.49898,0.64928 0.006,-1.36189 c 0.004,-1.02472 -0.21674,-1.81075 -0.89336,-3.175 -0.49459,-0.99721 -1.16841,-2.5104 -1.49737,-3.36263 -1.0779,-2.79245 -3.77563,-5.87531 -6.5973,-7.53913 -0.65379,-0.38552 -2.13681,-1.02123 -3.2956,-1.41271 -2.44878,-0.82728 -2.94398,-1.45626 -1.96606,-2.4972 0.49377,-0.52561 0.52422,-0.67305 0.21574,-1.04474 -0.27254,-0.3284 -0.68074,-0.40545 -1.69248,-0.31947 -1.83878,0.15626 -3.21079,0.87862 -4.19991,2.21123 -0.63756,0.85898 -1.11328,1.19947 -1.99216,1.42586 -1.8962,0.48845 -4.26258,1.82576 -5.79462,3.2747 -1.55635,1.47193 -2.26853,2.64785 -2.55306,4.21549 -0.0996,0.54881 -0.54521,1.41252 -0.99022,1.91936 -0.6486,0.73871 -0.773,1.06532 -0.62714,1.64651 0.19616,0.78156 0.60764,1.38941 0.94054,1.38941 0.11393,0 0.7172,-0.42613 1.34058,-0.94695 2.27645,-1.90192 4.85245,-2.75722 8.30424,-2.75722 1.54531,0 1.66418,0.0482 2.66339,1.08006 1.33824,1.38197 2.87192,2.28572 4.2538,2.50665 1.34106,0.2144 1.64218,-0.14606 0.95324,-1.14112 -0.95429,-1.37831 -0.9515,-1.39823 0.14161,-1.01256 2.16917,0.76533 4.2197,2.02165 5.50671,3.37385 1.72185,1.80906 2.14301,2.50983 2.62841,4.37339 0.70472,2.7056 0.15446,3.91962 -2.45267,5.41127 -1.59619,0.91325 -2.97376,2.00896 -2.97376,2.36532 0,0.13258 0.98686,0.24106 2.19302,0.24106 1.61207,0 2.44757,-0.12978 3.15395,-0.48991 0.93239,-0.47536 0.98369,-0.47551 1.72707,-0.005 0.42138,0.2668 1.41312,0.5924 2.20387,0.72357 2.0547,0.34082 2.10082,0.33933 2.25892,-0.0727 z"/>
+            <path d="M 123.31001,156.76642 c -0.22653,-0.32342 -0.41188,-0.69519 -0.41188,-0.82615 0,-0.32388 0.76129,0.32999 1.08209,0.92941 0.37627,0.70306 -0.16371,0.61987 -0.67021,-0.10326 z"/>
+          </g>
+        </svg>
+        <div class="logo-text">
+          <h1>TRANBERG</h1>
+          <span>INSTITUT AB</span>
+        </div>
+      </div>
+      <h1 class="book-title">Brand Book 1.0</h1>
+      <p class="book-subtitle">Visuell Identitetsguide — Tranberg Institut AB</p>
+    </header>
+
+    <p class="lead">Detta dokument styr hur Tranberg Institut AB kommunicerar visuellt. Målet är att inge förtroende, visa på akademiskt djup samt spegla institutets koppling till den naturliga funktionen och den skandinaviska naturen.</p>
+
+    <h2>1. Kärnvärden</h2>
+    <p>Tranberg Institut vilar på 30 års yrkeserfarenhet och ett arv av kunskap. Vår visuella närvaro ska uttrycka:</p>
+    <p><strong>Helhet</strong>, <strong>Kunskap</strong>, <strong>Närvaro</strong>, <strong>Symbios</strong> och <strong>Utveckling</strong>. Vi undviker överdesignad eller typisk alternativmedicinsk estetik och strävar efter en skandinavisk, lugn och akademisk ton.</p>
+
+    <div class="page-break"></div>
+
+    <h2>2. Färgpalett</h2>
+    <p>Färgerna är hämtade direkt från den nordiska naturen:</p>
+    
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-block" style="background-color: var(--color-forest);"></div>
+        <div class="color-name">Forest Green</div>
+        <div class="color-meta">HEX: <strong>#26332B</strong></div>
+        <div class="color-meta">RGB: <strong>38, 51, 43</strong></div>
+        <div class="color-meta">CMYK: <strong>75,45,65,50</strong></div>
+      </div>
+      <div class="color-card">
+        <div class="color-block" style="background-color: var(--color-gold);"></div>
+        <div class="color-name">Warm Gold</div>
+        <div class="color-meta">HEX: <strong>#B28C5A</strong></div>
+        <div class="color-meta">RGB: <strong>178,140,90</strong></div>
+        <div class="color-meta">CMYK: <strong>30,45,75,10</strong></div>
+      </div>
+      <div class="color-card">
+        <div class="color-block" style="background-color: var(--color-limestone); border: 1.5px solid var(--color-gold);"></div>
+        <div class="color-name">Limestone</div>
+        <div class="color-meta">HEX: <strong>#F5F3EE</strong></div>
+        <div class="color-meta">RGB: <strong>245,243,238</strong></div>
+        <div class="color-meta">CMYK: <strong>5,5,8,0</strong></div>
+      </div>
+      <div class="color-card">
+        <div class="color-block" style="background-color: var(--color-granite);"></div>
+        <div class="color-name">Granite Moss</div>
+        <div class="color-meta">HEX: <strong>#6E7168</strong></div>
+        <div class="color-meta">RGB: <strong>110,113,104</strong></div>
+        <div class="color-meta">CMYK: <strong>55,45,50,15</strong></div>
+      </div>
+    </div>
+
+    <h2>3. Typografi</h2>
+    <p>Vi kombinerar det klassiska seriftypsnittet <strong>Playfair Display</strong> med den moderna sans-serifen <strong>Inter</strong> för optimal balans och läsbarhet.</p>
+    
+    <div class="typo-spec">
+      <div class="typo-family" style="font-family: var(--font-serif);">Playfair Display</div>
+      <div class="typo-desc">Rubriker (H1, H2, H3), sidtitlar och officiella dokumentrubriker.</div>
+      <div class="typo-alphabet" style="font-family: var(--font-serif);">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890</div>
+    </div>
+
+    <div class="typo-spec">
+      <div class="typo-family" style="font-family: var(--font-primary); font-weight: 400;">Inter</div>
+      <div class="typo-desc">Brödtext, digitala texter, menyer och allmänt innehåll på hemsidan.</div>
+      <div class="typo-alphabet" style="font-family: var(--font-primary); font-weight: 300;">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>4. Logotypregler &amp; Frizon</h2>
+    <p>Logotypen ska alltid omges av en frizon som är minst halva symbolens höjd (X/2) för att förhindra att den störs av texter eller andra grafiska element.</p>
+    <p>Logotypen får inte färgas i andra färger än de som finns definierade i detta system. För mörka bakgrunder ska den ljusa varianten (med vit toppdelfin och guld ring) alltid användas för optimal kontrast.</p>
+
+  </div>
+
+</body>
+</html>

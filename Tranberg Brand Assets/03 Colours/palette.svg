@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" shape-rendering="geometricPrecision">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&amp;family=Inter:wght@300;400;600&amp;display=swap');
+      .title { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; fill: #26332B; font-weight: 500; }
+      .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; fill: #6E7168; font-weight: 300; letter-spacing: 2px; }
+      .color-title { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; fill: #26332B; font-weight: 500; }
+      .color-code { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; fill: #6E7168; font-weight: 400; }
+      .label { font-family: 'Inter', system-ui, sans-serif; font-size: 10px; font-weight: 600; fill: #26332B; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F3EE"/>
+
+  <!-- Header -->
+  <text x="50" y="70" class="title">Tranberg Institut AB</text>
+  <text x="50" y="95" class="subtitle">OFFICIELL FÄRGPALETT — BRAND ASSETS 1.0</text>
+  <line x1="50" y1="115" x2="750" y2="115" stroke="#B28C5A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Colour 1: Forest Green -->
+  <g transform="translate(50, 150)">
+    <rect width="110" height="280" fill="#26332B" rx="4"/>
+    <text x="0" y="315" class="color-title">Forest Green</text>
+    <text x="0" y="340" class="color-code"><tspan class="label">HEX: </tspan>#26332B</text>
+    <text x="0" y="358" class="color-code"><tspan class="label">RGB: </tspan>38, 51, 43</text>
+    <text x="0" y="376" class="color-code"><tspan class="label">CMYK: </tspan>75, 45, 65, 50</text>
+  </g>
+
+  <!-- Colour 2: Warm Gold -->
+  <g transform="translate(195, 150)">
+    <rect width="110" height="280" fill="#B28C5A" rx="4"/>
+    <text x="0" y="315" class="color-title">Warm Gold</text>
+    <text x="0" y="340" class="color-code"><tspan class="label">HEX: </tspan>#B28C5A</text>
+    <text x="0" y="358" class="color-code"><tspan class="label">RGB: </tspan>178, 140, 90</text>
+    <text x="0" y="376" class="color-code"><tspan class="label">CMYK: </tspan>30, 45, 75, 10</text>
+  </g>
+
+  <!-- Colour 3: Limestone / Sand -->
+  <g transform="translate(340, 150)">
+    <rect width="110" height="280" fill="#F5F3EE" stroke="#B28C5A" stroke-width="0.5" rx="4"/>
+    <text x="0" y="315" class="color-title">Limestone</text>
+    <text x="0" y="340" class="color-code"><tspan class="label">HEX: </tspan>#F5F3EE</text>
+    <text x="0" y="358" class="color-code"><tspan class="label">RGB: </tspan>245, 243, 238</text>
+    <text x="0" y="376" class="color-code"><tspan class="label">CMYK: </tspan>5, 5, 8, 0</text>
+  </g>
+
+  <!-- Colour 4: Granite Moss -->
+  <g transform="translate(485, 150)">
+    <rect width="110" height="280" fill="#6E7168" rx="4"/>
+    <text x="0" y="315" class="color-title">Granite Moss</text>
+    <text x="0" y="340" class="color-code"><tspan class="label">HEX: </tspan>#6E7168</text>
+    <text x="0" y="358" class="color-code"><tspan class="label">RGB: </tspan>110, 113, 104</text>
+    <text x="0" y="376" class="color-code"><tspan class="label">CMYK: </tspan>55, 45, 50, 15</text>
+  </g>
+
+  <!-- Colour 5: Soft Moss -->
+  <g transform="translate(630, 150)">
+    <rect width="110" height="280" fill="#8B9886" rx="4"/>
+    <text x="0" y="315" class="color-title">Soft Moss</text>
+    <text x="0" y="340" class="color-code"><tspan class="label">HEX: </tspan>#8B9886</text>
+    <text x="0" y="358" class="color-code"><tspan class="label">RGB: </tspan>139, 152, 134</text>
+    <text x="0" y="376" class="color-code"><tspan class="label">CMYK: </tspan>40, 25, 45, 5</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="50" y1="550" x2="750" y2="550" stroke="#B28C5A" stroke-width="0.8" opacity="0.5"/>
+  <text x="50" y="570" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#6E7168">© 2026 TRANBERG INSTITUT AB. ALL RIGHTS RESERVED.</text>
+</svg>
