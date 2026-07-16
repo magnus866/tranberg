@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerContainer.innerHTML = `
       <div class="header-container">
         <a href="${rootPath}index.html" class="logo-area" id="logo-link">
-          <img src="${rootPath}assets/logo/logo.svg" alt="Tranberg Institut logo" class="logo-img" width="48" height="48" />
+          <img src="${rootPath}assets/logo/logo-white.svg" alt="Tranberg Institut logo" class="logo-img" width="48" height="48" />
           <div class="logo-text">
             <span class="logo-title">TRANBERG</span>
             <span class="logo-subtitle">INSTITUT AB</span>

@@ -8,6 +8,16 @@
   --color-accent: #B28C5A;             /* Warm gold accent */
   --color-background: #F5F3EE;        /* Light beige background */
   
+  /* Legacy Color Fallbacks */
+  --color-forest-stone: var(--color-primary);
+  --color-patinated-brass: var(--color-accent);
+  --color-limestone: var(--color-background);
+  --color-granite-moss: var(--color-secondary-1);
+  --color-soft-moss: var(--color-secondary-2);
+  --color-wine-red: var(--color-accent);
+  --color-dark-text: var(--color-primary);
+  --color-brass-hover: #9E7A4A;
+  
   --color-white: #ffffff;
   --color-text: #26332B;               /* Primary text color */
   --color-border: rgba(38, 51, 43, 0.12);
@@ -215,10 +225,9 @@ a {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(245, 243, 238, 0.85);
-  background-color: var(--color-background);
+  background-color: var(--color-primary); /* Dark forest green header */
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: var(--transition-smooth);
   display: flex;
   justify-content: center;
@@ -265,14 +274,14 @@ a {
   font-weight: 500;
   font-size: 1.3rem;
   letter-spacing: 0.1em;
-  color: var(--color-forest-stone);
+  color: var(--color-background); /* Limestone/Light text */
 }
 
 .logo-subtitle {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.25em;
-  color: var(--color-granite-moss);
+  color: var(--color-accent); /* Gold text */
 }
 
 .nav-menu {
@@ -292,8 +301,8 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-forest-stone);
-  opacity: 0.8;
+  color: var(--color-background); /* Limestone link color */
+  opacity: 0.85;
   position: relative;
   padding: 0.5rem 0;
   display: inline-flex;
@@ -311,12 +320,14 @@ a {
   transition: var(--transition-smooth);
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active-nav-item {
   opacity: 1;
   color: var(--color-patinated-brass);
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a.active-nav-item::after {
   width: 100%;
 }
 
@@ -1303,7 +1314,7 @@ a {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-forest-stone);
+    background-color: var(--color-background); /* Light beige line */
     position: relative;
     transition: background-color 0.3s;
   }
@@ -1314,7 +1325,7 @@ a {
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: var(--color-forest-stone);
+    background-color: var(--color-background); /* Light beige lines */
     transition: transform 0.3s, background-color 0.3s;
   }
   
