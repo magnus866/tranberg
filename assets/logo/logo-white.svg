@@ -1,22 +1,31 @@
 <!-- ============================================================
-     TRANBERG INSTITUT AB – WHITE VERSION (reversed)
-     For use on dark backgrounds (#26332B or black).
-     Brand Book: Vit version / Negativ
+     TRANBERG INSTITUT AB — WHITE / REVERSED VERSION  v2.0
+     For use on dark backgrounds (Primary #26332B or black).
+     ViewBox: 400 × 400
      ============================================================ -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="symbol-white-title">
-  <title id="symbol-white-title">Tranberg Institut AB – Symbol (vit version)</title>
-  <!-- Dark background -->
-  <rect width="200" height="200" fill="#26332B"/>
-  <!-- Outer ring white -->
-  <circle cx="100" cy="100" r="82" fill="none" stroke="#F5F3EE" stroke-width="1.4"/>
-  <!-- Form 1 – Warm white / limestone -->
-  <path d="M 100 26 C 126 26 150 44 160 68 C 168 88 162 112 146 126 C 134 136 118 138 106 132 C 96 127 90 116 90 104 C 90 90 98 78 108 70 C 118 62 126 50 116 38 C 111 32 106 27 100 26 Z" fill="#B28C5A"/>
-  <!-- Form 2 – White -->
-  <path d="M 100 174 C 74 174 50 156 40 132 C 32 112 38 88 54 74 C 66 64 82 62 94 68 C 104 73 110 84 110 96 C 110 110 102 122 92 130 C 82 138 74 150 84 162 C 89 168 94 173 100 174 Z" fill="#F5F3EE"/>
-  <!-- Centre dot -->
-  <circle cx="100" cy="100" r="6"   fill="#F5F3EE"/>
-  <!-- Decorative dots -->
-  <circle cx="100" cy="15"  r="3.5" fill="#B28C5A"/>
-  <circle cx="100" cy="185" r="3.5" fill="#B28C5A"/>
-  <circle cx="179" cy="108" r="2.2" fill="#F5F3EE"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 400"
+  preserveAspectRatio="xMidYMid meet"
+  shape-rendering="geometricPrecision"
+  role="img"
+  aria-labelledby="ti-white-title">
+
+  <title id="ti-white-title">Tranberg Institut AB — Symbol (vit version)</title>
+
+  <rect width="400" height="400" fill="#26332B"/>
+
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#F5F3EE" stroke-width="2.4"/>
+
+  <!-- Form 1: Brass becomes warm limestone on dark bg -->
+  <path d="M 200,52 C 255,52 308,90 326,144 C 342,190 328,242 296,268 C 272,288 240,292 218,278 C 198,266 186,244 186,220 C 186,192 202,168 222,152 C 242,136 258,112 240,80 C 230,64 216,52 200,52 Z" fill="#B28C5A"/>
+
+  <!-- Form 2: Limestone (reversed) -->
+  <path d="M 200,348 C 145,348 92,310 74,256 C 58,210 72,158 104,132 C 128,112 160,108 182,122 C 202,134 214,156 214,180 C 214,208 198,232 178,248 C 158,264 142,288 160,320 C 170,336 184,348 200,348 Z" fill="#F5F3EE"/>
+
+  <circle cx="200" cy="200" r="11"  fill="#F5F3EE"/>
+  <circle cx="200" cy="31"  r="6.5" fill="#B28C5A"/>
+  <circle cx="200" cy="369" r="6.5" fill="#B28C5A"/>
+  <circle cx="362" cy="234" r="4"   fill="#F5F3EE"/>
+
 </svg>
