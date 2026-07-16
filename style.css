@@ -35,8 +35,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-limestone);
-  color: var(--color-dark-text);
+  background-color: var(--color-background);
+  color: var(--color-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -47,20 +47,20 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-limestone);
+  background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-granite-moss);
+  background: var(--color-secondary-1);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-forest-stone);
+  background: var(--color-primary);
 }
 
 /* Typography */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  color: var(--color-forest-stone);
+  color: var(--color-primary);
   font-weight: 500;
   line-height: 1.25;
 }

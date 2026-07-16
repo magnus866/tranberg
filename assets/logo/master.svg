@@ -1,84 +1,43 @@
-<!-- ============================================================
-     TRANBERG INSTITUT AB — MASTER SYMBOL SVG  v2.0
-     Production source for all logo variants.
-     
-     Geometry notes:
-     · ViewBox 400 × 400 — high precision for all output sizes
-     · Centre: 200, 200
-     · Outer ring radius: 166 px (viewBox units)
-     · Form 2 is an exact 180° rotation of Form 1 around (200, 200)
-       i.e. every point (x, y) on Form 1 → (400-x, 400-y) on Form 2
-     · Decorative dots placed on the outer ring circumference
-     · shape-rendering: geometricPrecision for crisp rendering at all sizes
+<!-- =============================================================
+     TRANBERG INSTITUT AB — MASTER SYMBOL  v3.0
+     PLACEHOLDER — Pending final vector tracing
 
-     Brand colours:
-     · Primary   #26332B  (Forest Stone)
-     · Accent    #B28C5A  (Patinated Brass)
-     · BG        #F5F3EE  (Limestone)
-     ============================================================ -->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 400 400"
-  preserveAspectRatio="xMidYMid meet"
-  shape-rendering="geometricPrecision"
-  role="img"
-  aria-labelledby="ti-logo-title">
+     This file holds the outer ring, colour tokens, and decorative
+     dots while the dolphin paths await finalisation via one of
+     the two recommended delivery methods described in the handoff
+     document (LogotypLeverans_v3.md).
+     ============================================================= -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 500 500"
+     preserveAspectRatio="xMidYMid meet"
+     shape-rendering="geometricPrecision"
+     role="img"
+     aria-labelledby="ti-master-title">
 
-  <title id="ti-logo-title">Tranberg Institut AB — Symbol</title>
+  <title id="ti-master-title">Tranberg Institut AB — Symbol (placeholder)</title>
 
-  <!-- ── Outer ring ─────────────────────────────────────────── -->
-  <circle
-    cx="200" cy="200" r="166"
-    fill="none"
-    stroke="#26332B"
-    stroke-width="2.4"/>
+  <!-- Outer ring -->
+  <circle cx="250" cy="250" r="192"
+          fill="none" stroke="#26332B" stroke-width="2.8"/>
 
-  <!-- ── Form 1 — Patinated Brass (upper / right sweep) ─────── -->
-  <!--
-    Path reads clockwise from the top centre point.
-    The curve sweeps right then returns through the interior,
-    creating a smooth kidney / teardrop shape.
-  -->
-  <path
-    d="M 200,52
-       C 255,52  308,90  326,144
-       C 342,190  328,242  296,268
-       C 272,288  240,292  218,278
-       C 198,266  186,244  186,220
-       C 186,192  202,168  222,152
-       C 242,136  258,112  240,80
-       C 230,64   216,52  200,52
-       Z"
-    fill="#B28C5A"/>
+  <!-- Gold dot – top of ring -->
+  <circle cx="250" cy="58"  r="6" fill="#B28C5A"/>
 
-  <!-- ── Form 2 — Forest Stone (lower / left sweep) ─────────── -->
-  <!--
-    Exact 180° rotation of Form 1 around (200,200).
-    Every control point is: (400-x, 400-y) of its Form 1 counterpart.
-  -->
-  <path
-    d="M 200,348
-       C 145,348  92,310   74,256
-       C 58,210   72,158  104,132
-       C 128,112  160,108  182,122
-       C 202,134  214,156  214,180
-       C 214,208  198,232  178,248
-       C 158,264  142,288  160,320
-       C 170,336  184,348  200,348
-       Z"
-    fill="#26332B"/>
+  <!-- Dark dot – bottom of ring -->
+  <circle cx="250" cy="442" r="6" fill="#26332B"/>
 
-  <!-- ── Centre pivot dot ────────────────────────────────────── -->
-  <circle cx="200" cy="200" r="11" fill="#26332B"/>
-
-  <!-- ── Decorative dots (on the outer ring circumference) ───── -->
-  <!-- Top  — ring at 90° = (200, 200-166) = (200, 34) -->
-  <circle cx="200" cy="31" r="6.5" fill="#B28C5A"/>
-
-  <!-- Bottom — ring at 270° = (200, 366) -->
-  <circle cx="200" cy="369" r="6.5" fill="#B28C5A"/>
-
-  <!-- Right accent — ring at ~12° offset from 0°, subtle small dot -->
-  <circle cx="362" cy="234" r="4" fill="#26332B"/>
+  <!-- PLACEHOLDER symbol — will be replaced with dolphin yin-yang -->
+  <text x="250" y="220" text-anchor="middle"
+        font-family="Georgia, serif" font-size="22" fill="#26332B" opacity="0.4">
+    Delfin-symbol
+  </text>
+  <text x="250" y="252" text-anchor="middle"
+        font-family="Georgia, serif" font-size="14" fill="#6E7168" opacity="0.4">
+    Awaiting vector artwork
+  </text>
+  <text x="250" y="280" text-anchor="middle"
+        font-family="Georgia, serif" font-size="14" fill="#6E7168" opacity="0.4">
+    (se handoff-dokument)
+  </text>
 
 </svg>
