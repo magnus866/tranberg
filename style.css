@@ -256,7 +256,7 @@ a {
 }
 
 .logo-svg {
-  color: var(--color-wine-red);
+  color: var(--color-accent);
   transition: var(--transition-smooth);
 }
 
@@ -576,7 +576,7 @@ a {
 }
 
 .value-icon {
-  color: var(--color-wine-red);
+  color: var(--color-accent);
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
@@ -1059,7 +1059,7 @@ a {
 }
 
 .success-icon {
-  color: var(--color-wine-red);
+  color: var(--color-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -1126,7 +1126,7 @@ a {
 }
 
 .footer-logo svg {
-  color: var(--color-wine-red);
+  color: var(--color-primary);
 }
 
 .footer-tagline {
@@ -1501,12 +1501,12 @@ a {
 
 /* Header Booking CTA Button style */
 .nav-btn-cta {
-  background-color: var(--color-wine-red) !important;
+  background-color: var(--color-accent) !important;
   color: var(--color-white) !important;
   padding: 0.6rem 1.5rem !important;
   border-radius: 50px;
   opacity: 1 !important;
-  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.15);
+  box-shadow: 0 4px 10px rgba(178, 140, 90, 0.15);
   font-weight: 600 !important;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1515,9 +1515,9 @@ a {
 }
 
 .nav-btn-cta:hover {
-  background-color: #5A0014 !important;
+  background-color: #9E7A4A !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(128, 0, 32, 0.35);
+  box-shadow: 0 6px 15px rgba(178, 140, 90, 0.35);
 }
 
 .nav-btn-cta::after {
@@ -1560,7 +1560,7 @@ a {
   }
 
   .nav-menu .nav-btn-cta {
-    background-color: var(--color-wine-red) !important;
+    background-color: var(--color-accent) !important;
     color: var(--color-white) !important;
     padding: 0.8rem 2rem !important;
     margin-top: 1.5rem;
@@ -1570,7 +1570,7 @@ a {
     text-transform: none;
     letter-spacing: normal;
     display: block;
-    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+    box-shadow: 0 4px 12px rgba(178, 140, 90, 0.2);
   }
 }
 
@@ -1628,7 +1628,7 @@ a {
 }
 
 .rich-text blockquote {
-  border-left: 3px solid var(--color-wine-red);
+  border-left: 3px solid var(--color-accent);
   padding-left: 2rem;
   margin: 2.5rem 0;
   font-family: var(--font-heading);
@@ -1682,7 +1682,7 @@ a {
 }
 
 .sidebar-links a:hover {
-  color: var(--color-wine-red);
+  color: var(--color-accent);
   padding-left: 4px;
 }
 
@@ -1709,7 +1709,7 @@ a {
 .article-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 35px rgba(38, 51, 43, 0.05);
-  border-color: rgba(128, 0, 32, 0.2);
+  border-color: rgba(178, 140, 90, 0.3);
 }
 
 .article-card-img {
@@ -1730,7 +1730,7 @@ a {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-wine-red);
+  color: var(--color-accent);
   margin-bottom: 0.8rem;
   font-weight: 600;
 }
@@ -1758,7 +1758,7 @@ a {
 }
 
 .article-link:hover {
-  color: var(--color-wine-red);
+  color: var(--color-accent);
 }
 
 /* -------------------------------------------------------------
@@ -1802,5 +1802,274 @@ a {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
+}
+
+/* -------------------------------------------------------------
+ * 11. Homepage Redesign & Mobile First Layouts (Brand Book 1.0)
+ * ------------------------------------------------------------- */
+
+/* Split-Hero Layout (Mobile First) */
+.hero-split-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  min-height: 100vh;
+  padding-top: 5rem; /* Header clearance */
+}
+
+.hero-split-text-panel {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-background);
+  flex: 1;
+}
+
+.hero-text-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-split-image-panel {
+  flex: 1;
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop adaptation for Split-Hero */
+@media (min-width: 992px) {
+  .hero-split-section {
+    flex-direction: row;
+    padding-top: 0;
+    height: 100vh;
+  }
+  
+  .hero-split-text-panel {
+    flex: 1.1;
+    padding: 8rem 4rem 4rem 6rem;
+  }
+  
+  .hero-split-image-panel {
+    flex: 0.9;
+    height: 100vh;
+  }
+  
+  .hero-split-img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Introduction Section Style */
+.serif-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.lead-paragraph {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--color-primary);
+}
+
+.text-link-gold {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.text-link-gold:hover {
+  color: var(--color-primary);
+}
+
+/* Clean Values Grid (Replacement for value cards with heavy shadows) */
+.values-clean-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3.5rem;
+  margin-top: 4rem;
+}
+
+.value-item {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.value-item:hover {
+  border-top-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.value-item-icon {
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.value-item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.value-item p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(38, 51, 43, 0.8);
+}
+
+/* Minimalist Treatments Grid */
+.treatments-minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.treatment-card-link {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.treatment-card-link:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(38, 51, 43, 0.03);
+}
+
+.treatment-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.treatment-card-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.treatment-card-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  color: rgba(38, 51, 43, 0.8);
+}
+
+.card-action-arrow {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  transition: var(--transition-smooth);
+}
+
+.treatment-card-link:hover .card-action-arrow {
+  color: var(--color-primary);
+  padding-left: 4px;
+}
+
+/* About Christer Section */
+.christer-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  box-shadow: 0 15px 45px rgba(38, 51, 43, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.christer-lead {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--color-accent);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.signature-text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  display: inline-block;
+}
+
+/* Testimonial Quote styling */
+.testimonial-blockquote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-primary);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  font-weight: 400;
+}
+
+.testimonial-blockquote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-top: 2rem;
+}
+
+/* General Layout adjustments */
+.button-spacer {
+  margin-top: 2rem;
+}
+
+.wellness-img, .education-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(38, 51, 43, 0.05);
+}
+
+.wellness-image-wrapper, .education-image-wrapper {
+  position: relative;
 }
 

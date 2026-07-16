@@ -5,149 +5,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tranberg Institut AB - Professionella osteopatiska behandlingar och biodynamisk kraniosakralosteopati i Göteborg. I symbios med människans natur.">
   <title>Tranberg Institut AB – I symbios med människans natur</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
   <!-- Header injected by components.js -->
   <header id="main-header"></header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-content container">
-      <span class="hero-badge">Osteopati & Biodynamisk Hälsa</span>
-      <h1 class="hero-title">I symbios med människans natur.</h1>
-      <p class="hero-lead">Vi ser kroppen som ett levande system i ständig dialog med sin omgivning. I symbios med människans natur återfinner vi balansen.</p>
-      <div class="hero-actions">
-        <a href="#bokning" class="btn btn-primary" id="hero-cta-btn">Boka behandling</a>
-        <a href="#filosofi" class="btn btn-secondary">Vår filosofi</a>
+  <!-- 1. HERO SECTION (Split-Layout, Designed Mobile First) -->
+  <section id="hero" class="hero-split-section">
+    <div class="hero-split-text-panel">
+      <div class="hero-text-content">
+        <span class="hero-badge">Osteopati &amp; Biodynamik</span>
+        <h1 class="hero-title">Hälsa genom kroppens egen intelligens.</h1>
+        <p class="hero-lead">Vi ser kroppen som ett integrerat, självreglerande system. Genom närvaro, stillhet och varsam manuell behandling stödjer vi din naturliga väg till balans och återhämtning.</p>
+        <div class="hero-actions">
+          <a href="#bokning" class="btn btn-primary" id="hero-cta-btn">Boka behandling</a>
+          <a href="#filosofi" class="btn btn-secondary">Vår filosofi</a>
+        </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <span class="mouse-icon"><span class="wheel"></span></span>
-      <span class="arrow"></span>
+    <div class="hero-split-image-panel">
+      <!-- High-quality stämningsfull naturbild/behandlingsbild -->
+      <img src="assets/hero_forest.jpg" alt="Skandinavisk natur och skog" class="hero-split-img">
     </div>
   </section>
 
-  <!-- Philosophy & Core Values -->
-  <section id="filosofi" class="philosophy-section section-padding">
+  <!-- 2. INTRODUCTION (The Living Academy) -->
+  <section id="filosofi" class="introduction-section section-padding">
+    <div class="container text-center">
+      <span class="section-tagline">Välkommen till institutet</span>
+      <h2 class="serif-heading">Ett levande kunskapscentrum</h2>
+      <p class="lead-paragraph">
+        Tranberg Institut AB är inte en traditionell terapeutklinik. Det är en akademisk plattform där klinisk behandling, premiumutbildningar och djup forskningsbaserad kunskap förenas. Vår filosofi vilar på över 30 års yrkeserfarenhet och ett arv av att förstå människokroppens inneboende hälsa och funktion.
+      </p>
+      <div class="intro-link-container">
+        <a href="om-institutet.html" class="text-link-gold">Läs historien om institutet &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHY TRANBERG INSTITUT (Core Values) -->
+  <section class="why-section section-padding alt-bg">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tagline">Vår Filosofi</span>
-        <h2>Kroppen som ett levande system</h2>
-        <p class="section-lead">Allt påverkar allt. När hinder undanröjs kan kroppen ofta återfinna sin egen naturliga funktion. Vi möter hela människan i symbios med hennes kropp, liv och omgivning.</p>
+        <span class="section-tagline">Våra Grundpelare</span>
+        <h2>Varför välja Tranberg Institut?</h2>
+        <p class="section-lead">Vi arbetar utifrån fem kärnvärden för att skapa en trygg och professionell behandlingsmiljö.</p>
       </div>
 
-      <div class="values-grid">
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <!-- Ripple/Circle SVG -->
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
+      <div class="values-clean-grid">
+        <div class="value-item fade-in">
+          <div class="value-item-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
               <circle cx="12" cy="12" r="9" />
               <circle cx="12" cy="12" r="5" />
-              <circle cx="12" cy="12" r="1.5" />
             </svg>
           </div>
           <h3>Helhet</h3>
-          <p>Vi ser människan som ett sammanhang, ett integrerat system där kropp, själ och sinne samverkar.</p>
+          <p>Människan förstås som ett sammanhängande, levande system där fysiologi, nervsystem och sinne samspelar.</p>
         </div>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <!-- Book/Knowledge SVG -->
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
+        <div class="value-item fade-in">
+          <div class="value-item-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
               <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15z" />
             </svg>
           </div>
           <h3>Kunskap</h3>
-          <p>Vi utvecklar ständigt vår vetenskapliga och praktiska förståelse för kroppens intrikata funktion.</p>
+          <p>Vår kliniska praktik vilar på gedigen utbildning, vetenskaplig nyfikenhet och 30 års erfarenhet.</p>
         </div>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <!-- Ear/Presence SVG -->
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M3 12c0-3.87 3.13-7 7-7 1.93 0 3.68.78 4.95 2.05L12 10h8V2l-2.64 2.64C15.74 3.03 13 2 10 2 4.48 2 0 6.48 0 12s4.48 10 10 10 10-4.48 10-10" stroke-dasharray="2 2" />
-              <path d="M19 12c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5" />
-              <circle cx="14" cy="12" r="1" />
+        <div class="value-item fade-in">
+          <div class="value-item-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M3 12c0-3.87 3.13-7 7-7 1.93 0 3.68.78 4.95 2.05L12 10h8V2l-2.64 2.64" />
+              <circle cx="12" cy="12" r="2" />
             </svg>
           </div>
           <h3>Närvaro</h3>
-          <p>Vi lyssnar först. Varje människa bär sin egen unika berättelse, och mötet sker utan stress.</p>
+          <p>Varje möte sker i stillhet och utan stress. Vi lyssnar med händerna och skapar utrymme för återhämtning.</p>
         </div>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <!-- Interconnected/Symbiosis SVG -->
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-              <path d="M12 6a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+        <div class="value-item fade-in">
+          <div class="value-item-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10" stroke-dasharray="2 2" />
+              <path d="M12 6a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6s6-2.69 6-6" />
             </svg>
           </div>
           <h3>Symbios</h3>
-          <p>Hälsa uppstår när kroppens alla fysiologiska och neurologiska system samverkar i harmoni.</p>
+          <p>Vi stimulerar kroppens symbios med naturens krafter och dess inneboende strävan efter hälsa.</p>
         </div>
 
-        <div class="value-card fade-in">
-          <div class="value-icon">
-            <!-- Growth/Sun SVG -->
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-              <circle cx="12" cy="12" r="4" />
+        <div class="value-item fade-in">
+          <div class="value-item-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
           </div>
           <h3>Utveckling</h3>
-          <p>Människan har en inneboende förmåga till självläkning och större potential än hon ofta tror.</p>
+          <p>Vi stödjer din personliga och kroppsliga utveckling för att återfinna full livskraft.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Treatments Details -->
-  <section id="behandlingar" class="treatment-section section-padding alt-bg">
+  <!-- 4. TREATMENT AREAS -->
+  <section id="behandlingar" class="treatment-overview-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Klinisk Verksamhet</span>
+        <h2>Behandlingsområden</h2>
+        <p class="section-lead">Vi erbjuder individanpassad manuell behandling för en rad vanliga hälsobesvär.</p>
+      </div>
+
+      <div class="treatments-minimal-grid">
+        <!-- Rygg & Nacke -->
+        <a href="behandlingar/rygg-nackbesvar.html" class="treatment-card-link fade-in">
+          <div class="treatment-card-content">
+            <h3>Rygg &amp; Nackbesvär</h3>
+            <p>Effektiv osteopatisk behandling vid ryggskott, nackspärr, ischias, stelhet och muskelvärk.</p>
+            <span class="card-action-arrow">Läs mer &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Huvudvärk & Migrän -->
+        <a href="behandlingar/huvudvark-migran.html" class="treatment-card-link fade-in">
+          <div class="treatment-card-content">
+            <h3>Huvudvärk &amp; Migrän</h3>
+            <p>Skonsam behandling som minskar spänningar, förbättrar cirkulationen och lindrar migrän.</p>
+            <span class="card-action-arrow">Läs mer &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Stress & Utmattning -->
+        <a href="behandlingar/stress-nervsystem.html" class="treatment-card-link fade-in">
+          <div class="treatment-card-content">
+            <h3>Stress &amp; Utmattning</h3>
+            <p>Mjuk kraniosakral behandling med fokus på att lugna nervsystemet och underlätta återhämtning.</p>
+            <span class="card-action-arrow">Läs mer &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Barn & Behandling -->
+        <a href="behandlingar/barn.html" class="treatment-card-link fade-in">
+          <div class="treatment-card-content">
+            <h3>Barn &amp; Behandling</h3>
+            <p>Varsam behandling anpassad för barns känsliga system i enlighet med gällande lagstiftning.</p>
+            <span class="card-action-arrow">Läs mer &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Biodynamisk info -->
+        <a href="biodynamisk-kraniosakralosteopati.html" class="treatment-card-link fade-in">
+          <div class="treatment-card-content">
+            <h3>Biodynamisk Metod</h3>
+            <p>Vår djupaste behandlingsform som stödjer kroppens naturliga fysiologiska rörelser och rytmer.</p>
+            <span class="card-action-arrow">Läs mer &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. COMPANY HEALTH & WELLNESS -->
+  <section class="company-wellness-section section-padding alt-bg">
     <div class="container">
       <div class="grid-2-col align-center">
-        <div class="treatment-image-wrapper fade-in">
-          <img src="assets/treatment.jpg" alt="Osteopatisk behandling på Tranberg Institut" class="treatment-img">
-          <div class="image-accent-border"></div>
-        </div>
-        <div class="treatment-text fade-in">
-          <span class="section-tagline">Vad vi erbjuder</span>
-          <h2>Professionell osteopati & kraniosakral terapi</h2>
-          <p>Osteopati är en etablerad form av manuell medicin som fokuserar på sambandet mellan kroppens struktur och dess funktion. Genom skonsamma, målinriktade tekniker arbetar vi för att återställa balans i muskler, leder, nervsystem och cirkulation.</p>
-          
-          <div class="treatment-list">
-            <div class="treatment-item">
-              <h4>Osteopatiska behandlingar</h4>
-              <p>Målinriktad diagnostik och behandling av ryggskott, nackspärr, ledvärk, spänningshuvudvärk och stressrelaterade besvär.</p>
-            </div>
-            <div class="treatment-item">
-              <h4>Biodynamisk kraniosakralosteopati</h4>
-              <p>En mycket mjuk, inkännande behandlingsform med fokus på kroppens djupaste reglerande rytmer. Särskilt lämplig vid utmattning och trauma.</p>
-            </div>
+        <div class="wellness-text fade-in">
+          <span class="section-tagline">För Organisationer</span>
+          <h2>Företagshälsa &amp; Föreläsningar</h2>
+          <p>Vi hjälper företag och organisationer att skapa långsiktig hälsa och minska stressrelaterad sjukfrånvaro. Genom skräddarsydda föreläsningar, ergonomisk rådgivning och förebyggande behandlingar på plats stödjer vi era medarbetares välmående.</p>
+          <div class="button-spacer">
+            <a href="foretagshalsa.html" class="btn btn-secondary">Läs om företagshälsa</a>
           </div>
-          
-          <a href="#bokning" class="btn btn-primary">Se lediga tider</a>
+        </div>
+        <div class="wellness-image-wrapper fade-in">
+          <img src="assets/leaves.jpg" alt="Naturliga gröna löv och wellness" class="wellness-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Booking Portal -->
-  <section id="bokning" class="booking-section section-padding">
+  <!-- 6. EDUCATION (Academy) -->
+  <section class="education-teaser-section section-padding">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div class="education-image-wrapper fade-in">
+          <img src="assets/zen_water.jpg" alt="Lugnande zen-vatten och utbildning" class="education-img">
+        </div>
+        <div class="education-text fade-in">
+          <span class="section-tagline">Yrkesutbildning</span>
+          <h2>Premiumutbildningar inom Kraniosakralterapi</h2>
+          <p>Vill du utbilda dig till certifierad terapeut eller vidareutbilda dig inom manuell medicin? Våra utbildningar håller en hög akademisk och praktisk nivå, ledda av Christer Tranberg med gästföreläsare. Vi ger dig redskapen att möta människans hälsa på djupet.</p>
+          <div class="button-spacer">
+            <a href="utbildningar.html" class="btn btn-primary">Se utbildningsprogrammet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ABOUT CHRISTER -->
+  <section class="about-christer-section section-padding alt-bg">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div class="christer-text fade-in">
+          <span class="section-tagline">Grundare &amp; Terapeut</span>
+          <h2>Christer Tranberg</h2>
+          <p class="christer-lead">"Hälsa handlar om att återfinna stillheten och låta kroppen fungera som det sammanhängande system den är skapad att vara."</p>
+          <p>Christer har över 30 års klinisk erfarenhet som osteopat och kraniosakralterapeut. Han har utbildat hundratals terapeuter i Sverige och internationellt. Hans människosyn präglas av en djup respekt för kroppens naturliga funktion och dess förmåga att med rätt stöd återgå till hälsa.</p>
+          <p class="signature-text">Christer Tranberg</p>
+          <div class="button-spacer">
+            <a href="om-christer.html" class="btn btn-secondary">Läs mer om Christer</a>
+          </div>
+        </div>
+        <div class="christer-image-wrapper fade-in">
+          <img src="assets/christer.jpg" alt="Christer Tranberg" class="christer-img">
+          <div class="image-accent-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PATIENT STORIES (Discreet Testimonial Quote) -->
+  <section class="patient-stories-section section-padding">
+    <div class="container text-center">
+      <span class="section-tagline">Patientberättelser</span>
+      <blockquote class="testimonial-blockquote fade-in">
+        "Efter år av migrän och spänningar i kroppen hittade jag äntligen rätt. Christers närvaro, stillhet och skickliga behandling gav mig inte bara lindring, utan ett helt nytt sätt att lyssna på min egen kropp."
+        <cite>– Klient, Göteborg</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 9. BOOKING PORTAL (AES-256 Encrypted Booking Flow) -->
+  <section id="bokning" class="booking-section section-padding alt-bg">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-tagline">Bokningsportal</span>
-        <h2>Hitta en ledig tid</h2>
-        <p class="section-lead">Bokningsbara tider är måndag till fredag, mellan 08:00 och 15:00. Välj en dag nedan för att se tillgänglighet.</p>
+        <h2>Boka din behandling online</h2>
+        <p class="section-lead">Hitta en ledig tid i kalendern nedan. Bokningsbara tider är måndag till fredag, mellan 08:00 och 15:00.</p>
       </div>
 
       <div class="booking-container card glassmorphism">
@@ -163,7 +272,9 @@
             </select>
           </div>
         </div>
+        
         <hr class="form-divider">
+        
         <div class="booking-grid disabled" id="booking-grid-area">
           <!-- Calendar / Date picker area -->
           <div class="booking-datepicker">
@@ -281,11 +392,11 @@
     </div>
   </section>
 
-  <!-- Footer injected by components.js -->
+  <!-- 10. FOOTER & CONTACT (Injected by components.js) -->
   <footer id="kontakt"></footer>
 
   <!-- Scripts -->
-  <script src="components.js?v=7" defer></script>
-  <script src="app.js?v=7" defer></script>
+  <script src="components.js?v=8" defer></script>
+  <script src="app.js?v=8" defer></script>
 </body>
 </html>
