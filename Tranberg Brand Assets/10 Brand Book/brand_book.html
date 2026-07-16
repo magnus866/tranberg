@@ -60,66 +60,90 @@
       }
     }
 
-    header {
+    /* Cover Page styling */
+    .cover-page {
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 1.5px solid var(--color-gold);
+      padding-bottom: 50px;
       margin-bottom: 60px;
-      border-bottom: 1px solid rgba(178, 140, 90, 0.3);
-      padding-bottom: 30px;
     }
 
-    .logo-container {
+    .cover-header {
       display: flex;
       align-items: center;
-      margin-bottom: 40px;
     }
 
     .logo-symbol {
-      width: 64px;
-      height: 64px;
-      margin-right: 20px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
+      width: 80px;
+      height: 80px;
+      margin-right: 25px;
     }
 
     .logo-text h1 {
       font-family: var(--font-serif);
-      font-size: 26px;
-      letter-spacing: 6px;
+      font-size: 32px;
+      letter-spacing: 8px;
       font-weight: 500;
     }
 
     .logo-text span {
-      font-size: 9px;
-      letter-spacing: 3px;
+      font-size: 11px;
+      letter-spacing: 4px;
       color: var(--color-granite);
       text-transform: uppercase;
-      font-weight: 400;
+    }
+
+    .cover-body {
+      margin: 60px 0;
     }
 
     .book-title {
       font-family: var(--font-serif);
-      font-size: 42px;
+      font-size: 56px;
       font-weight: 400;
-      margin-bottom: 10px;
+      color: var(--color-forest);
+      margin-bottom: 15px;
+      line-height: 1.1;
     }
 
     .book-subtitle {
-      font-size: 13px;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       color: var(--color-gold);
       font-weight: 600;
     }
 
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--color-granite);
+      border-top: 1px solid rgba(178, 140, 90, 0.3);
+      padding-top: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Section hierarchy */
     h2 {
       font-family: var(--font-serif);
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 500;
-      margin: 40px 0 20px 0;
+      margin: 50px 0 25px 0;
       padding-bottom: 8px;
-      border-bottom: 1.5px solid var(--color-limestone);
+      border-bottom: 2px solid var(--color-limestone);
+    }
+
+    h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      margin: 30px 0 15px 0;
+      color: var(--color-gold);
     }
 
     p {
@@ -134,12 +158,52 @@
       font-weight: 300;
       line-height: 1.7;
       color: var(--color-granite);
+      margin-bottom: 40px;
+    }
+
+    /* Table of contents */
+    .toc-box {
+      background: var(--color-limestone);
+      padding: 40px;
+      border-radius: 4px;
+      margin-bottom: 60px;
+    }
+
+    .toc-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 13px;
+      border-bottom: 1px dotted rgba(38, 51, 43, 0.15);
+      padding-bottom: 4px;
+    }
+
+    .toc-link {
+      text-decoration: none;
+      color: var(--color-forest);
+      font-weight: 500;
+    }
+
+    .toc-page {
+      font-weight: 600;
+      color: var(--color-gold);
     }
 
     /* Color Grid */
     .color-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
       margin: 30px 0;
     }
@@ -147,23 +211,22 @@
     .color-card {
       background: #ffffff;
       border-radius: 4px;
-      padding: 10px;
+      padding: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.02);
       border: 1px solid var(--color-limestone);
-      text-align: left;
     }
 
     .color-block {
-      height: 120px;
+      height: 130px;
       border-radius: 3px;
       margin-bottom: 12px;
     }
 
     .color-name {
       font-family: var(--font-serif);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .color-meta {
@@ -187,14 +250,17 @@
     }
 
     .typo-family {
-      font-size: 28px;
+      font-size: 32px;
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .typo-desc {
       font-size: 12px;
       color: var(--color-granite);
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .typo-alphabet {
@@ -203,7 +269,7 @@
       line-height: 2;
     }
 
-    /* Button and UI components */
+    /* Print/Save Button */
     .print-button {
       position: absolute;
       top: 30px;
@@ -212,7 +278,7 @@
       color: #ffffff;
       border: none;
       padding: 10px 20px;
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 600;
@@ -231,10 +297,11 @@
 <body>
 
   <div class="book-container">
-    <button class="print-button no-print" onclick="window.print()">Skriv ut till PDF</button>
+    <button class="print-button no-print" onclick="window.print()">Skriv ut som PDF</button>
 
-    <header>
-      <div class="logo-container">
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+      <div class="cover-header">
         <!-- Inline symbol -->
         <svg class="logo-symbol" viewBox="81 125 70 70">
           <g fill="var(--color-forest)">
@@ -258,20 +325,56 @@
           <span>INSTITUT AB</span>
         </div>
       </div>
-      <h1 class="book-title">Brand Book 1.0</h1>
-      <p class="book-subtitle">Visuell Identitetsguide — Tranberg Institut AB</p>
-    </header>
+      
+      <div class="cover-body">
+        <h1 class="book-title">Brand Book</h1>
+        <p class="book-subtitle">Visuell Identitetsguide — Version 1.0</p>
+      </div>
 
-    <p class="lead">Detta dokument styr hur Tranberg Institut AB kommunicerar visuellt. Målet är att inge förtroende, visa på akademiskt djup samt spegla institutets koppling till den naturliga funktionen och den skandinaviska naturen.</p>
+      <div class="cover-footer">
+        <div>Version: 1.0</div>
+        <div>Revision: Rev 1.0.4</div>
+        <div>Datum: Juli 2026</div>
+        <div>Status: Slutlig Release</div>
+      </div>
+    </div>
 
-    <h2>1. Kärnvärden</h2>
-    <p>Tranberg Institut vilar på 30 års yrkeserfarenhet och ett arv av kunskap. Vår visuella närvaro ska uttrycka:</p>
-    <p><strong>Helhet</strong>, <strong>Kunskap</strong>, <strong>Närvaro</strong>, <strong>Symbios</strong> och <strong>Utveckling</strong>. Vi undviker överdesignad eller typisk alternativmedicinsk estetik och strävar efter en skandinavisk, lugn och akademisk ton.</p>
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-box no-print">
+      <h3 class="toc-title">Innehållsförteckning</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#section-vision" class="toc-link">1. Vision &amp; Kärnvärden</a> <span class="toc-page">Sida 2</span></li>
+        <li class="toc-item"><a href="#section-symbol" class="toc-link">2. Officiell Symbol &amp; Betydelse</a> <span class="toc-page">Sida 3</span></li>
+        <li class="toc-item"><a href="#section-colors" class="toc-link">3. Varumärkets Färgpalett</a> <span class="toc-page">Sida 4</span></li>
+        <li class="toc-item"><a href="#section-typo" class="toc-link">4. Typografiska Riktlinjer</a> <span class="toc-page">Sida 5</span></li>
+        <li class="toc-item"><a href="#section-system" class="toc-link">5. Logotypsystem &amp; Användning</a> <span class="toc-page">Sida 6</span></li>
+        <li class="toc-item"><a href="#section-imagery" class="toc-link">6. Bildspråk &amp; Tillämpningar</a> <span class="toc-page">Sida 7</span></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1: VISION -->
+    <h2 id="section-vision">1. Vision &amp; Kärnvärden</h2>
+    <p class="lead">Tranberg Institut AB ska etableras som Sveriges mest respekterade kunskapscentrum inom biodynamisk kraniosakralosteopati.</p>
+    <p>Detta är inte en traditionell terapeuthemsida eller klinik, utan ett institut där behandling, utbildning och kunskap möts och berikar varandra.</p>
+    
+    <h3>Våra Kärnvärden</h3>
+    <p><strong>Helhet:</strong> Vi betraktar människan som en odelbar helhet och stimulerar kroppens inneboende balans.</p>
+    <p><strong>Kunskap:</strong> Med över 30 års klinisk erfarenhet kombinerar vi beprövad tradition med ett modernt, akademiskt förhållningssätt.</p>
+    <p><strong>Närvaro:</strong> Varsamhet, stillhet och lyssnande beröring utgör grunden för varje möte.</p>
 
     <div class="page-break"></div>
 
-    <h2>2. Färgpalett</h2>
-    <p>Färgerna är hämtade direkt från den nordiska naturen:</p>
+    <!-- SECTION 2: SYMBOL -->
+    <h2 id="section-symbol">2. Officiell Symbol &amp; Betydelse</h2>
+    <p>Symbolen utgörs av två stiliserade delfiner i en yin-yang-formation inom en öppen cirkel. Den symboliserar rörelse, symbios med naturen och kroppens kontinuerliga strävan efter reglering och hälsa.</p>
+    
+    <h3>Viktiga Designprinciper</h3>
+    <p><strong>Inga förändringar:</strong> Delfinsymbolens kurvor är noggrant optiskt balanserade och får inte ritas om eller modifieras.</p>
+    <p><strong>Förbud mot nyandlig estetik:</strong> För att upprätthålla institutets trovärdighet och akademiska ton är det strängt förbjudet att kombinera symbolen med chakran, kristaller, kosmiska ljuseffekter eller mystiska motiv. Den ska alltid framstå ren och förtroendeingivande.</p>
+
+    <!-- SECTION 3: COLORS -->
+    <h2 id="section-colors">3. Varumärkets Färgpalett</h2>
+    <p>Våra färger är hämtade från det skandinaviska landskapet — skogar, sandstränder och klippblock.</p>
     
     <div class="color-grid">
       <div class="color-card">
@@ -279,52 +382,60 @@
         <div class="color-name">Forest Green</div>
         <div class="color-meta">HEX: <strong>#26332B</strong></div>
         <div class="color-meta">RGB: <strong>38, 51, 43</strong></div>
-        <div class="color-meta">CMYK: <strong>75,45,65,50</strong></div>
+        <div class="color-meta">CMYK: <strong>75, 45, 65, 50</strong></div>
       </div>
       <div class="color-card">
         <div class="color-block" style="background-color: var(--color-gold);"></div>
         <div class="color-name">Warm Gold</div>
         <div class="color-meta">HEX: <strong>#B28C5A</strong></div>
-        <div class="color-meta">RGB: <strong>178,140,90</strong></div>
-        <div class="color-meta">CMYK: <strong>30,45,75,10</strong></div>
+        <div class="color-meta">RGB: <strong>178, 140, 90</strong></div>
+        <div class="color-meta">CMYK: <strong>30, 45, 75, 10</strong></div>
       </div>
       <div class="color-card">
         <div class="color-block" style="background-color: var(--color-limestone); border: 1.5px solid var(--color-gold);"></div>
         <div class="color-name">Limestone</div>
         <div class="color-meta">HEX: <strong>#F5F3EE</strong></div>
-        <div class="color-meta">RGB: <strong>245,243,238</strong></div>
-        <div class="color-meta">CMYK: <strong>5,5,8,0</strong></div>
+        <div class="color-meta">RGB: <strong>245, 243, 238</strong></div>
+        <div class="color-meta">CMYK: <strong>5, 5, 8, 0</strong></div>
       </div>
       <div class="color-card">
         <div class="color-block" style="background-color: var(--color-granite);"></div>
         <div class="color-name">Granite Moss</div>
         <div class="color-meta">HEX: <strong>#6E7168</strong></div>
-        <div class="color-meta">RGB: <strong>110,113,104</strong></div>
-        <div class="color-meta">CMYK: <strong>55,45,50,15</strong></div>
+        <div class="color-meta">RGB: <strong>110, 113, 104</strong></div>
+        <div class="color-meta">CMYK: <strong>55, 45, 50, 15</strong></div>
       </div>
     </div>
 
-    <h2>3. Typografi</h2>
+    <div class="page-break"></div>
+
+    <!-- SECTION 4: TYPOGRAPHY -->
+    <h2 id="section-typo">4. Typografiska Riktlinjer</h2>
     <p>Vi kombinerar det klassiska seriftypsnittet <strong>Playfair Display</strong> med den moderna sans-serifen <strong>Inter</strong> för optimal balans och läsbarhet.</p>
     
     <div class="typo-spec">
       <div class="typo-family" style="font-family: var(--font-serif);">Playfair Display</div>
-      <div class="typo-desc">Rubriker (H1, H2, H3), sidtitlar och officiella dokumentrubriker.</div>
+      <div class="typo-desc">Rubriker (H1, H2, H3) och officiella rubriker.</div>
       <div class="typo-alphabet" style="font-family: var(--font-serif);">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890</div>
     </div>
 
     <div class="typo-spec">
       <div class="typo-family" style="font-family: var(--font-primary); font-weight: 400;">Inter</div>
-      <div class="typo-desc">Brödtext, digitala texter, menyer och allmänt innehåll på hemsidan.</div>
+      <div class="typo-desc">Brödtext, digitala texter, menyer och allmänt innehåll.</div>
       <div class="typo-alphabet" style="font-family: var(--font-primary); font-weight: 300;">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Åå Ää Öö 1234567890</div>
     </div>
 
-    <div class="page-break"></div>
+    <!-- SECTION 5: SYSTEM -->
+    <h2 id="section-system">5. Logotypsystem &amp; Användning</h2>
+    <p>Logotypen är strukturerad för maximal flexibilitet och levereras i fyra olika layouter (Primär, Horisontell, Vertikal och Endast symbol) samt fem officiella färgvarianter:</p>
+    <p><strong>Frizon:</strong> Logotypen ska omges av en frizon som är minst halva symbolens höjd (X/2) åt alla håll.</p>
+    <p><strong>Minsta storlek:</strong> Digitalt ska symbolen aldrig renderas under 24x24 px. I tryck ska symbolen aldrig vara under 10 mm i diameter.</p>
 
-    <h2>4. Logotypregler &amp; Frizon</h2>
-    <p>Logotypen ska alltid omges av en frizon som är minst halva symbolens höjd (X/2) för att förhindra att den störs av texter eller andra grafiska element.</p>
-    <p>Logotypen får inte färgas i andra färger än de som finns definierade i detta system. För mörka bakgrunder ska den ljusa varianten (med vit toppdelfin och guld ring) alltid användas för optimal kontrast.</p>
-
+    <!-- SECTION 6: IMAGERY -->
+    <h2 id="section-imagery">6. Bildspråk &amp; Tillämpningar</h2>
+    <p>Vårt bildspråk fokuserar på närvaro, stillhet och skickligt hantverk.</p>
+    <p><strong>Tillåtet:</strong> Naturligt ljus, dämpade färgtoner, verkliga behandlingssituationer, autentiska porträtt och rofylld skandinavisk natur.</p>
+    <p><strong>Förbjudet:</strong> Överredigerade eller artificiella bilder, "svävande händer med ljussken", manipulerade helgonliknande auror, eller typiska massage-/spa-bilder.</p>
   </div>
 
 </body>

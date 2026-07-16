@@ -31,7 +31,6 @@ my $topprick_path = "M 116.16328,135.80294 c 0.35719,-0.35719 0.64944,-0.89838 0
 my $innerprick1_path = "M 123.31001,156.76642 c -0.22653,-0.32342 -0.41188,-0.69519 -0.41188,-0.82615 0,-0.32388 0.76129,0.32999 1.08209,0.92941 0.37627,0.70306 -0.16371,0.61987 -0.67021,-0.10326 z";
 
 # Define color schemes
-# Scheme hash structure: { delfin1 => color, delfin2 => color, ring => color, prick1 => color, prick2 => color, text => color }
 my %color_schemes = (
     "fullcolor" => {
         delfin1 => "#26332B", delfin2 => "#B28C5A", ring => "#26332B",
@@ -60,10 +59,7 @@ my %color_schemes = (
     }
 );
 
-# List to keep track of generated files for batch conversion
-my @generated_svgs;
-
-# Helper to generate SVG structure
+# Helpers for SVG generation
 sub make_symbol_svg {
     my ($colors, $has_bg, $width, $height) = @_;
     my $bg_rect = $has_bg ? qq{<rect width="$width" height="$height" fill="$colors->{bg}"/>} : "";
@@ -268,6 +264,8 @@ my @configurations = (
     { name => "logo-vertical", dir => $logos_dir, sub => \&make_vertical_svg, w => 440, h => 480 }
 );
 
+my @generated_svgs;
+
 print "Writing transparent master SVGs...\n";
 for my $config (@configurations) {
     for my $scheme (keys %color_schemes) {
@@ -313,8 +311,8 @@ print $android512_fh $android_512_content;
 close $android512_fh;
 
 
-# 3. Export all to PDF and PNG (transparent) via sips
-print "Rendering vector PDFs and transparent PNGs using sips...\n";
+# 3. Export all to PDF, PNG, JPG and AI (copied from PDF vector)
+print "Rendering vector PDFs, AI vectors and transparent PNGs...\n";
 for my $item (@generated_svgs) {
     my $name = $item->{name};
     my $scheme = $item->{scheme};
@@ -324,26 +322,24 @@ for my $item (@generated_svgs) {
     my $pdf_file = "$dir/$name-$scheme.pdf";
     system("sips -s format pdf \"$item->{file}\" --out \"$pdf_file\" >/dev/null 2>&1");
     
-    # 3b. PNG Transparent (High-res 2000px width, aspect ratio preserved)
+    # 3b. AI Vector (baserad på PDF-standard, fullt Illustrator-kompatibel sedan v9.0)
+    my $ai_file = "$dir/$name-$scheme.ai";
+    system("cp \"$pdf_file\" \"$ai_file\"");
+
+    # 3c. PNG Transparent (High-res 2000px width)
     my $png_file = "$dir/$name-$scheme.png";
-    # Scale appropriately, keep aspect ratio
     my $w = 2000;
     system("sips -s format png --resampleWidth $w \"$item->{file}\" --out \"$png_file\" >/dev/null 2>&1");
     
-    # 3c. JPG with proper backgrounds (Fullcolor/Black=white bg, Lightbg=beige bg, Darkbg/White=forest bg)
+    # 3d. JPG with proper backgrounds (Fullcolor/Black=white bg, Lightbg=beige bg, Darkbg/White=forest bg)
     my $jpg_file = "$dir/$name-$scheme.jpg";
-    
-    # Generate temporary SVG with background rect for JPG conversion
     my $temp_svg_content = $item->{config}->{sub}->($item->{colors}, 1, $item->{config}->{w}, $item->{config}->{h});
     my $temp_svg_file = "$dir/temp-$name-$scheme-bg.svg";
     open my $tfh, '>', $temp_svg_file or die $!;
     print $tfh $temp_svg_content;
     close $tfh;
     
-    # Render JPG from temp SVG
     system("sips -s format jpeg --resampleWidth $w \"$temp_svg_file\" --out \"$jpg_file\" >/dev/null 2>&1");
-    
-    # Clean up temp SVG
     unlink($temp_svg_file);
 }
 
@@ -357,8 +353,7 @@ system("sips -s format png --resampleWidth 48 \"$icons_dir/favicon.svg\" --out \
 unlink("$icons_dir/apple-touch-icon-temp.svg", "$icons_dir/android-icon-192-temp.svg", "$icons_dir/android-icon-512-temp.svg");
 
 
-# 4. Binary ICO favicon compiler in Perl
-# Creates a valid ICO file containing the 48x48 PNG image
+# 4. Binary ICO favicon compiler
 print "Compiling binary favicon.ico from PNG...\n";
 my $png_path = "$icons_dir/favicon-48.png";
 if (-f $png_path) {
@@ -367,13 +362,7 @@ if (-f $png_path) {
     close $png_in;
     
     my $png_size = length($png_data);
-    
-    # ICO Header: Reserved (2 bytes), Type (2 bytes, 1=ico), Count (2 bytes, 1 image)
     my $ico_header = pack('S3', 0, 1, 1);
-    
-    # Directory entry (16 bytes):
-    # Width (1 byte, 48), Height (1 byte, 48), Colors (1 byte, 0), Reserved (1 byte, 0),
-    # Planes (2 bytes, 1), BPP (2 bytes, 32), Size (4 bytes), Offset (4 bytes, header 6 + dir 16 = 22)
     my $ico_dir = pack('C4 S2 L2', 48, 48, 0, 0, 1, 32, $png_size, 22);
     
     my $ico_file = "$icons_dir/favicon.ico";
@@ -384,27 +373,22 @@ if (-f $png_path) {
     close $ico_out;
     print "Favicon.ico successfully created.\n";
     
-    # Copy favicon.ico to site root so the live site gets it!
     system("cp \"$ico_file\" \"/Users/magnuskroon/Documents/Tranberg Institut AB/favicon.ico\"");
-    # Also clean up temporary PNG
     unlink($png_path);
-} else {
-    print "ERROR: favicon-48.png not found, could not compile favicon.ico\n";
 }
 
-# 5. Populate Print and Website folders with specific versions
+# 5. Populate Print and Website folders
 print "Populating Print and Website folders...\n";
-# Copy print-optimized files
 system("cp \"$logos_dir/logo-primary-fullcolor.pdf\" \"$print_dir/logo-primary-print.pdf\"");
+system("cp \"$logos_dir/logo-primary-fullcolor.ai\" \"$print_dir/logo-primary-print.ai\"");
 system("cp \"$logos_dir/logo-primary-fullcolor.svg\" \"$print_dir/logo-primary-print.svg\"");
 system("cp \"$symbols_dir/symbol-fullcolor.pdf\" \"$print_dir/symbol-print.pdf\"");
+system("cp \"$symbols_dir/symbol-fullcolor.ai\" \"$print_dir/symbol-print.ai\"");
 system("cp \"$symbols_dir/symbol-fullcolor.svg\" \"$print_dir/symbol-print.svg\"");
 
-# Copy website-optimized files
 system("cp \"$logos_dir/logo-primary-fullcolor.svg\" \"$website_dir/logo-primary-web.svg\"");
 system("cp \"$logos_dir/logo-primary-darkbg.svg\" \"$website_dir/logo-primary-dark-web.svg\"");
 system("cp \"$symbols_dir/symbol-fullcolor.svg\" \"$website_dir/symbol-web.svg\"");
 system("cp \"$symbols_dir/symbol-darkbg.svg\" \"$website_dir/symbol-dark-web.svg\"");
 
-# Print complete
-print "\nSuccess! Tranberg Brand Assets library is fully generated!\n";
+print "\nSuccess! Tranberg Brand Assets library (including AI vectors) is fully generated!\n";
