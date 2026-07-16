@@ -252,21 +252,38 @@ document.addEventListener('DOMContentLoaded', () => {
    * 6. Shared Intersection Observer (Fade-In Reveal Animations)
    * ------------------------------------------------------------- */
   const fadeElements = document.querySelectorAll('.fade-in');
-  const fadeObserverOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const fadeObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  
+  if ('IntersectionObserver' in window) {
+    const fadeObserverOptions = {
+      threshold: 0.05, // Lower threshold to ensure triggering on small screens
+      rootMargin: '0px 0px -30px 0px'
+    };
+  
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, fadeObserverOptions);
+  
+    fadeElements.forEach(element => {
+      fadeObserver.observe(element);
     });
-  }, fadeObserverOptions);
+  } else {
+    // Immediate fallback for browsers without IntersectionObserver support
+    fadeElements.forEach(element => {
+      element.classList.add('visible');
+    });
+  }
 
-  fadeElements.forEach(element => {
-    fadeObserver.observe(element);
-  });
+  // Safety fallback: ensure ALL fade-in elements are visible after a short delay
+  // in case of layout engine lag, local file loading quirks, or viewport glitches.
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(element => {
+      element.classList.add('visible');
+    });
+  }, 600);
 });
+

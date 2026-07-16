@@ -7,4 +7,5 @@
 - [x] Verifiera alla mappar och filer
 - [x] Designa och implementera den nya startsidan (`index.html`) enligt mobil-först och Brand Book 1.0
 - [x] Rensa bort alla legacy-referenser och vinröda färger i `style.css`
-- [ ] Göra en slutlig git-commit och push till GitHub
+- [x] Åtgärda brutna 404-sökvägar i dropdown-menyn och sidopanelerna för behandlingssidorna
+- [x] Göra en slutlig git-commit och push till GitHub
