@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           <h4>Hur vi hanterar dina bokningsuppgifter:</h4>
           <ul>
-            <li><strong>Säkerhet:</strong> Din bokningsinformation hanteras säkert enligt GDPR.</li>
+            <li><strong>Säkerhet:</strong> Din bokningsinformation hanteras enligt GDPR.</li>
             <li><strong>Anonymitet:</strong> I bokningssystemet visas bokade tider endast som "Upptagen". Ingen personlig information exponeras någonsin offentligt.</li>
             <li><strong>Syfte:</strong> Vi samlar endast in namn, e-post, telefonnummer samt eventuell frivillig hälsoinformation i syfte att administrera din bokade tid samt förbereda din osteopatiska behandling.</li>
             <li><strong>Rensning:</strong> Dina personuppgifter sparas endast så länge det är nödvändigt för behandlingen och enligt lagstadgade krav för journalföring. Du har rätt att begära registerutdrag eller rättelse.</li>
