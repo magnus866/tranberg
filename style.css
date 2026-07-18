@@ -307,6 +307,7 @@ a {
   padding: 0.5rem 0;
   display: inline-flex;
   align-items: center;
+  min-height: 44px; /* Ensure adequate tap target height */
 }
 
 .nav-menu a::after {

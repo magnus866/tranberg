@@ -651,13 +651,7 @@
               <button type="submit" class="btn btn-primary btn-large" id="submit-booking-btn">Genomför bokning</button>
             </div>
           </form>
-          <div id="booking-status-overlay" class="status-overlay hidden">
-            <div class="status-box">
-              <div class="spinner"></div>
-              <h4 id="status-title">Krypterar bokningsdata...</h4>
-              <p id="status-desc">Etablerar säker anslutning till bokningsservern.</p>
-            </div>
-          </div>
+          
         </div>
         <div id="booking-success-message" class="booking-success hidden">
           <div class="success-icon">
@@ -666,15 +660,12 @@
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
           </div>
-          <h3>Tack för din bokning!</h3>
-          <p>Din bokning har registrerats och bekräftats.</p>
+        <h3>Tack för din bokning.</h3>
+            <p>En bekräftelse har skickats till din e‑post. Vi ser fram emot att träffa dig.</p>
           <div class="success-details">
             <p><strong>Behandling:</strong> <span id="success-type">-</span></p>
             <p><strong>Tid:</strong> <span id="success-time">-</span></p>
             <p><strong>Plats:</strong> Tranberg Institut AB, Göteborg</p>
-          </div>
-          <div class="encryption-notice">
-            Bokningsdata krypterades med AES-256 och skickades säkert till magnus@houseofkroon.se.
           </div>
           <button id="book-another-btn" class="btn btn-secondary">Gör en ny bokning</button>
         </div>

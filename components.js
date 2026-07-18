@@ -21,43 +21,41 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="logo-subtitle">INSTITUT AB</span>
           </div>
         </a>
-        
-        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Meny">
           <span class="sr-only">Meny</span>
           <span class="hamburger"></span>
         </button>
- 
-        <nav id="primary-navigation" class="nav-menu">
+
+        <nav id="primary-navigation" class="nav-menu" role="menubar">
           <ul>
-            <li><a href="${rootPath}index.html">Startsida</a></li>
-            <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati?</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Om oss <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
-                <li><a href="${rootPath}om-christer.html">Om Christer</a></li>
-                <li><a href="${rootPath}jorgen-tranberg.html">Jörgen Tranbergs arv</a></li>
+            <li><a href="${rootPath}index.html" role="menuitem">Startsida</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" role="menuitem">Om Institutet <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="${rootPath}om-institutet.html" role="menuitem">Om institutet</a></li>
+                <li><a href="${rootPath}om-christer.html" role="menuitem">Om Christer</a></li>
+                <li><a href="${rootPath}jorgen-tranberg.html" role="menuitem">Jörgen Tranbergs arv</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a href="${rootPath}biodynamisk-kraniosakralosteopati.html" class="dropdown-toggle">Behandlingar <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Metod & Info</a></li>
-                <li><a href="${rootPath}behandlingar/rygg-nackbesvar.html">Rygg & Nackbesvär</a></li>
-                <li><a href="${rootPath}behandlingar/huvudvark-migran.html">Huvudvärk & Migrän</a></li>
-                <li><a href="${rootPath}behandlingar/stress-nervsystem.html">Stress & Utmattning</a></li>
-                <li><a href="${rootPath}behandlingar/barn.html">Barn & Behandling</a></li>
-                <li><a href="${rootPath}behandling-barn.html">Barn & Osteopati (lag & debatt)</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" role="menuitem">Behandlingar <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html" role="menuitem">Metod & Info</a></li>
+                <li><a href="${rootPath}behandlingar/rygg-nackbesvar.html" role="menuitem">Rygg & Nackbesvär</a></li>
+                <li><a href="${rootPath}behandlingar/huvudvark-migran.html" role="menuitem">Huvudvärk & Migrän</a></li>
+                <li><a href="${rootPath}behandlingar/stress-nervsystem.html" role="menuitem">Stress & Utmattning</a></li>
+                <li><a href="${rootPath}behandling-av-barn.html" role="menuitem">Barn &amp; Osteopati</a></li>
+                <!-- Placeholder child treatment page removed -->
               </ul>
             </li>
-            <li><a href="${rootPath}utbildningar.html">Utbildningar</a></li>
-            <li><a href="${rootPath}foretagshalsa.html">Företagshälsa</a></li>
-            <li><a href="${rootPath}kunskapsbank.html">Kunskapsbank</a></li>
-            <li><a href="${rootPath}forelasningar.html">Föreläsningar</a></li>
-            <li><a href="${rootPath}boka.html" class="nav-btn-cta">Boka</a></li>
+            <li><a href="${rootPath}utbildningar.html" role="menuitem">Utbildningar</a></li>
+            <li><a href="${rootPath}kunskapsbank.html" role="menuitem">Kunskapsbank</a></li>
+            <li><a href="${rootPath}forelasningar.html" role="menuitem">Föreläsningar</a></li>
+            <li><a href="${rootPath}foretagshalsa.html" role="menuitem">Företagshälsa</a></li>
+            <li><a href="${rootPath}boka.html" class="nav-btn-cta" role="menuitem">Boka</a></li>
           </ul>
         </nav>
       </div>
+   </div>
     `;
   }
 
@@ -142,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           <h4>Hur vi hanterar dina bokningsuppgifter:</h4>
           <ul>
-            <li><strong>Säkerhet:</strong> När du gör en bokning skickas dina uppgifter krypterade direkt till vår administratör (magnus@houseofkroon.se). Ingen obehörig kan läsa din information.</li>
+            <li><strong>Säkerhet:</strong> Din bokningsinformation hanteras säkert enligt GDPR.</li>
             <li><strong>Anonymitet:</strong> I bokningssystemet visas bokade tider endast som "Upptagen". Ingen personlig information exponeras någonsin offentligt.</li>
             <li><strong>Syfte:</strong> Vi samlar endast in namn, e-post, telefonnummer samt eventuell frivillig hälsoinformation i syfte att administrera din bokade tid samt förbereda din osteopatiska behandling.</li>
             <li><strong>Rensning:</strong> Dina personuppgifter sparas endast så länge det är nödvändigt för behandlingen och enligt lagstadgade krav för journalföring. Du har rätt att begära registerutdrag eller rättelse.</li>

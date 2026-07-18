@@ -126,55 +126,33 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="section-tagline">Klinisk Verksamhet</span>
-        <h2>Behandlingsområden</h2>
-        <p class="section-lead">Vi erbjuder individanpassad manuell behandling för en rad vanliga hälsobesvär.</p>
+        <h2>Behandlingar</h2>
+        <p class="section-lead">Välj den behandling som passar dig bäst.</p>
       </div>
-
-      <div class="treatments-minimal-grid">
-        <!-- Rygg & Nacke -->
-        <a href="behandlingar/rygg-nackbesvar.html" class="treatment-card-link fade-in">
-          <div class="treatment-card-content">
-            <h3>Rygg &amp; Nackbesvär</h3>
-            <p>Effektiv osteopatisk behandling vid ryggskott, nackspärr, ischias, stelhet och muskelvärk.</p>
-            <span class="card-action-arrow">Läs mer &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Huvudvärk & Migrän -->
-        <a href="behandlingar/huvudvark-migran.html" class="treatment-card-link fade-in">
-          <div class="treatment-card-content">
-            <h3>Huvudvärk &amp; Migrän</h3>
-            <p>Skonsam behandling som minskar spänningar, förbättrar cirkulationen och lindrar migrän.</p>
-            <span class="card-action-arrow">Läs mer &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Stress & Utmattning -->
-        <a href="behandlingar/stress-nervsystem.html" class="treatment-card-link fade-in">
-          <div class="treatment-card-content">
-            <h3>Stress &amp; Utmattning</h3>
-            <p>Mjuk kraniosakral behandling med fokus på att lugna nervsystemet och underlätta återhämtning.</p>
-            <span class="card-action-arrow">Läs mer &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Barn & Behandling -->
-        <a href="behandlingar/barn.html" class="treatment-card-link fade-in">
-          <div class="treatment-card-content">
-            <h3>Barn &amp; Behandling</h3>
-            <p>Varsam behandling anpassad för barns känsliga system i enlighet med gällande lagstiftning.</p>
-            <span class="card-action-arrow">Läs mer &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Biodynamisk info -->
-        <a href="biodynamisk-kraniosakralosteopati.html" class="treatment-card-link fade-in">
-          <div class="treatment-card-content">
-            <h3>Biodynamisk Metod</h3>
-            <p>Vår djupaste behandlingsform som stödjer kroppens naturliga fysiologiska rörelser och rytmer.</p>
-            <span class="card-action-arrow">Läs mer &rarr;</span>
-          </div>
-        </a>
+      <div class="treatments-premium-grid">
+        <div class="treatment-card premium-card fade-in">
+          <h3>Första besöket</h3>
+          <p class="treatment-price">60 minuter – 1 250 kr</p>
+          <p>Inledande konsultation med hälsohistorik, bedömning och individanpassad behandlingsplan.</p>
+          <a href="boka.html" class="btn btn-primary">Boka första besöket</a>
+        </div>
+        <div class="treatment-card premium-card fade-in">
+          <h3>Återbesök</h3>
+          <p class="treatment-price">45 minuter – 950 kr</p>
+          <p>Uppföljning enligt tidigare behandlingsplan för att stärka och bibehålla resultat.</p>
+          <a href="boka.html" class="btn btn-primary">Boka återbesök</a>
+        </div>
+        <div class="treatment-card premium-card fade-in">
+          <h3>Fördjupad behandling</h3>
+          <p class="treatment-price">90 minuter – 1 700 kr</p>
+          <p>Omfattande session för komplexa besvär eller behov av längre behandlingstid.</p>
+          <a href="boka.html" class="btn btn-primary">Boka fördjupad behandling</a>
+        </div>
+      </div>
+      <div class="trust-section fade-in">
+        <h3>Osäker på vilken behandling som passar dig?</h3>
+        <p>Kontakta oss för en personlig rådgivning eller boka ett första besök för en individuell bedömning.</p>
+        <a href="boka.html" class="btn btn-secondary">Boka ett första besök</a>
       </div>
     </div>
   </section>
@@ -239,17 +217,6 @@
     </div>
   </section>
 
-  <!-- 8. PATIENT STORIES (Discreet Testimonial Quote) -->
-  <section class="patient-stories-section section-padding">
-    <div class="container text-center">
-      <span class="section-tagline">Patientberättelser</span>
-      <blockquote class="testimonial-blockquote fade-in">
-        "Efter år av migrän och spänningar i kroppen hittade jag äntligen rätt. Christers närvaro, stillhet och skickliga behandling gav mig inte bara lindring, utan ett helt nytt sätt att lyssna på min egen kropp."
-        <cite>– Klient, Göteborg</cite>
-      </blockquote>
-    </div>
-  </section>
-
   <!-- 9. BOOKING PORTAL (AES-256 Encrypted Booking Flow) -->
   <section id="bokning" class="booking-section section-padding alt-bg">
     <div class="container">
@@ -267,8 +234,8 @@
             <select id="booking-type" name="type" form="appointment-form" required>
               <option value="" disabled selected>Välj behandling...</option>
               <option value="45">Behandling 45 minuter (950 kr)</option>
-              <option value="60">Behandling 60 minuter (1 200 kr)</option>
-              <option value="90">Behandling 90 minuter (1 800 kr)</option>
+              <option value="60">Behandling 60 minuter (1 250 kr)</option>
+              <option value="90">Behandling 90 minuter (1 700 kr)</option>
             </select>
           </div>
         </div>
@@ -353,15 +320,6 @@
               <button type="submit" class="btn btn-primary btn-large" id="submit-booking-btn">Genomför bokning</button>
             </div>
           </form>
-
-          <!-- Encryption & Sending Overlay/Status -->
-          <div id="booking-status-overlay" class="status-overlay hidden">
-            <div class="status-box">
-              <div class="spinner"></div>
-              <h4 id="status-title">Krypterar bokningsdata...</h4>
-              <p id="status-desc">Etablerar säker anslutning till bokningsservern.</p>
-            </div>
-          </div>
         </div>
 
         <!-- Success Message -->
@@ -378,13 +336,6 @@
             <p><strong>Behandling:</strong> <span id="success-type">-</span></p>
             <p><strong>Tid:</strong> <span id="success-time">-</span></p>
             <p><strong>Plats:</strong> Tranberg Institut, Göteborg</p>
-          </div>
-          <div class="encryption-notice">
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="vertical-align: middle; margin-right: 4px;">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            Bokningsdata krypterades med AES-256 och skickades säkert via API till <strong>magnus@houseofkroon.se</strong>.
           </div>
           <button id="book-another-btn" class="btn btn-secondary">Gör en ny bokning</button>
         </div>
