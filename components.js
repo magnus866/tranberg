@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li><a href="${rootPath}behandlingar/huvudvark-migran.html" role="menuitem">Huvudvärk & Migrän</a></li>
                 <li><a href="${rootPath}behandlingar/stress-nervsystem.html" role="menuitem">Stress & Utmattning</a></li>
                 <li><a href="${rootPath}behandling-av-barn.html" role="menuitem">Barn &amp; Osteopati</a></li>
-                <!-- Placeholder child treatment page removed -->
               </ul>
             </li>
             <li><a href="${rootPath}utbildningar.html" role="menuitem">Utbildningar</a></li>
@@ -102,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="${rootPath}vad-ar-osteopati.html">Vad är osteopati</a></li>
             <li><a href="${rootPath}om-institutet.html">Om institutet</a></li>
             <li><a href="${rootPath}biodynamisk-kraniosakralosteopati.html">Biodynamisk Osteopati</a></li>
-            <li><a href="${rootPath}behandling-barn.html">Barn &amp; Osteopati</a></li>
+            <li><a href="${rootPath}behandling-av-barn.html">Barn &amp; Osteopati</a></li>
             <li><a href="${rootPath}utbildningar.html">Våra utbildningar</a></li>
             <li><a href="${rootPath}kunskapsbank.html">Kunskapsbank</a></li>
             <li><a href="${rootPath}forelasningar.html">Föreläsningar</a></li>
@@ -139,12 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>På Tranberg Institut AB värnar vi om din integritet och datasekretess. Vi följer reglerna i dataskyddsförordningen (GDPR) noggrant.</p>
           
           <h4>Hur vi hanterar dina bokningsuppgifter:</h4>
-          <ul>
-            <li><strong>Säkerhet:</strong> Din bokningsinformation hanteras enligt GDPR.</li>
-            <li><strong>Anonymitet:</strong> I bokningssystemet visas bokade tider endast som "Upptagen". Ingen personlig information exponeras någonsin offentligt.</li>
-            <li><strong>Syfte:</strong> Vi samlar endast in namn, e-post, telefonnummer samt eventuell frivillig hälsoinformation i syfte att administrera din bokade tid samt förbereda din osteopatiska behandling.</li>
-            <li><strong>Rensning:</strong> Dina personuppgifter sparas endast så länge det är nödvändigt för behandlingen och enligt lagstadgade krav för journalföring. Du har rätt att begära registerutdrag eller rättelse.</li>
-          </ul>
+          <p>Vi hanterar dina bokningsuppgifter på ett säkert och konfidentiellt sätt i enlighet med GDPR.</p>
           
           <button id="close-gdpr-dialog-btn" class="btn btn-secondary">Stäng</button>
         </div>
