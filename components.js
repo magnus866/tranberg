@@ -112,10 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer-contact fade-in">
           <h4>Kontakt & Öppettider</h4>
           <p><strong>Adress:</strong> Exempelgatan 1, 123 45 Göteborg</p>
-          <p><strong>Telefon:</strong> 070-12 45 67</p>
-          <p><strong>E-post:</strong> <a href="mailto:info@tranberginstitut.se">info@tranberginstitut.se</a></p>
-          <p><strong>Administration:</strong> <a href="mailto:magnus@houseofkroon.se">magnus@houseofkroon.se</a></p>
-          <p><strong>Öppettider:</strong> Mån – Fre: 08:00 – 15:00</p>
+          <p><strong>Telefon:</strong> <a href="tel:0734416538">0734 416538</a></p>
+<p><strong>E-post:</strong> <a href="mailto:boka@tranberginstitut.se">boka@tranberginstitut.se</a></p>
         </div>
       </div>
       
