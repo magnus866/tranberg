@@ -254,6 +254,11 @@ a {
   gap: 0.8rem;
   flex-shrink: 0;
 }
+.logo-area::after {
+  content: none;
+  display: none;
+}
+
 
 .logo-svg {
   color: var(--color-accent);
