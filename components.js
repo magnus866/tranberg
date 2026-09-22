@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <ul class="dropdown-menu" role="menu">
                 <li><a href="${rootPath}om-institutet.html" role="menuitem">Om institutet</a></li>
                 <li><a href="${rootPath}om-christer.html" role="menuitem">Om Christer</a></li>
-                <li><a href="${rootPath}jorgen-tranberg.html" role="menuitem">Jörgen Tranbergs arv</a></li>
+
               </ul>
             </li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" role="menuitem">Behandlingar <svg class="chevron-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
