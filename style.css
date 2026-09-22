@@ -350,10 +350,16 @@ a {
 
 /* Media query for medium desktops/tablets to prevent nav menu items from overlapping or squishing the logo */
 @media (min-width: 1201px) and (max-width: 1440px) {
-  .header-container {
-    padding: 0.8rem 1.2rem;
-    gap: 0.8rem;
+  #main-header {
+    justify-content: flex-start;
   }
+  .header-container {
+    padding: 0.8rem 0.4rem;
+    gap: 0.8rem;
+    margin-left: 0;
+    margin-right: auto;
+}
+}
   .logo-svg {
     width: 36px;
     height: 36px;
