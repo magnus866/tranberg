@@ -28,14 +28,14 @@
         <h1 class="hero-title">Hälsa genom kroppens egen intelligens.</h1>
         <p class="hero-lead">Vi stödjer kroppens egen intelligens med varsam, närvarande behandling som främjar balans och återhämtning.</p>
         <div class="hero-actions">
-          <a href="#bokning" class="btn btn-primary" id="hero-cta-btn">Boka behandling</a>
+          <a href="boka.html" class="btn btn-primary" id="hero-cta-btn">Boka behandling</a>
           <a href="#filosofi" class="btn btn-secondary">Vår filosofi</a>
         </div>
       </div>
     </div>
     <div class="hero-split-image-panel">
       <!-- High-quality stämningsfull naturbild/behandlingsbild -->
-      <img src="assets/hero_forest.jpg" alt="Skandinavisk natur och skog" class="hero-split-img">
+      <img src="assets/hero_forest.jpg" alt="Natur bild för hero" class="hero-split-img">
     </div>
   </section>
     <!-- STATEMENT SECTION -->
@@ -44,7 +44,8 @@
         <h3>Christers syn på behandling</h3>
         <p class="lead-paragraph">"Behandlingen bör alltid fokusera på att stödja kroppens naturliga förmåga att självläka. Genom varsam, närvarande teknik skapar vi ett tryggt utrymme för återhämtning och balans."
         </p>
-        <footer class="statement-attribution">Christer Tranberg</footer>
+        <img src="assets/5C9660E7-CE11-4417-B7A3-7E4BA1AA5B4F_1_105_c.jpeg" alt="Christer och Linda i behandlingssituation" class="statement-photo" />
+<footer class="statement-attribution">Christer Tranberg</footer>
       </div>
     </section>
 
@@ -225,132 +226,31 @@
       </div>
     </div>
   </section>
-
-  <!-- 9. BOOKING PORTAL (AES-256 Encrypted Booking Flow) -->
-  <section id="bokning" class="booking-section section-padding alt-bg">
+  <section id="bokning" class="section-padding alt-bg">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tagline">Bokningsportal</span>
-        <h2>Boka din behandling online</h2>
-        <p class="section-lead">Hitta en ledig tid i kalendern nedan. Bokningsbara tider är måndag till fredag, mellan 08:00 och 15:00.</p>
+        <span class="section-tagline">Boka behandling</span>
+        <h2>Boka din tid</h2>
+        <p class="section-lead">Kontakta oss direkt via telefon eller e-post så hjälper vi dig att hitta en passande tid.</p>
       </div>
 
-      <div class="booking-container card glassmorphism">
-        <div class="booking-header-selection">
-          <h3 class="booking-step-title">1. Välj behandling</h3>
-          <div class="form-group">
-            <label for="booking-type">Behandling *</label>
-            <select id="booking-type" name="type" form="appointment-form" required>
-              <option value="" disabled selected>Välj behandling...</option>
-              <option value="45">Behandling 45 minuter (950 kr)</option>
-              <option value="60">Behandling 60 minuter (1 250 kr)</option>
-              <option value="90">Behandling 90 minuter (1 700 kr)</option>
-            </select>
-          </div>
+      <div style="max-width: 580px; margin: 2rem auto 0; text-align: center; display: flex; flex-direction: column; gap: 1.25rem; align-items: center;">
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem; width: 100%;">
+          <a href="tel:+46734416538" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; padding: 0.9rem 2.2rem;">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Ring och boka
+          </a>
+          <a href="mailto:boka@tranberginstitut.se" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; padding: 0.9rem 2.2rem;">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Boka via e-post
+          </a>
         </div>
-        
-        <hr class="form-divider">
-        
-        <div class="booking-grid disabled" id="booking-grid-area">
-          <!-- Calendar / Date picker area -->
-          <div class="booking-datepicker">
-            <h3 class="booking-step-title">2. Välj datum</h3>
-            <div class="calendar-controls">
-              <button id="prev-month-btn" aria-label="Föregående vecka" class="calendar-nav-btn">&lsaquo;</button>
-              <span id="calendar-month-year">Juli 2026</span>
-              <button id="next-month-btn" aria-label="Nästa vecka" class="calendar-nav-btn">&rsaquo;</button>
-            </div>
-            
-            <div class="calendar-grid-header">
-              <div>Mån</div><div>Tis</div><div>Ons</div><div>Tor</div><div>Fre</div>
-            </div>
-            <div class="calendar-grid-days" id="calendar-days-container">
-              <!-- Rendered via JS -->
-            </div>
-            
-            <div class="calendar-legend">
-              <span class="legend-item"><span class="dot available"></span> Ledig</span>
-              <span class="legend-item"><span class="dot unavailable"></span> Upptagen</span>
-            </div>
-          </div>
-
-          <!-- Time slot area -->
-          <div class="booking-timeslots">
-            <h3 class="booking-step-title">3. Välj tid</h3>
-            <div class="selected-date-display" id="selected-date-text">
-              Välj en dag i kalendern till vänster
-            </div>
-            
-            <div class="timeslots-grid empty" id="timeslots-container">
-              <!-- Rendered via JS based on selected date -->
-              <p class="helper-text">Vänligen klicka på en tillgänglig dag först.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Form Area (Initially Hidden or Disabled until time is selected) -->
-        <div class="booking-form-wrapper disabled" id="booking-form-section">
-          <hr class="form-divider">
-          <h3 class="booking-step-title">4. Fyll i dina uppgifter</h3>
-          <p class="form-helper">Vald tid: <strong id="summary-datetime">-</strong></p>
-
-          <form id="appointment-form" class="booking-form">
-            <!-- Hidden inputs to store selection -->
-            <input type="hidden" id="form-date" name="date" required>
-            <input type="hidden" id="form-time" name="time" required>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="client-name">För- och efternamn *</label>
-                <input type="text" id="client-name" name="name" placeholder="Magnus Kroon" required autocomplete="name">
-              </div>
-              <div class="form-group">
-                <label for="client-email">E-postadress *</label>
-                <input type="email" id="client-email" name="email" placeholder="namn@företag.se" required autocomplete="email">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="client-phone">Telefonnummer *</label>
-              <input type="tel" id="client-phone" name="phone" placeholder="070-123 45 67" required autocomplete="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="client-message">Beskriv dina besvär (frivilligt)</label>
-              <textarea id="client-message" name="message" rows="3" placeholder="T.ex. stelhet i ländryggen eller spänningshuvudvärk..."></textarea>
-            </div>
-
-            <div class="form-checkbox-group">
-              <input type="checkbox" id="gdpr-consent" name="gdpr" required>
-              <label for="gdpr-consent">Jag samtycker till att mina personuppgifter sparas och hanteras i enlighet med dataskyddsförordningen (GDPR) för att administrera denna bokning. *</label>
-            </div>
-
-            <div class="form-actions text-center">
-              <button type="submit" class="btn btn-primary btn-large" id="submit-booking-btn">Genomför bokning</button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Success Message -->
-        <div id="booking-success-message" class="booking-success hidden">
-          <div class="success-icon">
-            <svg viewBox="0 0 24 24" width="60" height="60" stroke="currentColor" stroke-width="2" fill="none">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-          </div>
-          <h3>Tack för din bokning!</h3>
-          <p>Din bokning har registrerats och bekräftats.</p>
-          <div class="success-details">
-            <p><strong>Behandling:</strong> <span id="success-type">-</span></p>
-            <p><strong>Tid:</strong> <span id="success-time">-</span></p>
-            <p><strong>Plats:</strong> Tranberg Institut, Göteborg</p>
-          </div>
-          <button id="book-another-btn" class="btn btn-secondary">Gör en ny bokning</button>
-        </div>
+        <p style="font-size: 0.9rem; color: var(--color-granite-moss); margin-top: 0.25rem;">Telefon: <a href="tel:+46734416538" style="color: inherit; text-decoration: underline;">0734-416538</a> &bull; E-post: <a href="mailto:boka@tranberginstitut.se" style="color: inherit; text-decoration: underline;">boka@tranberginstitut.se</a></p>
+        <p style="font-size: 0.85rem; color: var(--color-granite-moss); margin-top: 0;">Ange gärna önskat datum, behandlingstyp och eventuella besvär i ditt meddelande.</p>
       </div>
     </div>
   </section>
+
 
   <!-- 10. FOOTER & CONTACT (Injected by components.js) -->
   <footer id="kontakt"></footer>
