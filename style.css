@@ -1326,7 +1326,7 @@ a {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-background); /* Light beige line */
+    background-color: var(--color-patinated-brass); /* Higher contrast gold line */
     position: relative;
     transition: background-color 0.3s;
   }
@@ -1337,7 +1337,7 @@ a {
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: var(--color-background); /* Light beige lines */
+    background-color: var(--color-patinated-brass); /* Higher contrast gold lines */
     transition: transform 0.3s, background-color 0.3s;
   }
   
@@ -1350,12 +1350,12 @@ a {
   
   .mobile-nav-toggle[aria-expanded="true"] .hamburger::before {
     transform: rotate(45deg) translateY(6px) translateX(6px);
-    background-color: var(--color-limestone);
+    background-color: var(--color-patinated-brass);
   }
   
   .mobile-nav-toggle[aria-expanded="true"] .hamburger::after {
     transform: rotate(-45deg) translateY(-6px) translateX(6px);
-    background-color: var(--color-limestone);
+    background-color: var(--color-patinated-brass);
   }
   
   .nav-menu {
@@ -1596,6 +1596,24 @@ a {
   padding: 11rem 0 7rem 0;
   position: relative;
   overflow: hidden;
+}
+
+/* Enhanced logo styling for header and footer */
+.logo-master-header, .logo-master-footer {
+  max-height: 70px; /* Larger logo height */
+  width: auto;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.3)); /* Slight shadow for contrast */
+}
+/* Ensure logo container has adequate spacing */
+.header-container .logo-area {
+  margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .logo-master-header,
+  .logo-master-footer {
+    max-height: 60px;
+  }
 }
 
 .subpage-hero h1 {

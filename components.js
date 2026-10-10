@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerContainer.innerHTML = `
       <div class="header-container">
         <a href="${rootPath}index.html" class="logo-area" id="logo-link">
-          <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master.svg" alt="Tranberg Institut" class="logo-master-header" width="160" height="67" style="height: 46px; width: auto; max-width: 175px; display: block;" />
+          <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master.svg" alt="Tranberg Institut" class="logo-master-header" width="160" height="67" />
         </a>
 
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Meny">
