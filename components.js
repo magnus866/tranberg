@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     headerContainer.innerHTML = `
       <div class="header-container">
         <a href="${rootPath}index.html" class="logo-area" id="logo-link">
-          <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master.svg" alt="Tranberg Institut" class="logo-master-header" width="160" height="67" />
+          <!-- Dark background logo per brand guidelines -->
+          <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master-darkbg.svg" alt="Tranberg Institut" class="logo-master-header" />
         </a>
 
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Meny">
           <span class="sr-only">Meny</span>
-          <span class="hamburger"></span>
+          <svg class="hamburger-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
 
         <nav id="primary-navigation" class="nav-menu" role="menubar">
@@ -63,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer-info fade-in">
           <div class="footer-logo">
             <a href="${rootPath}index.html" class="footer-logo-link" style="display: inline-block;">
-              <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master.svg" alt="Tranberg Institut" class="logo-master-footer" width="200" height="84" style="height: auto; width: 200px; max-width: 100%; display: block;" />
+              <!-- Dark background logo per brand guidelines -->
+            <img src="${rootPath}assets/logo/Tranberg-Institut-Logo-Master-darkbg.svg" alt="Tranberg Institut" class="logo-master-footer" width="200" height="84" style="height: auto; width: 200px; max-width: 100%; display: block;" />
             </a>
           </div>
           <p class="footer-tagline">I symbios med människans natur.</p>
