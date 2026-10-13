@@ -2115,3 +2115,273 @@ a {
 @media (min-width: 769px) {
   .mobile-nav-toggle { display: none; }
 }
+
+
+/* =============================================================
+   Tranberg Institut – startsida: visuell rytm och typografi
+   Alla nya regler är begränsade till body.home-page.
+   Header, navigering, andra sidor och varumärkesfärger lämnas orörda.
+   ============================================================= */
+body.home-page .section-padding {
+  padding: 5.5rem 0;
+}
+
+body.home-page .section-header {
+  margin-bottom: 2.75rem;
+}
+
+body.home-page .section-header h2,
+body.home-page .company-wellness-section h2,
+body.home-page .education-teaser-section h2,
+body.home-page .about-christer-section h2,
+body.home-page .serif-heading {
+  font-size: clamp(2rem, 3.3vw, 2.85rem);
+  line-height: 1.22;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+body.home-page .section-lead {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 1.075rem;
+  line-height: 1.7;
+  font-weight: 400;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+body.home-page .lead-paragraph {
+  max-width: 46rem;
+  font-size: 1.13rem;
+  font-weight: 400;
+  line-height: 1.75;
+  margin: 0 auto 1.75rem;
+}
+
+body.home-page .hero-title {
+  font-size: clamp(2.85rem, 5vw, 4.25rem);
+  line-height: 1.17;
+}
+
+body.home-page .hero-lead {
+  max-width: 35rem;
+  line-height: 1.7;
+}
+
+/* Christers citat fungerar som visuell övergång från hero till innehåll. */
+body.home-page .statement-section {
+  background-color: var(--color-primary);
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+}
+body.home-page .statement-section h3 {
+  color: var(--color-background);
+  font-size: clamp(1.65rem, 2.7vw, 2.15rem);
+  margin-bottom: 1.35rem;
+}
+body.home-page .statement-section .lead-paragraph {
+  color: var(--color-background);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.05vw, 1.5rem);
+  line-height: 1.65;
+  max-width: 48rem;
+}
+body.home-page .statement-attribution {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+body.home-page .introduction-section .lead-paragraph {
+  max-width: 45rem;
+}
+
+/* Fem grundpelare: balanserade rader om tre respektive två kort. */
+body.home-page .values-clean-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 2.1rem;
+  margin-top: 2.25rem;
+}
+body.home-page .value-item {
+  grid-column: span 2;
+}
+body.home-page .value-item:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+body.home-page .value-item:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+/* Tre behandlingsalternativ ges likvärdiga kort och tydliga prisnivåer. */
+body.home-page .treatments-premium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+body.home-page .treatments-premium-grid .premium-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 2.25rem 1.75rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+body.home-page .premium-card h3 {
+  font-size: clamp(1.35rem, 2vw, 1.55rem);
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+body.home-page .premium-card .treatment-price {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+body.home-page .premium-card p:not(.treatment-price) {
+  font-size: 0.96rem;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+body.home-page .premium-card .btn {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding-inline: 1rem;
+}
+body.home-page .trust-section {
+  margin: 3.25rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  max-width: 45rem;
+}
+body.home-page .trust-section h3 {
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  margin-bottom: 0.75rem;
+}
+body.home-page .trust-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+body.home-page .company-wellness-section .grid-2-col,
+body.home-page .education-teaser-section .grid-2-col {
+  gap: 3.25rem;
+}
+body.home-page .wellness-text > p,
+body.home-page .education-text > p,
+body.home-page .christer-text > p:not(.signature-text):not(.christer-lead) {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* Utan porträtt blir presentationen av Christer en centrerad textyta. */
+body.home-page .about-christer-section .grid-2-col {
+  display: block;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+body.home-page .christer-text {
+  text-align: center;
+}
+body.home-page .christer-lead {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  max-width: 39rem;
+  margin: 0 auto 1.3rem;
+}
+body.home-page .signature-text {
+  font-size: 1.5rem;
+  margin-top: 1.15rem;
+}
+body.home-page .about-christer-section .button-spacer {
+  margin-top: 1.6rem;
+}
+
+/* Låt bokningssektionen framträda efter den mörkare Om Christer-ytan. */
+body.home-page #bokning {
+  background-color: var(--color-background);
+}
+body.home-page #bokning .section-header {
+  margin-bottom: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1050px) {
+  body.home-page .values-clean-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.home-page .value-item,
+  body.home-page .value-item:nth-child(4),
+  body.home-page .value-item:nth-child(5) {
+    grid-column: auto;
+  }
+  body.home-page .value-item:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 1rem);
+    justify-self: center;
+  }
+  body.home-page .treatments-premium-grid {
+    grid-template-columns: 1fr;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body.home-page .section-padding {
+    padding: 4rem 0;
+  }
+  body.home-page .section-header {
+    margin-bottom: 2rem;
+  }
+  body.home-page .hero-title {
+    font-size: clamp(2.25rem, 8vw, 3.1rem);
+    line-height: 1.17;
+  }
+  body.home-page .hero-split-text-panel {
+    padding: 3.5rem 1.5rem;
+  }
+  body.home-page .hero-lead {
+    margin-bottom: 2rem;
+  }
+  body.home-page .statement-section {
+    padding: 3.5rem 0;
+  }
+  body.home-page .lead-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  body.home-page .values-clean-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-top: 1.75rem;
+  }
+  body.home-page .value-item,
+  body.home-page .value-item:nth-child(4),
+  body.home-page .value-item:nth-child(5),
+  body.home-page .value-item:last-child {
+    grid-column: auto;
+    width: auto;
+  }
+  body.home-page .treatments-premium-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+  body.home-page .treatments-premium-grid .premium-card {
+    padding: 1.75rem 1.5rem;
+  }
+  body.home-page .trust-section {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+}
