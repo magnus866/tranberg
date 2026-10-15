@@ -531,6 +531,96 @@
       text-align: center;
       margin-bottom: 0;
     }
+
+    /* ── Prislista: endast #priser (andra sektioner är orörda) ── */
+    #priser.section-padding {
+      padding-top: 5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    #priser .section-header {
+      margin-bottom: 2rem;
+    }
+
+    #priser .section-header h2 {
+      margin-bottom: 0;
+    }
+
+    #priser .price-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+      margin-top: 0;
+      align-items: stretch;
+    }
+
+    #priser .price-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 235px;
+      padding: 2rem 1.75rem 1.7rem;
+    }
+
+    #priser .price-card h3 {
+      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    #priser .price-card p:not(.price) {
+      font-size: 0.94rem;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    #priser .price-card .price {
+      margin-top: auto;
+      padding-top: 1rem;
+      margin-bottom: 0;
+      line-height: 1.25;
+    }
+
+    #priser .price-note {
+      text-align: center;
+      max-width: 46rem;
+      margin: 1.75rem auto 0;
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 960px) {
+      #priser .price-grid {
+        grid-template-columns: 1fr;
+        max-width: 38rem;
+        margin-inline: auto;
+        gap: 1.1rem;
+      }
+
+      #priser .price-card {
+        min-height: 0;
+        padding: 1.75rem 1.5rem;
+      }
+
+      #priser .price-card .price {
+        margin-top: 1rem;
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #priser.section-padding {
+        padding-top: 4rem;
+        padding-bottom: 3.5rem;
+      }
+
+      #priser .section-header {
+        margin-bottom: 1.5rem;
+      }
+
+      #priser .price-note {
+        margin-top: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -562,16 +652,16 @@
           </div>
           <div class="price-card value-card fade-in">
             <h3>Underhåll (45 min)</h3>
-            <p>Löpande behandling – för att bibehålla funktion och förebygga återfall.</p>
+            <p>Uppföljande behandling som befäster kroppens positiva förändringsresa och stödjer fortsatt balans och välmående.</p>
             <p class="price">950 kr</p>
           </div>
           <div class="price-card value-card fade-in">
             <h3>Djup behandling (90 min)</h3>
-            <p>Fördjupad och omfattande behandling för komplexa besvär eller akuta problem.</p>
+            <p>En fördjupad behandling med mer tid och närvaro för komplexa besvär och för att stödja kroppens återhämtning.</p>
             <p class="price">1 700 kr</p>
           </div>
         </div>
-        <p class="price-note">Alla behandlingar är berättigade till friskvårdsbidrag. Kontakta oss för att boka din tid.</p>
+        <p class="price-note">Friskvårdsbidrag kan användas för behandlingar som omfattas av gällande friskvårdsregler. Kontakta oss för information och bokning.</p>
       </div>
     </section>
   <!-- ══════════════════════════════════════════════════════
