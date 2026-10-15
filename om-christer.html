@@ -243,6 +243,17 @@
       transition: var(--transition-smooth);
     }
     .teaching-card:hover { box-shadow: 0 12px 40px rgba(38,51,43,0.1); transform: translateY(-3px); }
+
+/* Adjust image on Christer page – balanced layout */
+#presentation .treatment-image-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  align-self: start;
+}
+#presentation .treatment-img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
     .teaching-card h3 {
       font-family: var(--font-heading);
       font-size: 1.1rem;
